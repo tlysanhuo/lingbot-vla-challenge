@@ -1,0 +1,70 @@
+[
+  {
+    "path": "experiment/robotwin/eval_policy_client_lingbotvla.py",
+    "source_sha256": "9acb87ad120a7ea6cabfaa23207fd427ea7657ac9a8fdfc74760d44968fac26b"
+  },
+  {
+    "path": "experiment/robotwin/start_robotwin_infer_and_eval.sh",
+    "source_sha256": "6430a334c9b33453de761c6ec48d20af93bfde5d125d469dd463628d504dc569"
+  },
+  {
+    "path": "lingbotvla/checkpoint/checkpointer.py",
+    "source_sha256": "c71a33a3458cb54301d775f7280f0e30b1ccbfd8ad0391d552a9e6df54fac068"
+  },
+  {
+    "path": "lingbotvla/data/dataset.py",
+    "source_sha256": "92abe1deac1178f9442771a365041ae1d3faa054f60e868dc41dc916086225ff"
+  },
+  {
+    "path": "lingbotvla/data/vla_data/base_dataset.py",
+    "source_sha256": "500dcb57b2794bbab747c5725e090dc8515d0119777c8b32779bf371b677899b"
+  },
+  {
+    "path": "lingbotvla/data/vla_data/multi_vla_dataset.py",
+    "source_sha256": "1f3a6032cb9478b4e110c7bcbd175786b0fd28055524e2fba053b213ccc24648"
+  },
+  {
+    "path": "lingbotvla/data/vla_data/transform.py",
+    "source_sha256": "a4bf827fb46b7d80f5dadd8a8aff7112ccb0990752d921708487a4fc1e3d8e74"
+  },
+  {
+    "path": "lingbotvla/data/vla_data/utils.py",
+    "source_sha256": "1b830c1de3f627683c65c4a0cc5833fed1e39e6dd11eb82a9e65f3ebf7317ab9"
+  },
+  {
+    "path": "lingbotvla/models/vla/vision_models/module_utils.py",
+    "source_sha256": "67e29b3d483ba550d0fe6171b6d705d8e9dcfa6dc16188ac140ba440031a7914"
+  },
+  {
+    "path": "lingbotvla/utils/arguments.py",
+    "source_sha256": "6ecf0617e25e804b9d4b5c124a01e12cb147e3346bb379e3a10bebbcfc60562c"
+  },
+  {
+    "path": "tasks/vla/train_lingbotvla.py",
+    "source_sha256": "aac85017da5b54cc55d45c62373061061bec5c5a987e39641473a5a5094e2086"
+  },
+  {
+    "path": "lingbotvla/checkpoint/ema.py",
+    "source_sha256": "440f8887a8ca6da65ed26c1b5a78ddd8be5b7c39d8b3164f8582c16dfca53ac4"
+  },
+  {
+    "path": "lingbotvla/checkpoint/training_stage.py",
+    "source_sha256": "1b33294b942db63210b6f963fb8bc9e21018c3135d8ec1c50199141e0935a6b3"
+  },
+  {
+    "path": "lingbotvla/data/vla_data/augment.py",
+    "source_sha256": "9b7d75f173e4048537e70da445b61b324c563b0bf40e09172ee45cfc8b82646a"
+  },
+  {
+    "path": "lingbotvla/data/vla_data/rng_state.py",
+    "source_sha256": "ce0e914291cef2ea89d896ee8ac6a48f418d382d0c0be4edd867fec8f4b19361"
+  },
+  {
+    "path": "lingbotvla/data/vla_data/seen_bindings.py",
+    "source_sha256": "f47a070a2de9da7cd30b5edac00db13d2b5369ae9b2764f742cf683b1999075f"
+  },
+  {
+    "path": "experiment/robotwin/eval_policy_client_lingbotvla.py",
+    "note": "Audited confirmation client; only local parent_directory made portable. Description count stays 100."
+  }
+]

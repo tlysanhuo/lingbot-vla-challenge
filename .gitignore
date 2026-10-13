@@ -1,0 +1,17 @@
+/src/
+/models/
+/data/
+/outputs/
+/wandb/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.secrets/
+*.pt
+*.pth
+*.safetensors
+*.zip
+*.log
+/results/v3_preparation/
+.pytest_cache/

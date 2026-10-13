@@ -1,0 +1,6 @@
+checkpoint,clean,randomized,mean,episodes_per_task,scope
+v2 19k raw,78.4,47.2,62.8,5,historical selection
+v3 2k raw,82.4,49.6,66.0,5,historical selection
+v3 2k EMA,83.6,50.8,67.2,5,historical selection
+v3 4k raw,83.2,51.6,67.4,5,historical selection
+v3 4k EMA,80.8,46.8,63.8,5,historical selection

@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-13T19:11:18.712873+08:00",
+  "source_bootstrap": "offline restore from pinned git objects; passed",
+  "c2r_cpu_tests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "binding_state_rng_checkpoint_cpu_tests": {
+    "passed": 15,
+    "failed": 0
+  },
+  "public_results_verification": "100 cells, 1000 episodes, 3998 W&B rows passed",
+  "train_and_eval_dry_run": "passed; randomized/unseen first",
+  "config_parse": "v2 and v3 production argument classes validated",
+  "syntax_and_markdown_links": "passed",
+  "full_model_gpu_run_in_publication_copy": false,
+  "video": {
+    "duration_seconds": 133.25,
+    "bytes": 1463789
+  },
+  "limitations": "Portable publication layer has not been retrained or evaluated end-to-end on a clean machine. Original measured results remain unchanged."
+}

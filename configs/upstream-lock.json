@@ -1,0 +1,10 @@
+{
+  "lingbot": {
+    "url": "https://github.com/Robbyant/lingbot-vla-v2.git",
+    "commit": "bc643d74a0127fab8788da993b261d4d64101138"
+  },
+  "robotwin": {
+    "url": "https://github.com/RoboTwin-Platform/RoboTwin.git",
+    "commit": "13c3c47ff4312dd62484bcd51be034af55c062d1"
+  }
+}

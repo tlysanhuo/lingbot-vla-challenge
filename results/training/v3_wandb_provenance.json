@@ -1,0 +1,21 @@
+{
+  "source": "Weights & Biases GraphQL sampledHistory",
+  "url": "https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2",
+  "requested_samples": 5000,
+  "returned_rows": 3998,
+  "first_step": 1,
+  "last_step": 4000,
+  "all_4000_steps_present": false,
+  "run_state": "finished",
+  "fields": [
+    "training_loss",
+    "training_vla_loss",
+    "training_depth_loss",
+    "training_future_depth_loss",
+    "training_future_video_loss",
+    "training_grad_norm",
+    "training_lr",
+    "training_expert_lr",
+    "steptime"
+  ]
+}

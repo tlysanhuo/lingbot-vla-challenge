@@ -1,0 +1,28 @@
+{
+  "checkpoint": "sft_v3_tail_v1_r2/global_step_4000/hf_ckpt (raw)",
+  "tasks": 50,
+  "episodes_per_task_per_setting": 10,
+  "total_episodes": 1000,
+  "settings": {
+    "clean": "seen",
+    "randomized": "unseen"
+  },
+  "description_count": 100,
+  "precision": "FP32 inference",
+  "chunk_size": 50,
+  "execute_steps": 30,
+  "denoising_steps": 10,
+  "compile": true,
+  "expert_check": true,
+  "seed_start": 100000,
+  "results_type": "internal confirmation; not official competition score",
+  "new_evaluation_order": [
+    "randomized",
+    "clean"
+  ],
+  "recorded_confirmation_order": [
+    "clean",
+    "randomized"
+  ],
+  "completed_at": "2026-10-10T23:37:12+08:00"
+}
