@@ -1,0 +1,915 @@
+{
+  "schema_version": 1,
+  "scope": "historical evaluation; both settings use unseen instructions",
+  "episodes_per_task": 5,
+  "execute_steps": 50,
+  "precision_evidence": "Historical per-run logs do not independently record actual dtype; not inferred from current launcher defaults.",
+  "results": {
+    "clean": {
+      "adjust_bottle": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "beat_block_hammer": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "blocks_ranking_rgb": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "blocks_ranking_size": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "click_alarmclock": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "click_bell": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "dump_bin_bigbin": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "grab_roller": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "handover_block": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "handover_mic": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "hanging_mug": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "lift_pot": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_can_pot": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_pillbottle_pad": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_playingcard_away": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_stapler_pad": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "open_laptop": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "open_microwave": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "pick_diverse_bottles": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "pick_dual_bottles": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_a2b_left": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_a2b_right": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_bread_basket": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_bread_skillet": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_burger_fries": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_can_basket": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_cans_plasticbox": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_container_plate": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_dual_shoes": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_empty_cup": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_fan": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_mouse_pad": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_object_basket": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_object_scale": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_object_stand": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_phone_stand": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_shoe": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "press_stapler": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "put_bottles_dustbin": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "put_object_cabinet": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "rotate_qrcode": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "scan_object": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "shake_bottle": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "shake_bottle_horizontally": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_blocks_three": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_blocks_two": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_bowls_three": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_bowls_two": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stamp_seal": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "turn_switch": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      }
+    },
+    "randomized": {
+      "adjust_bottle": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "beat_block_hammer": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "blocks_ranking_rgb": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "blocks_ranking_size": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "click_alarmclock": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "click_bell": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "dump_bin_bigbin": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "grab_roller": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "handover_block": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "handover_mic": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "hanging_mug": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "lift_pot": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_can_pot": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_pillbottle_pad": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_playingcard_away": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "move_stapler_pad": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "open_laptop": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "open_microwave": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "pick_diverse_bottles": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "pick_dual_bottles": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_a2b_left": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_a2b_right": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_bread_basket": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_bread_skillet": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_burger_fries": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_can_basket": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_cans_plasticbox": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_container_plate": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_dual_shoes": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_empty_cup": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_fan": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_mouse_pad": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_object_basket": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_object_scale": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_object_stand": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_phone_stand": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "place_shoe": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "press_stapler": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "put_bottles_dustbin": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "put_object_cabinet": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "rotate_qrcode": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "scan_object": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "shake_bottle": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "shake_bottle_horizontally": {
+        "successes": 2,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_blocks_three": {
+        "successes": 4,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_blocks_two": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_bowls_three": {
+        "successes": 3,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stack_bowls_two": {
+        "successes": 5,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "stamp_seal": {
+        "successes": 1,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      },
+      "turn_switch": {
+        "successes": 0,
+        "attempts": 5,
+        "instruction_type": "unseen"
+      }
+    }
+  },
+  "source_artifact_hashes": {
+    "clean/adjust_bottle": {
+      "result_sha256": "fab485527844d404dd92420898ea6569ccd4f2c318be2c868ef04fd6e2a678d6",
+      "log_sha256": "5228bdc87c2bf5909872fac42f688b35a6a0c7881304c23833818215da546afd"
+    },
+    "clean/beat_block_hammer": {
+      "result_sha256": "fab485527844d404dd92420898ea6569ccd4f2c318be2c868ef04fd6e2a678d6",
+      "log_sha256": "2e563f65371a39075ac90cf07ca23be2f869ec3a5a5f486ac128ea286522aebf"
+    },
+    "clean/blocks_ranking_rgb": {
+      "result_sha256": "d193362fa0f12f2d5564a731231cbc24f5293a8a0b8dae0f54127b19418bb91c",
+      "log_sha256": "1e2e2f024fba7a123be19e4a930c54fde9fe3a5bf8024db2bd886d0f11824fae"
+    },
+    "clean/blocks_ranking_size": {
+      "result_sha256": "06c18358136141de29a0e9582b77d471e710725768b786aeb15329b3132f7a15",
+      "log_sha256": "6674347cc2d47afbfda66562ce5ed6afc39654166bee4cff8f2dca586bb550ac"
+    },
+    "clean/click_alarmclock": {
+      "result_sha256": "7892ed182c828e68ee551510b7bf0202e3a4556e3f67c0aaa43575872a069769",
+      "log_sha256": "255f53df0da0a820eff68b1e52fe66c6e336daef0986b09e9dc7ac1ff273beeb"
+    },
+    "clean/click_bell": {
+      "result_sha256": "0841cc203b291b41295600077ca01db620366e4f1e27aad3bef3110bbb15fe4a",
+      "log_sha256": "d859182bb8518974ad32f34dc93b1340f1db5d19cbff5b417ef826c611aa226b"
+    },
+    "clean/dump_bin_bigbin": {
+      "result_sha256": "41d8aa125b0aea71c46cd96af3b03ebf8e0c691089d8e9b0eccec36ad677f7d4",
+      "log_sha256": "906e90104477ceef7c0a68f7a30e44b18e614f90cc5e078bbbe6ff0fac65e436"
+    },
+    "clean/grab_roller": {
+      "result_sha256": "26f9a3ffbc7139bade2a9aa8210bdbd83d61bb2496ebaa8669a1ad524bc8cdc3",
+      "log_sha256": "09a82b917e8b291349440a5b2c9973b85113222b99eae50b5bcc996bb26f3569"
+    },
+    "clean/handover_block": {
+      "result_sha256": "a612737275c2c7f973fd0d3acf3824513448445efcb96d8f044d649b6a39715a",
+      "log_sha256": "ed0f529510a1f846e3820d60d1914a720555fc697acbe6bc8ff1b61eb8ed8909"
+    },
+    "clean/handover_mic": {
+      "result_sha256": "84c5e86a4099d786dc6974249bc722d6edcac59f3729287e1e6bada36844632e",
+      "log_sha256": "48dee5d524ede1c07a6957923f464ea59b630ac0cf2f3670027692194f0b976b"
+    },
+    "clean/hanging_mug": {
+      "result_sha256": "5fcf3aea36ba63550c6bd81c2f42ab62ce4b1f6f40efa2cff36169d19e81addf",
+      "log_sha256": "d4ecabc7f46975424d709584add5107099d74f56aa1f0694fee32f9281979213"
+    },
+    "clean/lift_pot": {
+      "result_sha256": "e07d33c2ce0e5774e83fa7691fafc843b55ac2a30601426fec38a8b1026ccf32",
+      "log_sha256": "ac4d3a5f7b7cc8f46073ce1494906e05ca19cfe7101f0c47ec6faad29ea69a57"
+    },
+    "clean/move_can_pot": {
+      "result_sha256": "576f7b1507fc75f7be6a31a67fe179d7019db5e8fe8551e9fc846450329b004b",
+      "log_sha256": "618749d5ff7c8a020d07fe85213bed78eff562df9e6505ec04d457c80a2c28c3"
+    },
+    "clean/move_pillbottle_pad": {
+      "result_sha256": "48a5a6af1d3bd5f8e6a03a5ad0ffd73fa89abb7082d8c482b2cf2b52246998bc",
+      "log_sha256": "bb5e9ea914ac3a1078eda27fef44a594ece5a9abadc86d31f3b6e16ecbac95f3"
+    },
+    "clean/move_playingcard_away": {
+      "result_sha256": "19a8a0cd66b3699067fecb345799db735a3d8c2bfb818d1f1b945c1faf37aaf7",
+      "log_sha256": "e3195f0d37f3688615febb4f19a0990bb091504268bccc3dff81eb4f7f639449"
+    },
+    "clean/move_stapler_pad": {
+      "result_sha256": "03b7a6a12cf2315f31ac4d6ad9e4d0ae7f20e06f94cc6723cd063095a5d54a6f",
+      "log_sha256": "617c49a72b0464a0b7c36565fafbde7733c094b3a0794d64a54bb8275da3b4db"
+    },
+    "clean/open_laptop": {
+      "result_sha256": "24cd3093f24cfc5f0c225b71927d5f79c7f00adf1fee6211b54167f544f20d3c",
+      "log_sha256": "53a232b5b247c2b46aba43cef2adf6065e28d839dabf8e698511e45b0fe9257f"
+    },
+    "clean/open_microwave": {
+      "result_sha256": "fd5a1a3486c7648449521e70076bcd850c9fc15f535d9a7dee917d182af25759",
+      "log_sha256": "fe387a2ab2e3f5169d629be9953bad7d1783fd41deadfe90f0a20c4c60ae6636"
+    },
+    "clean/pick_diverse_bottles": {
+      "result_sha256": "f77b08e8242cc20694e5f4433fd157e4e2435a19ab54e55aefd62c6da5234e00",
+      "log_sha256": "a8156758d100d0669500095facc36998d1ff3e409cfb3fb4c23dbcacfcab1090"
+    },
+    "clean/pick_dual_bottles": {
+      "result_sha256": "4a2c7d37bcf2e2edc31909dfcd05f786fedeeacd61ae1c8917ce4e0648c9d071",
+      "log_sha256": "82b0d8ac8b15be762351eae08f02da3403c284b07f1de83731e463445405d107"
+    },
+    "clean/place_a2b_left": {
+      "result_sha256": "ad70a48977235e6900da150de06891a107fa88179e1058d0237808a049931c97",
+      "log_sha256": "8412ba0ee81dbde0e1b3d2e015c4929cdbdd94b0a11ccf6feb8156834bee7993"
+    },
+    "clean/place_a2b_right": {
+      "result_sha256": "a6b59cda4048295a9c7dc49a8f1efb7332060f968bff1dee820ec292328247b0",
+      "log_sha256": "4be7c21be44fe386292abf3579c831c251296a0587d52dfe2a71761910e6bb1f"
+    },
+    "clean/place_bread_basket": {
+      "result_sha256": "561ebb1a759f6cf6685c5c8b41b59c1a4d053c3403e17164832e74262c6839e6",
+      "log_sha256": "c70636998280ed073517ed310d10d66af1592e6ca10a8b94cc27a9b5fb5bf5c3"
+    },
+    "clean/place_bread_skillet": {
+      "result_sha256": "cddce9d86d37da47f2f33b84c6214402f2299bd6176626bbb5b7fac7b0ba48c6",
+      "log_sha256": "a39d108cea05d75f3f09124e12724d0a1d161fb4a33e4ecd5f456003642153c4"
+    },
+    "clean/place_burger_fries": {
+      "result_sha256": "0ac58b2a2f8a13258fd27d34c13636b214b3a3f420df62258b8add61fc626add",
+      "log_sha256": "1ecd14bcc30f9f5df4f8c4951c29fe0916dad6487e6e17c8f57816c3b9cc6534"
+    },
+    "clean/place_can_basket": {
+      "result_sha256": "31691e4b63b540fbf188c2117c1ef8e0a063d11f0fe22bf5b24f7c5063e29c2c",
+      "log_sha256": "5f0bafda1d1ad19b0ab6901cb4823c3acdc313c1b562c40369cb9384025d2ff8"
+    },
+    "clean/place_cans_plasticbox": {
+      "result_sha256": "d4f0334969dba13699d0f7b6a560fd000b78d8d96a8c8041524c59f05ae8a354",
+      "log_sha256": "871d4a20d8b0af905382fcab5958c80ddaea6c6e3440f7138a65533aa94c134e"
+    },
+    "clean/place_container_plate": {
+      "result_sha256": "b08d210022d8d6ffd56ca4fa8e8cbea2de790f4a885c0f0915157f4e22855a88",
+      "log_sha256": "1952b642b175d22239012e06233c5edaa31817bb2db0e3b707eb9540b477f919"
+    },
+    "clean/place_dual_shoes": {
+      "result_sha256": "0329c91e632c12e75f8813235d4ee63660b98301ebd3b989bee526540d1295dc",
+      "log_sha256": "6a7f2fb4af762167b161ac8891b07b48ef1ce214315255b288361d1f2d3edc13"
+    },
+    "clean/place_empty_cup": {
+      "result_sha256": "6f32ffd323a3d378105299fa9afdd5bbbe795b9911712b6600f201bcdfbfd36b",
+      "log_sha256": "2d8a419cb995548087f92e76d5a796fa1e00c1d66559b9c4a0d252cc4cea9dae"
+    },
+    "clean/place_fan": {
+      "result_sha256": "dcbc50ea31a7a07ea6c0076bfe76d218b9f3d827b51546a51d8e524b32a09ffa",
+      "log_sha256": "75c07d13805071f93f89eaffa90bab4dc010c8301bed445d2c9d7322bbbc1209"
+    },
+    "clean/place_mouse_pad": {
+      "result_sha256": "f827cb5397ae73dc817e29d5a4d5b786a32b413bb6d9fa078536fef04976b8ae",
+      "log_sha256": "e2b8968ebfa52eba97b0182621e0dc1826c1958d64e9a3251e3bea3a4138a904"
+    },
+    "clean/place_object_basket": {
+      "result_sha256": "9628a078f6a32ef8dbacfe44d2a3ffe31987b254f04138a7ae3eabe528a957de",
+      "log_sha256": "c3215d8cb279832c985e2deb9abca1254c311ae9a269a293e471a2a7a28894c8"
+    },
+    "clean/place_object_scale": {
+      "result_sha256": "e79b395bab6b4548061146cdc0c413a4b41620b218a42f2191c8be366c77957b",
+      "log_sha256": "1006da3a6877ccd65f3f944f03ff7ded4d7ed4845c0a2d8a0094369e23c63e55"
+    },
+    "clean/place_object_stand": {
+      "result_sha256": "303a7bda3e0f8745748c7c64bee7adfdbe776b9a3fac1aa52cc0c5a596900781",
+      "log_sha256": "830fee5a34817caa06a849dec45bc809e37c26a0f2667b9985b1a9690447951d"
+    },
+    "clean/place_phone_stand": {
+      "result_sha256": "8caf0ce5c2584f866e3b86a540bcf4e4dbd6516507b7838e045a6105140d4e76",
+      "log_sha256": "bea6d9470945b757822ac0a0fabe93675f900eb55b5db6112318376649e06279"
+    },
+    "clean/place_shoe": {
+      "result_sha256": "2257c42147cccea0968412c2a8a2797ec1248bb23bf5bf248a033dd751986c54",
+      "log_sha256": "a95598f84ead8867140541c0cda3c9c351c381e406ec5d1a53004a357f22f5e6"
+    },
+    "clean/press_stapler": {
+      "result_sha256": "2553aa7aaa88c549ed71493fe5bf6c51df7737782c18d5bee1d32e12e90207c8",
+      "log_sha256": "a1acfb9e391e81e1dae701434313dab8aa27cf70c4c5f44e5b0131a1e1096b5e"
+    },
+    "clean/put_bottles_dustbin": {
+      "result_sha256": "8dba1926e85d364dc18b1ee6e41bb9e72f1f14f5621d11d2141bd2dfe8f8f1cb",
+      "log_sha256": "ecd1a9d32dd7ca1bc5a0dfd1ec8f5ac99dc5c0ffcc727da3df7fdad6864fbb54"
+    },
+    "clean/put_object_cabinet": {
+      "result_sha256": "ee42c592b0b2fb8a1a718b2d6c0f80aa9e6dd0a261dd1435e709fec15d018a3d",
+      "log_sha256": "825e219c018871accc8611a6c71cee1a0a5a0bf5ea7cfb0e7d89c4ba47a80781"
+    },
+    "clean/rotate_qrcode": {
+      "result_sha256": "d07bf0be3d12b048da79d18309ce1b12b690edf5f51dfac9b31c94f693f758d3",
+      "log_sha256": "f32ce914ee0bbdc0043c4c449caaebf9d5955ee2a3cfb8a4e52f8bfb47d35a46"
+    },
+    "clean/scan_object": {
+      "result_sha256": "8411930d60730bd68ab892df437b6ef83314bae0f34d28fda087bc0b675e8fa0",
+      "log_sha256": "aec8d25c18dedb9a0c9a6abeb05de298c87c38dc40b77552d5c1686bdb34cabf"
+    },
+    "clean/shake_bottle": {
+      "result_sha256": "a8842eb64c2e84f704ae806a172f5371d6ab0bc7925889b33d54e486c5ea847d",
+      "log_sha256": "1abeb9de3d3cbba0d452375a21e2c4a16c5413bbf6fcf472cf5c0d69ee416aff"
+    },
+    "clean/shake_bottle_horizontally": {
+      "result_sha256": "05ac7cfd5e62ff7c75942166b3aba8fe1298536daab3aecd0d9e7061656f6a7d",
+      "log_sha256": "18f7f4a4c200cbe3d05849affb82f53bb52a7083dd9601e22b4b66051c74faa7"
+    },
+    "clean/stack_blocks_three": {
+      "result_sha256": "1202449c040cf089d194ee1ab21827e89b6b7b2e315574d39a5caddede86976b",
+      "log_sha256": "084317430a5a7ec6dc3af380fbdf3e03c9b99526ca2493e65890088ac0e16be5"
+    },
+    "clean/stack_blocks_two": {
+      "result_sha256": "e1e4af1a8a0573f42f924a8561721e6defb4fde72d709cc52e47e24d9ef129f9",
+      "log_sha256": "4ea2bb29b83c43e75393cbd42c38922fa41a96a0c7ee5ac9fd7902aaa9943e47"
+    },
+    "clean/stack_bowls_three": {
+      "result_sha256": "79c0d0bd7bd1594ed06ace4312aa0be1fcdf09886078f11d53358f18c3f69649",
+      "log_sha256": "1b9750c079686b67ad6574313d9355e478226af77d11969d87f8b03579470d6d"
+    },
+    "clean/stack_bowls_two": {
+      "result_sha256": "cd0b44ba9c7c1be862faeafba8dd8c122d9aa1986ad8a6008c80a02c9e8296de",
+      "log_sha256": "5b6a32e07b2e267bb84ebc74154d251805304eba3ccc02e5b579aacc6416ce9e"
+    },
+    "clean/stamp_seal": {
+      "result_sha256": "4dd2aaf598dacdca04492b3f1b77d521f710e11f1503771fe66a20e3a40821f9",
+      "log_sha256": "6d570f48a1abdd5c986cd0ab3cd9fb5403f63e7afb98c8c74463f52310620dfb"
+    },
+    "clean/turn_switch": {
+      "result_sha256": "2ec2f23077f05deadab16f7c0372a185e96ff3fbbba9f32acec2a6ff4d48627d",
+      "log_sha256": "df0d200a2bf421e9c291862abd6dabf502b03bec4667c4f0c725c42d51297ca2"
+    },
+    "randomized/adjust_bottle": {
+      "result_sha256": "60b27667529ea48b0204c4289e1814054c47d8ee8bef77bae9a044b43b0a988d",
+      "log_sha256": "b32591ca098494cd201a22fe525be00942a6d5a160fefdcbd314a89309fb89a5"
+    },
+    "randomized/beat_block_hammer": {
+      "result_sha256": "b3ef190f57354c5926bb979a4df205610a83ce242b3717662b5c738841a33cb4",
+      "log_sha256": "37c78c10a4e1add9ec5034c6a94dac2248ad167b990387bfcc08a38be76f2c8b"
+    },
+    "randomized/blocks_ranking_rgb": {
+      "result_sha256": "81d4ee8e64d6a44e766fea1faa220bdd214a0072405adca503aa5cd6b31dcbd7",
+      "log_sha256": "b49964bbb3fe61fb87ae5e3998dbf747eab52d36aadae1bc427668c237e63def"
+    },
+    "randomized/blocks_ranking_size": {
+      "result_sha256": "b8f28cd35e9602d681aa6440be096d7c14c0b10234398d117c9c9ec1141d6c7f",
+      "log_sha256": "787393acb61d9ed82ca7c90d4135d4dbff98bc49f130d8b5de5b8a1669705e6b"
+    },
+    "randomized/click_alarmclock": {
+      "result_sha256": "e4bcc2671d126c34d0f0e5e5c7a912febd3fef2953e0baebd20e99d9ad3dba2c",
+      "log_sha256": "1b7f4aed5f19dc5d279a4143637633b33d4c3c7c7d572b9e55c1c8cd21300621"
+    },
+    "randomized/click_bell": {
+      "result_sha256": "01f8f9808229da32cb8a26acf6e177cadc779afaf20c244e2f2770f5f718d131",
+      "log_sha256": "0a3f92e54f29c95106bafc5ebfa42a5ebc47d590522220cd5c191f44f1d1a05f"
+    },
+    "randomized/dump_bin_bigbin": {
+      "result_sha256": "0880cb301c60a6db31ddf37725bc1a71b6832802918a4dc0ecb14b0be2f7f793",
+      "log_sha256": "96d8ac1cb0b91270d311a9bf4ec0b4d4898a21fe7bdcd200ce5321bbd8e6d37a"
+    },
+    "randomized/grab_roller": {
+      "result_sha256": "3b7a39c0207b3d09466eaad268fd6c143a7cc6d557d14d59d7b86e8c5a9837bd",
+      "log_sha256": "bfbbefaa9d8e4ddcc86158dafdf58e8445d1f9b657bea3647dd7d100a67048a3"
+    },
+    "randomized/handover_block": {
+      "result_sha256": "70e74a2af073981dec5013662fc35ddfdd6caa378a69991999fbf2f939cdcb79",
+      "log_sha256": "a28687476e220f677dde3a71392054100d6859af364f2ab27543f53f95f25449"
+    },
+    "randomized/handover_mic": {
+      "result_sha256": "2456a27eeb586a652fdf6ca7d0e329da29409ad44fd0a1baeec2f1a483079144",
+      "log_sha256": "d961cefccf53eca71ea289e98d708721f594ea7eef7bfb424684dc88965e7241"
+    },
+    "randomized/hanging_mug": {
+      "result_sha256": "1c8e4596d9547a9057ac7587fe2cf36d696e0049e868bdceb015bf3593405e85",
+      "log_sha256": "99a8e28b980ebb0614757df00de3e231809b09f157b9cb60f1279dd7b9456744"
+    },
+    "randomized/lift_pot": {
+      "result_sha256": "c17f9b1683d4840858d3b1e3fb1bd04bf1cd2bb4d9c6b5b80779ade7a15bae25",
+      "log_sha256": "19790e5daf32b4efcdd5162529760143576b9873e39206b510369edd76f0b230"
+    },
+    "randomized/move_can_pot": {
+      "result_sha256": "eca7c7d27214318d5cc0b5d26df71ec2505be44a46682652c5dbca5a5f44ea10",
+      "log_sha256": "66795c7306d7ff41948ab424dccee773456d88f64f010028d1bb1525742dce41"
+    },
+    "randomized/move_pillbottle_pad": {
+      "result_sha256": "c541de924ff6cad67d19bfd2f62ceced641c020da16266969d921a70b7f9aed7",
+      "log_sha256": "7631acd2988c16c32c03e7a8850fdd19196f087e4044e9e7fe8a6af1f81e53f4"
+    },
+    "randomized/move_playingcard_away": {
+      "result_sha256": "d8d8c4819022d6c1da9324902f34c59658f6042d7a2fd8dcecedaf6d5af65497",
+      "log_sha256": "e377c519b7176db44f62674555de3f5463d7ef630ee61dfa2be0a85793968850"
+    },
+    "randomized/move_stapler_pad": {
+      "result_sha256": "e13946cb66caaf1fca6f5a6dea695fb0e13108db26687fd1e221120943fa9520",
+      "log_sha256": "8f643be07d1270bf227b83be2adaeddd1120b5fd2b617e98fb8ba0a2261e8e7d"
+    },
+    "randomized/open_laptop": {
+      "result_sha256": "f5c67350ad2d8ff5baafac31988659353dacddfa3d26e9b0b3a172ad26f3987d",
+      "log_sha256": "e42398dfb28dc0735df574b3f4f949a36e912e1b48a5ad86cf645e177ad9051b"
+    },
+    "randomized/open_microwave": {
+      "result_sha256": "1aa16c7ac730af55afd1adcab4c1f85a07c8d6db3076ac73a67caa04ddc490d8",
+      "log_sha256": "4be0e201f30d644519fa08b56029c24e4e03849f3f364e589280bf10fe995a22"
+    },
+    "randomized/pick_diverse_bottles": {
+      "result_sha256": "656195b70479fbf35ddb3ba22fc34bf5f9f0ba6df76d7e6ff34f9cd29b0dc5b3",
+      "log_sha256": "48a5124130e89472a11a66023c4cc384c6c408b40814df020aada3017dd2cd6d"
+    },
+    "randomized/pick_dual_bottles": {
+      "result_sha256": "8e207b3409840c2b644638c7278cfb44050c3d072d8d712d28cea7d1269c1168",
+      "log_sha256": "9119dfce4646d85f485d0c87084e3d1ec387936601cea2054b3cae116dee0d12"
+    },
+    "randomized/place_a2b_left": {
+      "result_sha256": "e89b851851f29b317e1da714f664e605bb0639e3e30ff60c0a41bbd023291379",
+      "log_sha256": "707a4bcfee144b35f2384400736c3eb521f5617f778b17e7bf94b41fb79d2589"
+    },
+    "randomized/place_a2b_right": {
+      "result_sha256": "96250aedfee6a09ae64a25b8ca957b80cd66186965b0a6949cc21d9f32502dee",
+      "log_sha256": "a9f8a817ab169d417231b571810220e55a9e763e8c588f98a4011c48cc87d486"
+    },
+    "randomized/place_bread_basket": {
+      "result_sha256": "7970754fa9bbb853de43fdf39f6c4cf04e3168f97697aa293133bd0d3387baed",
+      "log_sha256": "e9d224aa68e965bd8c8eee9e665a4184d8b23d13263901bf9c91d1b7d1bb30d2"
+    },
+    "randomized/place_bread_skillet": {
+      "result_sha256": "ff9437be51ab60041a5f7f383a026e51037bab24757077f3cb31b1e5a2acc693",
+      "log_sha256": "b30faf057bf15a64cad240de5af9cabb3c0f339d8e4d841fdebf72045599a187"
+    },
+    "randomized/place_burger_fries": {
+      "result_sha256": "91c29961bb000fecd3cc900edaa142618d58f76be264db31a5f69010036ccea9",
+      "log_sha256": "066475786ef289b8b06a5e01779f61dc9fbffbc63c5023af05cea09997220c64"
+    },
+    "randomized/place_can_basket": {
+      "result_sha256": "73baa61e5a0de7df38dab113d3a42664fcf26663a7bf41dec92d5e6fd736e834",
+      "log_sha256": "4bc05715a137b772e64cc6f9aac4bd038af9fe53283ba7513d8a31c003ca0cf7"
+    },
+    "randomized/place_cans_plasticbox": {
+      "result_sha256": "39d641b1d700ed11cc706f7db8914302c7403416a1f394614369568e80ae308f",
+      "log_sha256": "5602148454c1a5d6520ee063aa7e79094584d14eb8aac8707ace2584c8f2f049"
+    },
+    "randomized/place_container_plate": {
+      "result_sha256": "f36311014ea64bc157b42d22e21f883b9b4de2d76af0b4080151f57cdcca0c23",
+      "log_sha256": "65f93907ac59abbd08b5ed20fabe7671b216e8aa91256520651c029736b2d8eb"
+    },
+    "randomized/place_dual_shoes": {
+      "result_sha256": "0e6a126153c2154a32e0b779682e842c5e310a4ea5e02f57ea7bf203d7c307b4",
+      "log_sha256": "db8e94ab2785e82c5eebf5d476ce9ea51c52db3267806c983bc5e4a4caf784c9"
+    },
+    "randomized/place_empty_cup": {
+      "result_sha256": "2a18b0b63a8a62d1a81bfd15291a071d79ebae62617b40ca0fd6b3cf6d7fdc5c",
+      "log_sha256": "0152ad5f6a6b287e9db380a258430155863666cbb5e85e5c1841c82e19a9a8e0"
+    },
+    "randomized/place_fan": {
+      "result_sha256": "732904c1fd159e15d543adff2273735d0319d7aa386fe9bb4f447296c8da8dba",
+      "log_sha256": "11a68f07ac9f1c18626e2099fc0865146b2f6dda0d0849162f1e3550956b2474"
+    },
+    "randomized/place_mouse_pad": {
+      "result_sha256": "48e81dce98315c6229705edf0c2cb12d50c1757dc8cdce7c4b8774dc6a0d97fa",
+      "log_sha256": "d2332c976198f24517e7356c3f498ad2635e1cf887bdc6a3a87efa578132fe90"
+    },
+    "randomized/place_object_basket": {
+      "result_sha256": "f82372cfad1ffec543bcd024079a1409abae0deff1dd991c6d863a0acd1e800a",
+      "log_sha256": "6241c7b98570323d85ac993c7393310c41cc732fd212a558209c6294365019c9"
+    },
+    "randomized/place_object_scale": {
+      "result_sha256": "a072c4cb5a9b951e7bae58c7bd10800c841b6d98beda124ba48d284a18ec4780",
+      "log_sha256": "1172427078b5303dca9611c65c7eb3dec8941f41bb5fa6d383ffc1992f66f2d6"
+    },
+    "randomized/place_object_stand": {
+      "result_sha256": "a978f039da7e52f58fff0195956c9d07659d8202663c36e09289becf0b242b51",
+      "log_sha256": "e17895f488c951006fc0f94a1b47933d907d6f5776b58731c61eb0e132cef353"
+    },
+    "randomized/place_phone_stand": {
+      "result_sha256": "ed76116633d75b1728830eb6284c2e77cfcd73e107067d161222339b69ab513f",
+      "log_sha256": "734509143dcc8fe3215dc10208c36eac783b6f73c77be587a2c144f7bbc6f668"
+    },
+    "randomized/place_shoe": {
+      "result_sha256": "54c2edafba9f741eafa368d175516f99184bb4a3deb2605bd7111f733c5bb3ce",
+      "log_sha256": "1869e35d1ffb16e2b9e19b4bee3e49459e6495eb049bdc17fbe0a55381cfff80"
+    },
+    "randomized/press_stapler": {
+      "result_sha256": "160df6d2869a9066f7b00b303dac5d1a7978bfcc305a222e12f92bfb9a79d712",
+      "log_sha256": "85c804d013987d643ab206bafbe7c3153bdff4b45671b0898680dbab9fa8c573"
+    },
+    "randomized/put_bottles_dustbin": {
+      "result_sha256": "24ac83c1f08e0a72ecab038fd1a8c75ed859c451a99de80841ab03d01c8cd4fe",
+      "log_sha256": "3c914200ff7acda0fb74c8beaea0e39b0d67fa9bbfa4332696407179c31e2105"
+    },
+    "randomized/put_object_cabinet": {
+      "result_sha256": "d90cdf5e72b342df9d2b731e0546301da4a876a3ad5a814a06b885b9c301aace",
+      "log_sha256": "f548de0857bc88ee52d27d56b158947eb081904e5dfb88787cd98e2f3f365b69"
+    },
+    "randomized/rotate_qrcode": {
+      "result_sha256": "d283ce07274a0aea73dde3d1cc00cf90448f1e80bc31f71c91a34838ae8ec05b",
+      "log_sha256": "70c0e76d437dd5dade025da79a9cddb3ffb00f6619f2c2527ee42d1e304a6c76"
+    },
+    "randomized/scan_object": {
+      "result_sha256": "de41c3c98e4e474154331a87c63ebc512a24fc0b0c085244259a59bdc3bc2483",
+      "log_sha256": "2e8047501813b1485f49e88670a87c0c9743dd7590801e7b065654681ca0d213"
+    },
+    "randomized/shake_bottle": {
+      "result_sha256": "48b62ac9009f9f8e26fcecf8c710355a026733465b29ab6096cec165de1eee1d",
+      "log_sha256": "f5d29b782c8789df69672b68c6fd566282dd450c5307188b27b29b926e2f74a1"
+    },
+    "randomized/shake_bottle_horizontally": {
+      "result_sha256": "7bcfd8fe3d023b2490370c01fb4548b5f1d3b025975164ba3301903ec43c57ef",
+      "log_sha256": "ca8d6ccf5ec35938cc1cffd2bd1087d5eca9dc6169b29abb7e723e5db3c3b0fe"
+    },
+    "randomized/stack_blocks_three": {
+      "result_sha256": "f3d8b07cf26a363763c0c0830defcb6c630122eda5a6c3975f18107505010690",
+      "log_sha256": "e80a73959276f327c0e6f97e96f0b7cbb309e54f264c0c5ffdce8f240918b9d4"
+    },
+    "randomized/stack_blocks_two": {
+      "result_sha256": "2083cfc908c1ca5ce7bcdb774659a4030785e527f97ddfdab503a4aa3c68e8e4",
+      "log_sha256": "aa4a574d276e820384eb3490ec918b7cd0b0185f58a9a388a85cd2f4917b5779"
+    },
+    "randomized/stack_bowls_three": {
+      "result_sha256": "37106131f7019fc115528ce0b00b12c928683716e5dd72992b88944668d22eb2",
+      "log_sha256": "f0d676468e5d2932aee3e5be451a71784c7e51ee2f80d8284f5af4d63a1d8fa4"
+    },
+    "randomized/stack_bowls_two": {
+      "result_sha256": "a386ca05487c430cc2da6d6637a8af2587a4d8970d3c30bb37fc4de52c84d707",
+      "log_sha256": "0b623b8fd6536fc73e4885d1634f937ed1f306ff0d8a26122b972ce9be21a71a"
+    },
+    "randomized/stamp_seal": {
+      "result_sha256": "86af90cc8fac47038654088fc6db599f9edf3b940927cc188ea4160cb0b85cf0",
+      "log_sha256": "8d7caafa3899b94ff6fbe8574e9c2193127b73491223b12ab3dd2ec2e625da22"
+    },
+    "randomized/turn_switch": {
+      "result_sha256": "74ee9407a86253e8bf5887f29515723c553aa4a82dd4c2707681f8628d7736c3",
+      "log_sha256": "5a2bae2dc2541c5ab90faef102f821fa0883882b903e616d4d3797c4678c7d4a"
+    }
+  }
+}

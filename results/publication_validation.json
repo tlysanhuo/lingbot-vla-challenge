@@ -18,5 +18,16 @@
     "duration_seconds": 133.25,
     "bytes": 1463789
   },
-  "limitations": "Portable publication layer has not been retrained or evaluated end-to-end on a clean machine. Original measured results remain unchanged."
+  "limitations": "Portable publication layer has not been retrained or evaluated end-to-end on a clean machine. Original measured results remain unchanged.",
+  "history_extension": {
+    "checked_at": "2026-10-13T19:36:19.802212+08:00",
+    "v0_records": 1000,
+    "v1_records": 4600,
+    "v2_records": 19000,
+    "v1_replay_config": "production parser passed; 4 GPUs, global1024, 4600 steps, no image augmentation",
+    "historical_results": "v1 and v2 each 50 tasks x 2 settings x 5 episodes; original unseen/exec50 protocol retained",
+    "curve_export": "portable exporter exactly matches recovered v0 CSV",
+    "lineage": "v0/v1/v2 from base; v3 weights-only from v2@19000",
+    "cpu_only": true
+  }
 }

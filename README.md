@@ -4,9 +4,24 @@
 
 **Full-parameter post-training · Multi-view augmentation · Stateful checkpointing · Closed-loop evaluation**
 
-[实验结果](#实验结果) · [训练曲线](#训练曲线) · [方法实现](#方法实现) · [复现指南](docs/REPRODUCIBILITY.md) · [工程设计](docs/ENGINEERING.md)
+[项目演进](#项目演进) · [实验结果](#实验结果) · [训练曲线](#训练曲线) · [方法实现](#方法实现) · [复现指南](docs/REPRODUCIBILITY.md) · [工程设计](docs/ENGINEERING.md)
 
 ![v3 confirmation](assets/figures/confirmation.png)
+
+## 项目演进
+
+项目按 **v0流程验证 → v1正式基线 → v2视觉泛化 → v3精修与确认** 连续迭代。每一阶段都保留训练配置、指标来源、观察到的问题和下一步决策。
+
+| 阶段 | 核心工作 | 实际训练 | 形成的下一步依据 |
+|---|---|---|---|
+| v0 | 打通数据、监督、训练和保存链路 | 1000步，global256 | 从可运行流程进入正式训练 |
+| **v1** | **无视觉增强的全50任务基线** | **4600步，global1024** | 历史clean60.8/randomized34.4，识别泛化缺口 |
+| v2 | c2r多视角视觉增强 | 20k日程，选19k检查点 | 泛化改善后进入平台期，转向精修 |
+| v3 | 低LR、seen绑定、状态噪声；raw/EMA选型 | 从v2@19k权重续训4000步 | 4k raw完成1000集确认，均值65.6 |
+
+阶段编号是项目版本，基座均为LingBot-VLA 2.0。v0、v1、v2分别从官方基座初始化，v3才直接继承v2；研究过程连续，权重谱系按实际记录展示。历史v1两setting都用unseen指令、exec50，不能与当前确认分直接作同口径涨幅计算。
+
+[完整训练历程、阶段曲线与权重关系](docs/TRAINING_HISTORY.md)
 
 ## 实验结果
 
@@ -27,13 +42,18 @@
 
 ## 训练曲线
 
-图表直接使用已结束的 **W&B v3运行**导出数据，覆盖step 1–4000。浅色为原始值，深色为75条记录的滑动均值；导出的3998条记录保留原样，缺失点未填补。
+三阶段统一展示，每阶段使用独立优化步横轴。v1/v2从原始TensorBoard事件恢复，v3来自W&B在线导出；原始trace与75条记录滑动均值同时显示，未插值补点。
 
-[![W&B training curves](assets/figures/training_v3.png)](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2)
+![Training evolution](assets/figures/training_evolution.png)
 
-[打开原始 W&B 运行](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2) · [下载指标CSV](results/training/v3_wandb.csv) · [导出来源](results/training/v3_wandb_provenance.json)
+| 阶段 | 指标记录 | 来源 | 详细图 |
+|---|---:|---|---|
+| v0 | 1000步 | [原始事件恢复](results/training/v0_provenance.json) | [CSV](results/training/v0_tensorboard.csv) |
+| **v1** | **4600步** | [原始事件恢复](results/training/v1_provenance.json) | [v1完整训练图](assets/figures/training_v1.png) |
+| v2 | 19000步 | [原始事件恢复](results/training/v2_provenance.json) / [W&B](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v2-aug-c2r-v1-clean2500-20k) | [v2完整训练图](assets/figures/training_v2.png) |
+| v3 | 3998条，覆盖4000步 | [W&B原始运行](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2) / [导出来源](results/training/v3_wandb_provenance.json) | [v3完整训练图](assets/figures/training_v3.png) |
 
-W&B访问沿用原项目权限；仓库内图片和CSV可直接查看。训练loss只用于观察优化过程，最终模型选择依据闭环成功率。
+v1当时的W&B同步因兼容性问题失败，现从完整事件文件恢复；重启产生的重复记录按(step, metric)保留最新观测。W&B访问沿用原项目权限，仓库内图片/CSV可直接查看。训练loss用于复盘优化，最终选型依据闭环成功率。
 
 ## 方法实现
 
@@ -61,16 +81,6 @@ flowchart LR
 **评测可信度。**显式绑定clean→seen、randomized→unseen，缩短测试回合数时仍保持100条描述生成规模；记录专家筛选和策略成败，交叉检查实际回合、结果和日志。支持显式GPU映射、服务就绪检查及CPU线程控制。
 
 完整设计与取舍见[方法说明](docs/METHOD.md)。
-
-## 实验演进
-
-| 阶段 | 核心配置 | 产物 |
-|---|---|---|
-| v2 | clean2500；c2r；Muon；global1024；20k学习率日程，在19k检查点结束 | 视觉增强训练基线 |
-| v3 | v2@19k weights-only；LR 2e-5→2e-6；4000步；seen绑定与状态噪声；维护EMA | 2k/4k × raw/EMA候选 |
-| 确认 | 选定4k raw；50×2×10；FP32、exec30 | 80.8 / 50.4 / 65.6 |
-
-多项变更发生在同一阶段，结果不被解释为单个正则项的独立因果收益。EMA与权重平均的负结果也在[实验记录](docs/EXPERIMENTS.md)中保留。
 
 ## 快速查看与复现
 

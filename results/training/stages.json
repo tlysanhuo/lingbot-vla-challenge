@@ -1,0 +1,58 @@
+{
+  "foundation": "LingBot-VLA 2.0 (6B)",
+  "version_naming": "v0/v1/v2/v3 are project experiment stages, not upstream LingBot product versions",
+  "research_order": [
+    "v0",
+    "v1",
+    "v2",
+    "v3"
+  ],
+  "stages": [
+    {
+      "id": "v0",
+      "role": "Pipeline validation",
+      "steps": 1000,
+      "global_batch_size": 256,
+      "initialization": "LingBot-VLA 2.0 base",
+      "weight_parent": "base",
+      "next_decision": "Increase training budget and establish a full-task baseline",
+      "curve": "v0_tensorboard.csv",
+      "provenance": "v0_provenance.json"
+    },
+    {
+      "id": "v1",
+      "role": "Full-task baseline",
+      "steps": 4600,
+      "global_batch_size": 1024,
+      "historical_gpu_count": 8,
+      "initialization": "LingBot-VLA 2.0 base",
+      "weight_parent": "base",
+      "next_decision": "Investigate clean-to-randomized gap with c2r augmentation",
+      "curve": "v1_tensorboard.csv",
+      "provenance": "v1_provenance.json"
+    },
+    {
+      "id": "v2",
+      "role": "Visual generalization",
+      "steps": 19000,
+      "schedule_steps": 20000,
+      "global_batch_size": 1024,
+      "initialization": "LingBot-VLA 2.0 base",
+      "weight_parent": "base",
+      "next_decision": "Retain c2r and use low-LR refinement after the high-LR plateau",
+      "curve": "v2_tensorboard.csv",
+      "provenance": "v2_provenance.json"
+    },
+    {
+      "id": "v3",
+      "role": "Low-LR refinement and confirmation",
+      "steps": 4000,
+      "global_batch_size": 1024,
+      "initialization": "v2 global_step_19000 raw, weights only",
+      "weight_parent": "v2@19000",
+      "next_decision": "Select raw/EMA checkpoints and confirm all 50 tasks",
+      "curve": "v3_wandb.csv",
+      "provenance": "v3_wandb_provenance.json"
+    }
+  ]
+}

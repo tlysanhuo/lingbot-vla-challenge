@@ -57,6 +57,14 @@ $MODEL_ROOT/
 
 ## 4. 历史训练阶段
 
+v1基线已包含，先选择需要复现的单一阶段：
+
+```bash
+bash train.sh --stage v1 --gpus 0,1,2,3 --dry-run
+```
+
+`configs/v1.yaml`保留4600步日程、global1024和无增强设置，按4卡×micro32×accum8适配；原8卡配置单独保存在`configs/history/v1_original.yaml`。v0配置仅作为流程验证档案。v1、v2分别从基座训练，不能将三阶段命令自动串成连续权重续训。
+
 在训练环境执行，先进行不占卡的参数检查：
 
 ```bash

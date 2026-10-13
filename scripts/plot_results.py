@@ -65,5 +65,45 @@ def scores():
             for j in range(2):ax.text(j,i,str(arr[i,j]),ha='center',va='center',fontsize=9,color='white' if arr[i,j]>=7 else '#152238')
     fig.savefig(OUT/'task_breakdown.png',dpi=150);plt.close(fig)
 
+def history():
+    stages = [('v1', 'Baseline', BLUE), ('v2', 'Visual generalization', TEAL), ('v3', 'Low-LR refinement', PURPLE)]
+    loaded = {}
+    for stage, title, color in stages:
+        file = f'{stage}_tensorboard.csv' if stage != 'v3' else 'v3_wandb.csv'
+        rows = list(csv.DictReader((ROOT / 'results/training' / file).open()))
+        loaded[stage] = (np.array([int(float(r['step'])) for r in rows]), rows)
+    fig, axes = plt.subplots(2, 3, figsize=(15, 8.1))
+    fig.subplots_adjust(top=.82, bottom=.14, hspace=.46, wspace=.28)
+    fig.text(.07, .96, 'One project, three training stages', fontsize=23, weight='bold')
+    fig.text(.07, .905, 'v0 pipeline validation  →  v1 baseline  →  v2 c2r augmentation  →  v3 refinement + confirmation', fontsize=10.5, color='#526078')
+    for col, (stage, title, color) in enumerate(stages):
+        steps, rows = loaded[stage]
+        for row, (field, ylabel) in enumerate([('training_vla_loss', 'Action loss (log scale)'), ('training_lr', 'Learning rate')]):
+            ax = axes[row, col]; y = np.array([float(r[field]) for r in rows])
+            ax.plot(steps, y, color=color, alpha=.15, lw=.45)
+            ax.plot(steps, smooth(y), color=color, lw=1.8)
+            ax.set_xlabel(f'{stage} optimizer step'); ax.set_ylabel(ylabel); ax.grid(axis='y'); ax.set_xlim(1, steps[-1]); ax.xaxis.set_major_locator(MaxNLocator(5))
+            if row == 0:
+                ax.set_yscale('log'); ax.set_title(f'{stage.upper()} · {title}', loc='left', pad=13)
+            else:
+                ax.ticklabel_format(axis='y', style='sci', scilimits=(0, 0))
+    fig.text(.07, .065, 'Independent step axes. v1 and v2 each start from the same LingBot-VLA 2.0 base; only v3 starts from v2@19k.', fontsize=9, color='#526078')
+    fig.text(.07, .028, 'Sources: original TensorBoard events (v1/v2), W&B export (v3). Raw trace + 75-record trailing mean; no imputation.', fontsize=9, color='#68758b')
+    fig.savefig(OUT / 'training_evolution.png', dpi=170); plt.close(fig)
+    for stage, title, color in stages[:2]:
+        steps, rows = loaded[stage]
+        fig, axes = plt.subplots(2, 3, figsize=(15, 8.1))
+        fig.subplots_adjust(top=.83, bottom=.12, hspace=.43, wspace=.28)
+        fig.text(.07, .955, f'LingBot-VLA 2.0  /  {stage} {title.lower()}', fontsize=23, weight='bold')
+        fig.text(.07, .902, f'{steps[-1]:,} recorded steps  |  global batch 1,024  |  Muon  |  original training events', fontsize=11, color='#526078')
+        specs = [('Action loss', 'training_vla_loss'), ('Total loss', 'training_loss'), ('Current-depth loss', 'training_depth_loss'), ('Future-video loss', 'training_future_video_loss'), ('Learning rate', 'training_lr'), ('Gradient norm', 'training_grad_norm')]
+        for ax, (name, key) in zip(axes.flat, specs):
+            y = np.array([float(r[key]) for r in rows]); ax.plot(steps, y, color=color, alpha=.16, lw=.45); ax.plot(steps, smooth(y), color=color, lw=1.8)
+            ax.set_title(name, loc='left', pad=13); ax.set_xlabel('Optimizer step'); ax.grid(axis='y'); ax.set_xlim(1, steps[-1]); ax.xaxis.set_major_locator(MaxNLocator(5))
+            if 'loss' in key: ax.set_yscale('log'); ax.set_ylabel('Log scale')
+            if key == 'training_lr': ax.ticklabel_format(axis='y', style='sci', scilimits=(0, 0))
+        fig.text(.07, .04, 'Recovered from TensorBoard. Restart duplicates retain the latest observed value per step and metric; no imputation.', fontsize=9, color='#68758b')
+        fig.savefig(OUT / f'training_{stage}.png', dpi=170); plt.close(fig)
+
 if __name__=='__main__':
-    training();scores();print(OUT)
+    training();scores();history();print(OUT)

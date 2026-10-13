@@ -9,7 +9,7 @@ from common import ROOT, base_env, gpu_gate, render_config
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage', choices=['v2', 'v3'], required=True)
+    parser.add_argument('--stage', choices=['v1', 'v2', 'v3'], required=True)
     parser.add_argument('--gpus', required=True)
     parser.add_argument('--dry-run', action='store_true')
     args = parser.parse_args()

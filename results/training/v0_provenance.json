@@ -1,0 +1,33 @@
+{
+  "source": "original TensorBoard scalar events",
+  "run_name": "sft_v0_lr5e5",
+  "retained_through_checkpoint": 1000,
+  "rows": 1000,
+  "first_step": 1,
+  "last_step": 1000,
+  "missing_steps": [],
+  "duplicate_scalar_records": 0,
+  "selected_scalar_records_before_dedup": 9000,
+  "scalar_records_after_checkpoint_excluded": 0,
+  "deduplication": "latest wall_time per (optimizer step, metric); no interpolation or imputation",
+  "first_observation_bjt": "2026-09-17T17:30:05.578113+08:00",
+  "last_observation_bjt": "2026-09-18T01:02:43.298414+08:00",
+  "source_event_files": [
+    {
+      "index": 0,
+      "bytes": 3685950,
+      "sha256": "f2e7ed93efbbe280a38c5dfa036603fa788b2331cdbad9c2b458abbda1a89409"
+    }
+  ],
+  "fields": [
+    "training_loss",
+    "training_vla_loss",
+    "training_depth_loss",
+    "training_future_depth_loss",
+    "training_future_video_loss",
+    "training_grad_norm",
+    "training_lr",
+    "training_expert_lr",
+    "steptime"
+  ]
+}
