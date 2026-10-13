@@ -21,7 +21,7 @@
 
 阶段编号是项目版本，基座均为LingBot-VLA 2.0。v0、v1、v2分别从官方基座初始化，v3才直接继承v2；研究过程连续，权重谱系按实际记录展示。历史v1两setting都用unseen指令、exec50，不能与当前确认分直接作同口径涨幅计算。
 
-[完整训练历程、阶段曲线与权重关系](docs/TRAINING_HISTORY.md)
+各阶段的训练过程和曲线在下文直接展开；[训练历程档案](docs/TRAINING_HISTORY.md)保留更详细的来源与复现记录。
 
 ## 实验结果
 
@@ -42,18 +42,69 @@
 
 ## 训练曲线
 
-三阶段统一展示，每阶段使用独立优化步横轴。v1/v2从原始TensorBoard事件恢复，v3来自W&B在线导出；原始trace与75条记录滑动均值同时显示，未插值补点。
+项目围绕同一个问题逐步推进：先把完整训练链路跑通，再建立50任务基线，随后改善跨场景泛化，最后进行低学习率精修和扩大样本确认。下图按阶段分别展示动作loss与学习率；各阶段使用独立优化步横轴。
 
 ![Training evolution](assets/figures/training_evolution.png)
 
-| 阶段 | 指标记录 | 来源 | 详细图 |
-|---|---:|---|---|
-| v0 | 1000步 | [原始事件恢复](results/training/v0_provenance.json) | [CSV](results/training/v0_tensorboard.csv) |
-| **v1** | **4600步** | [原始事件恢复](results/training/v1_provenance.json) | [v1完整训练图](assets/figures/training_v1.png) |
-| v2 | 19000步 | [原始事件恢复](results/training/v2_provenance.json) / [W&B](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v2-aug-c2r-v1-clean2500-20k) | [v2完整训练图](assets/figures/training_v2.png) |
-| v3 | 3998条，覆盖4000步 | [W&B原始运行](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2) / [导出来源](results/training/v3_wandb_provenance.json) | [v3完整训练图](assets/figures/training_v3.png) |
+### v0 · 打通训练与保存链路
 
-v1当时的W&B同步因兼容性问题失败，现从完整事件文件恢复；重启产生的重复记录按(step, metric)保留最新观测。W&B访问沿用原项目权限，仓库内图片/CSV可直接查看。训练loss用于复盘优化，最终选型依据闭环成功率。
+最初从官方预训练基座开始，使用clean演示完成**1000步**流程验证：micro8 × 2卡 × accum16 = **global256**，Muon，LR **5e-5**。这一阶段验证数据读取、原生辅助监督、分布式训练和checkpoint保存，为正式基线提供可运行的起点。
+
+v0没有用于代表最终性能的完整确认成绩。[原始训练指标](results/training/v0_tensorboard.csv)与[配置档案](configs/history/v0_original.yaml)均保留。
+
+### v1 · 4600步正式基线
+
+在流程验证之后，v1重新从**LingBot-VLA 2.0官方基座**训练，建立覆盖全部50任务的无视觉增强基线。实际训练**4600步**，原配置为micro32 × 8卡 × accum4 = **global1024**，Muon，cosine学习率 **1e-4 → 5e-5**。
+
+![v1 baseline training](assets/figures/training_v1.png)
+
+训练loss持续下降，但历史全50任务×5集评测中，clean为 **152/250 = 60.8%**，randomized为 **86/250 = 34.4%**。跨场景落差促使下一阶段研究视觉泛化，而不只是继续增加基线训练步数。
+
+这组历史评测两边均使用**unseen指令、exec50**；不能与当前clean/seen、exec30的确认分直接计算同口径增益。v1当时的W&B同步因NumPy兼容问题失败，图表从完整TensorBoard事件恢复；重启重复记录按每个(step, metric)保留最新观测，未补点。
+
+[4600步指标CSV](results/training/v1_tensorboard.csv) · [曲线来源](results/training/v1_provenance.json) · [原始配置](configs/history/v1_original.yaml) · [4卡便携配置](configs/v1.yaml) · [逐任务结果](results/evaluation/v1_4600_exec50.json)
+
+### v2 · 用c2r增强改善视觉泛化
+
+针对v1观察到的跨场景差距，v2从同一官方基座**重新训练**，保留Muon、global1024、动作损失与原生几何/视频监督，引入c2r多视角增强：光度、通道统计和频域扰动；同一相机的当前帧与未来帧复用参数，并保留20%原图直通。
+
+v2使用**20k步学习率日程**，选取**19k检查点**。它继承v1的实验经验，权重并不从v1继续。
+
+![v2 visual generalization training](assets/figures/training_v2.png)
+
+历史exec50、两边unseen协议下，全50任务×5集为clean **194/250 = 77.6%**、randomized **122/250 = 48.8%**。后续采用exec30并纠正clean指令口径后，v2@19k记录为 **78.4 / 47.2**。这些结果按各自协议保存。
+
+早期面板支持保留视觉增强；中后期训练loss继续下降，而闭环收益趋于平台，促使项目转向低学习率精修。训练量和日程等条件并未完全控制，因此不把v1到v2的全部差值归因于c2r。
+
+[19000步指标CSV](results/training/v2_tensorboard.csv) · [来源与重启处理](results/training/v2_provenance.json) · [W&B运行](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v2-aug-c2r-v1-clean2500-20k) · [训练配置](configs/v2.yaml) · [历史逐任务结果](results/evaluation/v2_19000_exec50.json)
+
+### v3 · 低学习率精修、选型与确认
+
+v3以 **v2@19k raw权重**初始化，重新建立优化器与调度器，训练**4000步**，cosine学习率 **2e-5 → 2e-6**。保留c2r，加入seen语义绑定和关节状态噪声；同时维护EMA，在2k与4k保存raw/EMA候选。
+
+[![v3 refinement training](assets/figures/training_v3.png)](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2)
+
+通过检查点选型后采用**4k raw**，再完成全部50任务×2setting×10集确认，得到 **clean/seen 80.8%、randomized/unseen 50.4%、等权均值65.6%**。2k EMA与4k EMA的表现不同，选型保留了负结果，没有将EMA简单判定为普遍有效或无效。
+
+v3图表直接来自已结束的W&B运行，导出**3998条指标记录，覆盖step1–4000**。浅色为原始值，深色为75条记录滑动均值；缺失点未填补。W&B访问沿用原项目权限，仓库内图片与CSV可直接查看。
+
+[W&B原始运行](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2) · [指标CSV](results/training/v3_wandb.csv) · [导出来源](results/training/v3_wandb_provenance.json) · [训练配置](configs/v3.yaml) · [检查点选型记录](docs/EXPERIMENTS.md)
+
+### 权重谱系与经验迭代
+
+```mermaid
+flowchart LR
+    Base[LingBot-VLA 2.0<br/>官方预训练基座]
+    Base --> V0[v0 · 流程验证]
+    Base --> V1[v1 · 4600步基线]
+    Base --> V2[v2 · c2r / 19k检查点]
+    V2 -->|weights-only| V3[v3 · 4000步精修]
+    V0 -.流程经验.-> V1
+    V1 -.泛化问题与方法迭代.-> V2
+    V3 --> Confirm[4k raw<br/>1000集确认]
+```
+
+项目经验按v0→v1→v2→v3积累，实际权重初始化关系按图中的实线记录。训练loss用于复盘优化过程，模型选择依据闭环成功率。
 
 ## 方法实现
 
