@@ -40,9 +40,9 @@ def main():
     assert protocol['description_count']==100 and protocol['execute_steps']==30
     summary['equal_setting_mean']=sum(summary[s]['rate'] for s in ['clean','randomized'])/2
     stages=json.loads((ROOT/'results/training/stages.json').read_text())
-    assert stages['research_order']==['v0','v1','v2','v3']
+    assert stages['research_order']==['v0','v1','v2','v3','v4']
     parents={r['id']:r['weight_parent'] for r in stages['stages']}
-    assert parents=={'v0':'base','v1':'base','v2':'base','v3':'v2@19000'}
+    assert parents=={'v0':'base','v1':'base','v2':'base','v3':'v2@19000','v4':'v3@4000'}
     for stage, count in [('v0',1000),('v1',4600),('v2',19000)]:
         history=list(csv.DictReader((ROOT/'results/training'/f'{stage}_tensorboard.csv').open()))
         meta=json.loads((ROOT/'results/training'/f'{stage}_provenance.json').read_text())
@@ -57,7 +57,12 @@ def main():
             assert len(records)==50 and set(records)==set(results[setting])
             assert all(r['attempts']==5 and r['instruction_type']=='unseen' for r in records.values())
             assert sum(r['successes'] for r in records.values())==target
-    print('PASS: v0/v1/v2 historical curves, historical protocols, and checkpoint ancestry')
+    history=list(csv.DictReader((ROOT/'results/training/v4_tensorboard.csv').open()))
+    meta=json.loads((ROOT/'results/training/v4_tensorboard.provenance.json').read_text())
+    assert len(history)==meta['rows']==6000
+    assert [int(r['step']) for r in history]==list(range(1,6001))
+    assert all(math.isfinite(float(v)) for r in history for v in r.values())
+    print('PASS: v0–v4 historical curves, historical protocols, and checkpoint ancestry')
     print(json.dumps(summary,ensure_ascii=False,indent=2))
     print('PASS: 100 task-setting cells, 1,000 episodes, and 3,998 W&B records')
 

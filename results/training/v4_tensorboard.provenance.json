@@ -1,0 +1,18 @@
+{
+  "source": "original TensorBoard scalar events",
+  "rows": 6000,
+  "first_step": 1,
+  "last_step": 6000,
+  "retained_through_checkpoint": 6000,
+  "missing_steps": [],
+  "duplicate_scalar_records": 0,
+  "scalar_records_after_checkpoint_excluded": 0,
+  "deduplication": "latest wall_time per (optimizer step, metric); no interpolation or imputation",
+  "source_event_files": [
+    {
+      "index": 0,
+      "bytes": 22424870,
+      "sha256": "8634f5d0b8303eaa97210de3c0b57514c3018d8c5f922b107d4839284f97c86e"
+    }
+  ]
+}

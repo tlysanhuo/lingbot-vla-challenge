@@ -9,5 +9,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python scripts/verify_results.py
+      - run: python scripts/verify_evaluation_history.py
       - run: python -m compileall -q scripts overlays tests
       - run: bash -n train.sh eval.sh

@@ -69,11 +69,22 @@ v3加载v2@19k raw权重，重新建立优化器与4000步日程。保留c2r，�
 
 v3曲线来自已结束的[W&B运行](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2)，导出3998条指标，覆盖step1–4000。当前主成绩是80.8/50.4/65.6；67.4只保留为旧5集选型值。
 
+## v4：演示均衡续训与候选筛选
+
+从v3@4k raw初始化，新增6000步，累计谱系29k；global1024，200步warmup 2e-6→1e-5后cosine→2e-6。采样为50%帧均匀＋50%演示均匀后取帧，继续原配套归一化。
+
+![v4 training](../assets/figures/training_v4.png)
+
+原始TensorBoard共6000步，未插值或补点。3k/6k raw与EMA均已保存；已评的3k raw randomized为49.0%，3k clean和6k randomized提前停止，保留部分计数，不报双场均分。当前v3仍为主候选。
+
+[v4训练配方](../results/training/v4_recipe.json) · [完整指标](../results/training/v4_tensorboard.csv) · [所有v4评测与任务明细](evaluation/v4.md)
+
 ## 连续项目中保留了什么
 
 - 数据接入与训练自检，从v0延续到后续阶段。
 - v1揭示的泛化缺口，推动v2的增强实验。
 - v2的平台期与训练曲线，推动v3的低LR日程。
+- v3之后的均衡续训形成v4，已发生的负结果和未完成筛选同样归档。
 - 中断恢复、语义绑定、W&B指标同步和逐集审计在迭代中逐步补齐。
 - 正负结果、协议更正和数据统计未决项均保留，避免只展示最终最好的一次数字。
 

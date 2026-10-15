@@ -1,0 +1,28 @@
+{
+  "version": "environment",
+  "snapshot_at": "2026-10-15T20:37:00+08:00",
+  "runs": [
+    {
+      "id": "environment-01",
+      "version": "environment",
+      "source_run": "anchor_official_cuda",
+      "recorded_timestamp_tag": null,
+      "checkpoint_paths": [],
+      "checkpoint_steps": [],
+      "variant": "unknown",
+      "version_evidence": "environment_record",
+      "setting": "unknown",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {}
+    }
+  ]
+}

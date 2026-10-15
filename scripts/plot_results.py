@@ -105,5 +105,21 @@ def history():
         fig.text(.07, .04, 'Recovered from TensorBoard. Restart duplicates retain the latest observed value per step and metric; no imputation.', fontsize=9, color='#68758b')
         fig.savefig(OUT / f'training_{stage}.png', dpi=170); plt.close(fig)
 
+def v4_training():
+    rows=list(csv.DictReader((ROOT/'results/training/v4_tensorboard.csv').open()))
+    steps=np.array([int(r['step']) for r in rows])
+    fig,axes=plt.subplots(1,3,figsize=(14,4.8))
+    fig.subplots_adjust(left=.065,right=.975,top=.73,bottom=.20,wspace=.3)
+    fig.text(.065,.94,'v4  /  balanced continuation from v3@4k',fontsize=23,weight='bold')
+    fig.text(.065,.845,'6,000 additional steps · global batch 1,024 · 50% frame + 50% episode sampling',fontsize=11,color='#526078')
+    for ax,(key,title,color) in zip(axes,[('training_vla_loss','Action loss',TEAL),('training_lr','Learning rate',BLUE),('training_grad_norm','Gradient norm',PURPLE)]):
+        values=np.array([float(r[key]) for r in rows])
+        ax.plot(steps,values,color=color,alpha=.2,lw=.5)
+        ax.plot(steps,smooth(values),color=color,lw=1.8)
+        ax.set_title(title,loc='left');ax.set_xlabel('v4 optimizer step');ax.grid(axis='y');ax.set_xlim(1,6000)
+        if key=='training_lr':ax.ticklabel_format(axis='y',style='sci',scilimits=(0,0))
+    fig.text(.065,.065,'Source: original TensorBoard events · 6,000 records · raw trace + 75-record mean · evaluation gains are not established',fontsize=9,color='#68758b')
+    fig.savefig(OUT/'training_v4.png',dpi=150);plt.close(fig)
+
 if __name__=='__main__':
-    training();scores();history();print(OUT)
+    training();scores();history();v4_training();print(OUT)

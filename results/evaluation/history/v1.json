@@ -1,0 +1,4479 @@
+{
+  "version": "v1",
+  "snapshot_at": "2026-10-15T20:37:00+08:00",
+  "runs": [
+    {
+      "id": "v1-01",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_055837",
+      "recorded_timestamp_tag": "20260930_055837",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-02",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_060233",
+      "recorded_timestamp_tag": "20260930_060233",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-03",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_061123",
+      "recorded_timestamp_tag": "20260930_061123",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-04",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_062150",
+      "recorded_timestamp_tag": "20260930_062150",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "complete_50_tasks",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 50,
+      "successes": 152,
+      "attempts": 250,
+      "success_rate": 60.8,
+      "instruction_types": [
+        "unseen"
+      ],
+      "execute_steps": [
+        50
+      ],
+      "episodes_per_completed_task": {
+        "5": 50
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100005,
+            100006,
+            100008
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "0da01b8ddd1d18ec06c7d6e9f8ed55d0e1e8c6e2e3236b6ed86bfd425581aaae",
+          "source_result_sha256": "0af3224eaf603a6991ccd97c4ef917220fec2eeeed0f661403bf48c148120974"
+        },
+        "beat_block_hammer": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100003,
+            100005,
+            100006,
+            100007
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "8af5b12681fd46c133b10e8b9afecdeae2e2f7b123a17841c5e261f1833e5ead",
+          "source_result_sha256": "38c158a38fb8bf55d38e54df0274f4cb81f8b8dc2a6582008592bbd1a1c210b4"
+        },
+        "blocks_ranking_rgb": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "8d9b7c513dfdc190861b9d16e902601905159dd84a2302094a94e0d32164e599",
+          "source_result_sha256": "8be897e613a9a6886e511a26f58cecb461aacb046907181c5022305c4a15b745"
+        },
+        "blocks_ranking_size": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "313626201b621b5bf0cb3f72d5c362f0eaedc089a24efe943cf05f606204dec7",
+          "source_result_sha256": "71e4db587ed8aa4ccd2224ad396ec2c4b2ed32bdad3fb54b7ecd9b77f0711ae1"
+        },
+        "click_alarmclock": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100007
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "a56bc5aeb609a523a8768aa6ddd16806b245a158e1c98efcc5379d2f8a1e5e0a",
+          "source_result_sha256": "d1b504293404360ad1db997c0659da1f1bc20a9862f22f44d7f3e2f29d3e3d8f"
+        },
+        "click_bell": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "84541b1b3596ab4a5b293898eef555929e597c72fc0d10b95b9146a553a6e4f2",
+          "source_result_sha256": "e1178944665f2d16bed0bff8143e60ba3fa4645a3179f9dfc1c42ca5f59f7e4b"
+        },
+        "dump_bin_bigbin": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100004,
+            100010,
+            100012
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "a76f0e6338caaec5b91dba60f143406ec74809ed6c0aca47f632e99639a8dead",
+          "source_result_sha256": "ccd986cdbb7f8bd95aee6731707b3a933f090dc273f2bbb1e4a85e91060990a2"
+        },
+        "grab_roller": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "69e87aa7445ca54fa6b26ade6fc920a37e89d749a4965d408e7cc07b08b2468d",
+          "source_result_sha256": "00ee17b0661f2820e3e449ae7b7abdae98dcb5059e5eeadb9513f8f399adda9d"
+        },
+        "handover_block": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "b083ff8b257b58afbf182b7d7d3a2ed212bbbc5b581a3a5caf15428a3f51e98f",
+          "source_result_sha256": "1d147310ff4c1595a04257b1259bb7e3b1daf4d813c2de34c68383f6c35b9fbf"
+        },
+        "handover_mic": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100003,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "877f6d21e25f2f26f21bc66905779706392b580830e850a152222c66c857104b",
+          "source_result_sha256": "d7e777ae63f546c09b5c101f270d68d912c784abacaaeff467a42bf1fb19b707"
+        },
+        "hanging_mug": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "debdced0ccf65275d3b9ef68e5fdcdc95e4a8b17e8fc3e46e8ff29d0520de592",
+          "source_result_sha256": "5f5a230898387a04d6356cd0f1fb5ee12873447a67a55b0a1cd9ab840739b05b"
+        },
+        "lift_pot": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100009
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "source_log_sha256": "a2fefd634c7ae90bfe8f476b5bd92a16a3ee61e6ca8d2ba3536ca82a8965c9be",
+          "source_result_sha256": "e5a279dcf6e5f539a5dd0befa9139eaccdd395a00208d0c0844ab9de42fa4780"
+        },
+        "move_can_pot": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "43e01ea87030fa61e019b2c836cfe5dad54cd0344ede5e1e8cc0b4ebb9dc6f81",
+          "source_result_sha256": "6cdf47d7071f871bce9b9c6c3a7058d2171de39cde9b2ca630dda4a66ebc8fde"
+        },
+        "move_pillbottle_pad": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            2
+          ],
+          "source_log_sha256": "1b9262f37d5ba772dffba598d6934e93c9e81e2407a5c3c596e82b583244a1fd",
+          "source_result_sha256": "bfa734de251e6a1ca01a969a8d8c79b9e5f7576824fe2a7afe89a2b2b946d04c"
+        },
+        "move_playingcard_away": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "df3ef37d5b102d5d8dff2aca324dd844f74f5ba788163575e3de08277a1ceeda",
+          "source_result_sha256": "aca1a77cfb76ae1413c4120104900dbe980bf70254aac70f81db95be5fd4e0e2"
+        },
+        "move_stapler_pad": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "source_log_sha256": "c75b0e1573538dfd8b157cb8143b448414ee3c0dbda39933d94c5e050641ea21",
+          "source_result_sha256": "7832d6e21b9146d44fe4ec236c655b1215020e330756f7876636cc223213a1fc"
+        },
+        "open_laptop": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "cf0217acdf1f625937cea864e3ee8a4a6f0bd93668eb691b10991e9a0d0b00b8",
+          "source_result_sha256": "7c82e979d7c43df77b8f2fb170122f442fe661e156a526baa4b6f86795eafb26"
+        },
+        "open_microwave": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "c8c408b448202df7f56b73c2789f168e2d08f910e3848f21adeaf5669fd28b86",
+          "source_result_sha256": "2b18bdc4075e8dd42caeea109d162ea9c0765502b4db8bc20a65b8caab4be863"
+        },
+        "pick_diverse_bottles": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100007,
+            100009,
+            100012
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "66eb12f2260e7022911726b6cb6f2fa76d78ba76a1fa5984d1705e76efd2a5c0",
+          "source_result_sha256": "58e52959a86dc49b63486523950572fd29ac11caca535000c3e6831addf1f827"
+        },
+        "pick_dual_bottles": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "076ecb58b91f6550362b9b15126a141f7c880521293a96431e00e13a567aa3b4",
+          "source_result_sha256": "139bb92fa07bc8e688c835dc2cc3a067e0c0601411608c893e2fbf88590c05cd"
+        },
+        "place_a2b_left": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "afeaff6da5c4c794e324e15d367bafd286adcfd91b771761cf3d4eb74735bc30",
+          "source_result_sha256": "b6d2b60f9872de2be3acb55afbc328410e68c52bb3a30e8db5c2665fdc355b5c"
+        },
+        "place_a2b_right": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            4
+          ],
+          "source_log_sha256": "b5e53784c89500a1b71a56ce42876c8cc28d509bf847f578b983b8b2eda5bd87",
+          "source_result_sha256": "a43245982ae5889099b0d0f19823e1eeab3b231354d56d93eee39ce656b4af72"
+        },
+        "place_bread_basket": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "0bf6f304bf5eb72c3a851200ac82e5aeda89d1fce67c1a57eea9946b964859be",
+          "source_result_sha256": "46b75d58a02b7116f787d01a2bc1337f14fb98083e931019f8f28094656c4d84"
+        },
+        "place_bread_skillet": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100004,
+            100005,
+            100006,
+            100015,
+            100018
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "ba52b6caacc4f8bc622538eec07a4baa5e8ab6a5b6229ddebc8a4efa8da550f0",
+          "source_result_sha256": "fe0b846c81f651d1fc54656231f2a3483cc0e583cf6d0c5caf9e930ffd9880b5"
+        },
+        "place_burger_fries": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            4
+          ],
+          "source_log_sha256": "40bcf42b936d0bde7b0a0a160bb37371fbb1c89796a09c211bf45eae713de2e1",
+          "source_result_sha256": "1de9f8a0575ecde29619f9bc7c53e606ae23b6d5d41f53df0d9ff931ac8b48c4"
+        },
+        "place_can_basket": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source_log_sha256": "e2418263ed2aa712213c3b939685df0cee7074457d7cfde8997e6712ae080109",
+          "source_result_sha256": "75e8ef2b11b8f4368fa6a1df3fd395579cbebbc5a61d669a49fc370db2af34f3"
+        },
+        "place_cans_plasticbox": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "source_log_sha256": "63cc10aa1077d5ac207a81b9aa7c6486673d89a5bd303527f7c37bf552af5bff",
+          "source_result_sha256": "5acc6f20caca7f1581225af77049e31f385d58a01e7cd4b58785cb474474069c"
+        },
+        "place_container_plate": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100003,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "7914bcce58b54bce5512001e90b0dcaed8eccf8b8a3549916229343c70b90879",
+          "source_result_sha256": "232b0d7a03ac6cd785e3fe2bca8b4fe91ecc6735a56a3eb545441ff15bf6543b"
+        },
+        "place_dual_shoes": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100007
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "4fa20853c8be69574d91be5f622d08803bd2aa40dfa09707486a5de3803db221",
+          "source_result_sha256": "58c647f91b43078e816ed594729d5f5d76254e28d1ebc154114ac8b0ac1c3c82"
+        },
+        "place_empty_cup": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "94b2c85377e1094104378c3dd035430c046daf5f97e978c55a09e525d8b26bb4",
+          "source_result_sha256": "52ed04110334746cc428c4323b1972065530526e91f076a5d5fd53cad5d769b0"
+        },
+        "place_fan": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100002,
+            100003,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source_log_sha256": "353a7deecd50712b12b8b5cd20f9dd2e7a59d86f80c0e2c96baa3ee2cf9daf97",
+          "source_result_sha256": "43ad0278575bd8ae12df24ab1ca15ef510120d0427f7fdfbc153a2522151592c"
+        },
+        "place_mouse_pad": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source_log_sha256": "e2ca0486549a961314fbf7f288c7e5ddf51a09f21358ec47275c419361a7ebff",
+          "source_result_sha256": "f2b60d20efe5f9b7026e769675772df79897be2c83736aadf0eba999feab54f2"
+        },
+        "place_object_basket": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100008,
+            100009
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            3
+          ],
+          "source_log_sha256": "e5ccf5a4e25fb15684d4cfd4e073297f75422e9f303e2b0b3e3aabdc7ffb736d",
+          "source_result_sha256": "d3fb88a7f6f39038e2a0857969520aec2cc566924c947ef72d959def0c519c1d"
+        },
+        "place_object_scale": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "832f272c87f050dc8e2e3d080c028a9d422da46e98915c10f616556bbbe5c13d",
+          "source_result_sha256": "38fc43e5e4def04e93161522bea5b30916baf9b7a1939d93e6262f63da1f8ca1"
+        },
+        "place_object_stand": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "59f51343b7ab8f1124a25c50db4659504be9c89f6220d8745754d38405fcba5f",
+          "source_result_sha256": "eaf584111a58dc567714b640efeeaee877accfa8988145c07bdecb421a95f7ef"
+        },
+        "place_phone_stand": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "2f27fa91eb96dcc6d27717de9ef0920dd633905a19778807f01fce65cbca9945",
+          "source_result_sha256": "03a396b561db78cfbf8e6bf615e723fb88a9f8bfeb9a957d0946eeb51bf7b4da"
+        },
+        "place_shoe": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            4
+          ],
+          "source_log_sha256": "5fc28d21e4a483cb1a2027e00042a0c51421f9b7080bba765ec069fd552da52d",
+          "source_result_sha256": "bdfc4dd718bcc72cf54215335edc44e9d4fbd849edb1cf9011ca6a839577ba98"
+        },
+        "press_stapler": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "4ad316492bfb742ef48a65a35759ae09bc436d03d9e9fad19be3821938dbca73",
+          "source_result_sha256": "494d6a78499aee11a4feaaf258169a3d5f9b0d311695fe0756c40d6f9508ac86"
+        },
+        "put_bottles_dustbin": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "152dc81dee5dbfe8e31d8861982d1458a3e203ec6dd2cb999718728e7afbb4f0",
+          "source_result_sha256": "f2e388f2e26eab03db64a0a9d940cb6d93cad1e13236f90620e7efef7dae8821"
+        },
+        "put_object_cabinet": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100009,
+            100026,
+            100027,
+            100029,
+            100030
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            3
+          ],
+          "source_log_sha256": "1fc26381af5b94cf42956c996a8d8729e5f7b54c232db39c49d62ff555efa527",
+          "source_result_sha256": "3c0dbb90781cff4eeab652eee9522743c9000cf4fc699b3d282ae263f5470388"
+        },
+        "rotate_qrcode": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "2fbcc451b1bee8547ebc4ae66d1406ca327fd566e6d6d9417bf0ce1dbf4ab9a8",
+          "source_result_sha256": "cc0a4aaedd4140810e25285a6efaf96170dde280cba1868955a99ba512022d68"
+        },
+        "scan_object": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100006,
+            100014,
+            100017,
+            100019,
+            100029
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "9d8536a5a2cd2538aff62b9e7534479e7aa6d8287f3ef633fd184ef3d83dba14",
+          "source_result_sha256": "ab462902475137e1fd26fd7cb1557520ba4937503ce55a8df82d770af2557b27"
+        },
+        "shake_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "b9bcacc79c7c242a5b976a5858fc43897f5a3af865f8e5b112b07fd8bd9ff41c",
+          "source_result_sha256": "1d31d8236d66cea8bbd72429563aff8feaab86730f46b4e0fb8e5ae816d107be"
+        },
+        "shake_bottle_horizontally": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "a1ad9f6fe19c5687434ca5329e1eddc033d5c05dd02d7fb331caee7747e3d979",
+          "source_result_sha256": "a683812a13f988ebda2a215fd48beee1e5324c6b5eafcf7ef3c281be942c65c8"
+        },
+        "stack_blocks_three": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            4
+          ],
+          "source_log_sha256": "c9f227ba5ed7de77df1999248013c9fded88c98fefbbeb53cf03afbaab693d3d",
+          "source_result_sha256": "8734f8e1b637657caa1b8b111eca7685d1b115bbaf5648a2c4d238ab39abbf79"
+        },
+        "stack_blocks_two": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "e56d65b83ea21c559502c20aae60afa5682e502ac394f886442a07625fcb3b6a",
+          "source_result_sha256": "27392936392a55f11ac5c8ec30258c079e67329f01cc9541f5a65306d1684638"
+        },
+        "stack_bowls_three": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100006,
+            100008
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "456487486c0ab8def68fac7bd3bdb0a1860452cfd26a4702e0bc642259d6bd0c",
+          "source_result_sha256": "55b1cf7627637826542a350f7c725484bda797b38619ce8c290b3af79df41fc8"
+        },
+        "stack_bowls_two": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "6ba89a41895ed726ee28824373e7619a72dd69c7dbd21bbc06a104bb40fa1b91",
+          "source_result_sha256": "eaf2796c408339f38c15620abba46ce36b48a4b4cc7c2156100b3bfc349de2da"
+        },
+        "stamp_seal": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "2d5027d760442bc175e740c7a334e68b6d2268f7103c0d331bcbf6e951287212",
+          "source_result_sha256": "761a7c4ca7718d85207fa3c7e18da9f9509123192234ef07d4aa024fac43185f"
+        },
+        "turn_switch": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "d08f99a4ae35943a7ad2bc2c679e8d3fcc83c464c6d648eec5bfd07eeb72554d",
+          "source_result_sha256": "94b2fb4960ca8ce1243fe7bc90d3ba2c18beb623121189401ac165720b04e360"
+        }
+      },
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-05",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_randomized_20260930_083617",
+      "recorded_timestamp_tag": "20260930_083617",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "randomized",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {
+        "hanging_mug": {
+          "successes": 0,
+          "attempts": 2,
+          "instruction_type": "unknown",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": false,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002
+          ],
+          "cumulative_successes": [
+            0,
+            0
+          ],
+          "source_log_sha256": "1dd07dce3a18307a718f170f6e8140891825681fb61b48cf87f9f83189be6b56",
+          "source_result_sha256": null
+        },
+        "lift_pot": {
+          "successes": 0,
+          "attempts": 4,
+          "instruction_type": "unknown",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": false,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100017
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "dece1d92ceb68c1d791ed187949caa9062d8ea002d57543286bd168dddb7d3f7",
+          "source_result_sha256": null
+        }
+      }
+    },
+    {
+      "id": "v1-06",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_randomized_20260930_102809",
+      "recorded_timestamp_tag": "20260930_102809",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "randomized",
+      "status": "complete_50_tasks",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 50,
+      "successes": 86,
+      "attempts": 250,
+      "success_rate": 34.4,
+      "instruction_types": [
+        "unseen"
+      ],
+      "execute_steps": [
+        50
+      ],
+      "episodes_per_completed_task": {
+        "5": 50
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            4
+          ],
+          "source_log_sha256": "b5cb22c6136c49ca57e8080afe3ab6d8ee16d35d535310682728203e515a7bb8",
+          "source_result_sha256": "e387d79dcf81b69915cfb32beb51ba6b4284f47654a033d82e0b47e1eb266e22"
+        },
+        "beat_block_hammer": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "ee79fdbd0af46ccbdf38ed742cf7a7a35900e22f6a527fa42b26c93829697e52",
+          "source_result_sha256": "426205913f5c00ff35f2b527863450374413c53172b1a25f24f4da8ac604839b"
+        },
+        "blocks_ranking_rgb": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source_log_sha256": "8af2fa7c944d61b6ea9ffeae2d0b482f6dec5b24df8afa18254e28a6f0c08fdd",
+          "source_result_sha256": "8bd17ba4a5a95ac88fe6ab9e797f67f9c2ad0a9009ad48030851c5711de99c3a"
+        },
+        "blocks_ranking_size": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "0580c38bbe431481f009b6a15c251fea9898b32459ea5eb0e59f653f687cc254",
+          "source_result_sha256": "20523a548ee3fb86241833fc9b22f24afbd39dd37b511b637d1dc42352366326"
+        },
+        "click_alarmclock": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "53669751ca3dc931a8d459336df2bca6e1f10f4e6930f5cf606cddb1c029046f",
+          "source_result_sha256": "8258dfef251748534cf5f3ad64023c9781dfe65f38379e4fbe892e89db1febdf"
+        },
+        "click_bell": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "0ca53accc14d47c7b6d286c5b01128b4bb20c61a297ece73ac8a5662159cf2b1",
+          "source_result_sha256": "2c496751507a56345121a5ae06901c15176e852ec379eacda34d7b32899cb809"
+        },
+        "dump_bin_bigbin": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100003,
+            100007,
+            100011,
+            100012,
+            100017
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "896adfc21b3b27ef5bc23f51eee5c6f709b4921e79ba83b3879dd3e5d3f0198c",
+          "source_result_sha256": "9c5e0bf8171df7379e1b8dc3461696d1c8a52605905f0b54961e191163e4b51a"
+        },
+        "grab_roller": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "d2af4a7d472ddf21c44facddf0d1b0213622a313318361d395a514872eeaddfb",
+          "source_result_sha256": "3e086705cb7366d089ba1e86c56ae42a627620d6141beb5cc4ab730cc6cae19c"
+        },
+        "handover_block": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "1296c910a3571a4cfe9fdcdfed43a2992e6c9343183f5c5b4fea1c3ad3460123",
+          "source_result_sha256": "736a2f9adb75677db44bf4fcbd9c6fe2e14f8f59ca989b3c8ebf380ca7a284b3"
+        },
+        "handover_mic": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "792b920a0968d76e4eb100f50f3e5b44a3a3155f54f35033f49bd7a48e83f20a",
+          "source_result_sha256": "a98476f69532b7510bc053c3fa6ce3cf6712be2d85451e3bf65dd2871115e1c4"
+        },
+        "hanging_mug": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "662c296ec2c794935c23d3405156b69c19660a6b25c38e78d1de9a77540225b4",
+          "source_result_sha256": "73120a9758c3cfc970893c01a3e971397feb688616894b178fba1115365468cd"
+        },
+        "lift_pot": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100017,
+            100021
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "82bc43c8e3d9ae6fa9e9896bf995c9e1be212bb1bedab4d99c84c1444a960355",
+          "source_result_sha256": "5b3920c5fce2e8da39b8cf93046355de70ebc0c1264131a022ccc148183a1cb0"
+        },
+        "move_can_pot": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "99391e83ddd5ba22e691523bd0713591820d7350c652c54683fb4ba3d0cd5e66",
+          "source_result_sha256": "c4790ce3c6c3c32d354cea4ec352d99454926fa188e6fd46f37437b0811a63b4"
+        },
+        "move_pillbottle_pad": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "source_log_sha256": "9370911e974ac80fb08ff7bc4d4f4085d3339ff28cea0103d8ffbbdcbf5d5fdc",
+          "source_result_sha256": "8f5074339fd488b198224f705967e21b33cedb12db73d5a3f9032befe6d84e5a"
+        },
+        "move_playingcard_away": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "3bbd0ed5c86562b244fc365b49b7e436dd46ae9dadc8303d5662bf87d97478d2",
+          "source_result_sha256": "c9f321e23b48b3602b98b6a9c6e3811b69031079aeda544df9d489af6444d14b"
+        },
+        "move_stapler_pad": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "eaef43758be2e58b266b077c14b67e54ddf7e026fc855e723321701499070798",
+          "source_result_sha256": "7897a43e1c4db3183d2e2fd9e7b3bfd6de74479f3ba98280fdb2f4d4063547d8"
+        },
+        "open_laptop": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "a2e5ea1717e31a354226f1797e1c30d1b6869191088365381113d6dc053460b4",
+          "source_result_sha256": "62ef107a34b8362a9565a192d81505b35486e328518104060e70a6d383b56e14"
+        },
+        "open_microwave": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "f5befb8227dd969acfacc3d7682ff278660e2ead2f5a8ddec7f3a8258f29629f",
+          "source_result_sha256": "701c35f995f2a32acf29d0d0613b258333955fbe95b9907c4ce39fe61ae83e84"
+        },
+        "pick_diverse_bottles": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100005,
+            100007,
+            100008,
+            100009,
+            100013
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "b1e4c709aeabde2236a3a5d0da1a9321e0c5d62b3b56b49a73243c7391c2aee0",
+          "source_result_sha256": "fc4c08a7d3e8ee57212d8172299902617b15fc2216e8d354c375e430cf3bec02"
+        },
+        "pick_dual_bottles": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "d1b6b6e412c42ed237f70b1ff9f9d6424c293357c91942ed8e7a1eb3d8780b80",
+          "source_result_sha256": "611e3a99f812ff47812792480c34274eca8c8d4d4ad36bafe407bbe266a591a8"
+        },
+        "place_a2b_left": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100004,
+            100005,
+            100006,
+            100007
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            3
+          ],
+          "source_log_sha256": "d67ddd67a1a6d801c1da83a0b4d5ac4af1d981505d43bbe08d30e93524fe27d8",
+          "source_result_sha256": "a33e0f6ea7cdd7f5a8a091f44ba2708ee157fdb6fb42caa0f848bf2a0e820ef3"
+        },
+        "place_a2b_right": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "bfcd8dd3329a7a9734b3c8bd66cd6fedf8b28c0a25b99fd71ee4efaff662eb16",
+          "source_result_sha256": "395531dd8087bb0a2efe70fefed93a9f79bfad3718966289d88e2aea464f0548"
+        },
+        "place_bread_basket": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100003,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            2,
+            3
+          ],
+          "source_log_sha256": "24ff37dc49d95bb80964b6a5c65f905d2859e3508969d6df1e25ced1297f598f",
+          "source_result_sha256": "c600b9816df51a37e91f979e62e76f328e195e96de609235ed4244f98fe754e9"
+        },
+        "place_bread_skillet": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100003,
+            100004,
+            100006,
+            100009
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "aa6265f4cb6cce5037ca9d0e337ee672244f2f88be1d7d1815c1161522a5af03",
+          "source_result_sha256": "6d76a2c8c2989501a6dbf93169527db0adf366e90e8152f0e91554800738991d"
+        },
+        "place_burger_fries": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "3985283a16692c4466f2da59bbb091922ecc75570a1943d52d48f16a47e23f5a",
+          "source_result_sha256": "24a9e47a34dffe2c60d801f9776057548da370baee1953aee25c0918530bb5b6"
+        },
+        "place_can_basket": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100002,
+            100003,
+            100004,
+            100005,
+            100007
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "12cff2bacbff5e497a665909940165385fa4137c3ef93b2ea0f03c5d94b94b54",
+          "source_result_sha256": "a271ab3cef1ebd657397c9106bb913fa69cb02c2d2fd8d5e0633c14a71880656"
+        },
+        "place_cans_plasticbox": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "55244381ae2894efc47049b09967a494af2315dff00eb68c21e56cf2db3839e4",
+          "source_result_sha256": "3c63768a1bba465ca618a425c09991eb7c73d26f623239a3afa6ae01c08d5a2b"
+        },
+        "place_container_plate": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "e776714b9c6a5d55d3dcd52b300e1050421a833f8f68f5cd88d22a8bfba376e0",
+          "source_result_sha256": "815cb5544b988b6e976aa2b7f9198890d179c31e209f3473d2cf4d69e93333d3"
+        },
+        "place_dual_shoes": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            2,
+            3
+          ],
+          "source_log_sha256": "15884ffb469b23f87f0c5cf4c38dd2aa0f83b8cc53a708ab7a34f73444f966d7",
+          "source_result_sha256": "44087b286a16cb319ce01b879b8785e690dd20ffdf7ba759d19da5be0ffa3fa9"
+        },
+        "place_empty_cup": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "d9243027665818594f6fa3fbd3f1c04094815a03d8a9063847c02ac0ff61dbda",
+          "source_result_sha256": "eb0d6ec6cd6df453dbef56c7d718a65c31e29407f4445d393bb66ee851a3d8a3"
+        },
+        "place_fan": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "dd39281db66c2f556cd075df25fbda9e340e92ac5e03cb15a976bc5ada9f54cf",
+          "source_result_sha256": "5be4627b3e639ffef89a5f2d76fcd9be1ed0ff82fa4b62858ea5bb1d970b39c6"
+        },
+        "place_mouse_pad": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "503dac950c68e6ec9651cb9e647083a8a01668158b175a7ae2b7270363a9ae37",
+          "source_result_sha256": "c038d6b1c4977735fa4f519532b7fa6bbf755963d4b0402f201c7d50f0dabd01"
+        },
+        "place_object_basket": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100007,
+            100009
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "source_log_sha256": "ecf0c8c646839bbb5840a55779a7e246728e554ae82a9d91909f00ba2f906be2",
+          "source_result_sha256": "c77901a4fdbb9acbf618261ce71ab9a45f0606420f4a76ce9fcef35b9e0383be"
+        },
+        "place_object_scale": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source_log_sha256": "6c934c57d1c8b709915956f50198f1c453425bdbebaf68181d75054f7fcc8f4a",
+          "source_result_sha256": "14e5e19b30383d8636f5b6c9ce4ec5020ce5c90310da2ec4b787a6d08b37e36c"
+        },
+        "place_object_stand": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "d9538feb392454f42c5420a3fad552c2ba09351f145c8567f3ab83055f68b319",
+          "source_result_sha256": "a88c80b24d7274900b9625278ebc9212663ae29d308c3a31c80f0ae88ab295ae"
+        },
+        "place_phone_stand": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100009,
+            100010,
+            100012,
+            100013
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "6409ef5b848797cdf54417d254cb059548089d00c8d545124db40981ea1b03f4",
+          "source_result_sha256": "670eea0f95b052b879728eb0b41becf73330e66cd84884a92e82f57be03e9a61"
+        },
+        "place_shoe": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "08291d04186b8da27a4272e69e06e51ccaf892b84f3122f717c4818f94f8e8b8",
+          "source_result_sha256": "4a2edebbc0cdcd5976b4da9b7ad2195a8adbb79362d04dcad2b0e4746c7dab93"
+        },
+        "press_stapler": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "b567222e401e6577fba03e265fd4df14b20e6ab2eeaecc0eca6625f6dd2d04e3",
+          "source_result_sha256": "213c3678171abc49560e973de2b100f45196c70d2e5d588521b35cda55c31a31"
+        },
+        "put_bottles_dustbin": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100008
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "11b8b2dc75aebacca82d12d0b616c67ed37f6222df638852c6c90dd2979c50e0",
+          "source_result_sha256": "6f5063fa0f9aa1a6eabf10c3d9cb0573076d58574aa8db13b8a1fe7146b4a34f"
+        },
+        "put_object_cabinet": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100010,
+            100018,
+            100026,
+            100049,
+            100051
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source_log_sha256": "5b8d9dce75a986757ee156c1d7a11771040467a1ae1f4083403789caed364e9d",
+          "source_result_sha256": "4801fbb31770d44e3888a55adac155f930ade1e549a373b18589633e0b2e1de3"
+        },
+        "rotate_qrcode": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "eb33b4ac41c84a175d7052938e6fec304a49bf6bdab60700d1277c0b9523c612",
+          "source_result_sha256": "6fd35ce6a2bcd3592a8d82d9a9d36a64b62ffe1dc5a3f2799ec763038e7a6fbf"
+        },
+        "scan_object": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100004,
+            100007,
+            100009,
+            100013,
+            100015
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "source_log_sha256": "f799dfb12ddc46508c8f6762484f172cced6e575a12bd3f0f2a1fe2c6479b814",
+          "source_result_sha256": "73120a9758c3cfc970893c01a3e971397feb688616894b178fba1115365468cd"
+        },
+        "shake_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100007
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "9790ed7f4b74b1e78c107699fd913d95cee233232ec2c64c34a505cca33a0cd3",
+          "source_result_sha256": "9836446ccc7b026e40eb67c39b6edc30af9da299b0bfc82406edacc47e038a94"
+        },
+        "shake_bottle_horizontally": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100007
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "b09a4c820ac924fe8fbe1230e7f570ed608a3376cc19b562f6aec619dee0a278",
+          "source_result_sha256": "4d6ad127b2f63bc7457a36d12925401c11c35db01b536baf39ed646d16079250"
+        },
+        "stack_blocks_three": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            3,
+            3
+          ],
+          "source_log_sha256": "3c57ef0d917b4abe76729403fc22fc8f8cdf3aa4b5b45235a5b6342ed71becc7",
+          "source_result_sha256": "dc55eedeaab5c2f6fa42beafa184ed444226f035581eb4d72998b2ddd07c01b7"
+        },
+        "stack_blocks_two": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            2
+          ],
+          "source_log_sha256": "0ff6782e51f043af944c73feb3948bff90dd828e6e4c9c7f40f6a2e6fd3ff9c1",
+          "source_result_sha256": "a9b997c4086eb72884cd34bd2b5deb78b7447644036175bbcb81531ffb25206c"
+        },
+        "stack_bowls_three": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100006,
+            100007
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "858cb14d7975174d89a70cb6bfa24dbdc17e18fb7c69d998e990a8c285a588ec",
+          "source_result_sha256": "5b3920c5fce2e8da39b8cf93046355de70ebc0c1264131a022ccc148183a1cb0"
+        },
+        "stack_bowls_two": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "b7b375fb53b0eebcd8f04aa8e7b4b81ddd89c604c8355b81cc759936f3e52883",
+          "source_result_sha256": "f136c28c245ead8173ea4d098602edad19aceb06fcf59d61fdfc16b6c5fde92d"
+        },
+        "stamp_seal": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100003,
+            100004,
+            100005,
+            100006,
+            100007
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "e08927f5d51d7a6b30736a141a3c1e7de7fabd9d68fd7a2c9d6c861e5bb784c5",
+          "source_result_sha256": "7a5b15967239f6b9be783bc31c9476c95b7232d89768f194acd157cf40dfac70"
+        },
+        "turn_switch": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "6dc985a22c013108eddc9116883fc93c71b39e520c342c1eb38a97e89da0f664",
+          "source_result_sha256": "6eb9ffd91432595ea7580a2a6e29617d86bb2c90cca2f64879b11ac9b56779ba"
+        }
+      },
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-07",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_153226_smoke_exec30",
+      "recorded_timestamp_tag": "20260930_153226",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-08",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_153759_smoke2_exec30",
+      "recorded_timestamp_tag": "20260930_153759",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-09",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_155247_smoke3_exec30",
+      "recorded_timestamp_tag": "20260930_155247",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "no_completed_task",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 0,
+      "successes": 0,
+      "attempts": 0,
+      "success_rate": null,
+      "instruction_types": [],
+      "execute_steps": [],
+      "episodes_per_completed_task": {},
+      "per_task": {},
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-10",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_160531_smoke4_exec30",
+      "recorded_timestamp_tag": "20260930_160531",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "subset_or_interrupted",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 1,
+      "successes": 1,
+      "attempts": 1,
+      "success_rate": 100.0,
+      "instruction_types": [
+        "unseen"
+      ],
+      "execute_steps": [
+        30
+      ],
+      "episodes_per_completed_task": {
+        "1": 1
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 1,
+          "attempts": 1,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001
+          ],
+          "cumulative_successes": [
+            1
+          ],
+          "source_log_sha256": "f5c96a85ee3d21a4bb450e5b7a5b05d3c0019b5427897c3bd1e47697ed33f292",
+          "source_result_sha256": "5d3ddc1cf77d158ece943979295fcc946ac98706cffddb79dc475aef86c96023"
+        }
+      },
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-11",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_161229_exec50",
+      "recorded_timestamp_tag": "20260930_161229",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "subset_or_interrupted",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 15,
+      "successes": 61,
+      "attempts": 75,
+      "success_rate": 81.33333333333333,
+      "instruction_types": [
+        "unseen"
+      ],
+      "execute_steps": [
+        50
+      ],
+      "episodes_per_completed_task": {
+        "5": 15
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100005,
+            100006,
+            100008
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "61dc5c7fc4b40a6a09e96722be0cbc2f3c7e38414f40ecbf3209cf124df34fa4",
+          "source_result_sha256": "cabfda31be92ca6dc612b3d12c1bebe1b6456b715f711cb59ab8fbcbdda16aef"
+        },
+        "blocks_ranking_rgb": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            4
+          ],
+          "source_log_sha256": "438c36c7f40a249a7be471414fe0290010d26cbf1201230effce8782cba2f0f0",
+          "source_result_sha256": "2abc8048b4d2b8f89e80e675c5204046d0640a81e043b99a47ba41407e877b11"
+        },
+        "dump_bin_bigbin": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100004,
+            100010,
+            100012
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            4
+          ],
+          "source_log_sha256": "5d5f622512c7aeba813328aa53b04971811175dbb07ebdf28a406024f4adc0f7",
+          "source_result_sha256": "35dc19857a35c8d3f39571a169475471098a392ab95574d59a11b9ed7098497b"
+        },
+        "grab_roller": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "faa0622ab000be3a940e74df3f207b88b9d5110ee0027b7a0e09dd5d438bac0f",
+          "source_result_sha256": "1c8e26cc74ff3fd3350438090ef02816cbc550302a410af3fdcf34a13a9fa5fc"
+        },
+        "move_can_pot": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "847b845a248798bcc4efc7bef91c31cb7dfd0becefb3e640de985e4bd00c2229",
+          "source_result_sha256": "cabfda31be92ca6dc612b3d12c1bebe1b6456b715f711cb59ab8fbcbdda16aef"
+        },
+        "move_playingcard_away": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "33e4446ab0555c0b12c274d1b5a940de7209251db0f1741a57e5edcd1132e33a",
+          "source_result_sha256": "39030f1a9ed14243e85a890d29d15edf5cb0e365aa2da4fb609288194e6188d8"
+        },
+        "open_laptop": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "dd37335c9f807d76fc02432e95cbd49fbade480ac8fb0abad54f0c764e9b9914",
+          "source_result_sha256": "bcf34adb2d46186cb0fd4ec80b852f5c531ebac9d9d37ceb9e176b4fd37d3798"
+        },
+        "pick_diverse_bottles": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100007,
+            100009,
+            100012
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "83d092570f731c37a79c9dffa02f7b52e288acb063db9df96aec4cd91cf67188",
+          "source_result_sha256": "eb00bd4db7b9cc58e0695fa42cac2bf43519374e3113888fc60d79b544f5cefe"
+        },
+        "place_a2b_right": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            3
+          ],
+          "source_log_sha256": "35e0fcfbc36f2499f9d720dcaf4c280f9cc44c2d2ee4b100076625844526612c",
+          "source_result_sha256": "367b9135b766c4092ef5580bf34e57d78de41c73a35db02ebe2a4157baf4fe3f"
+        },
+        "place_container_plate": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100003,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "7787019471b4414d41c953ee283439123a28b0f687ed8f4f6226d6ccda4f5cdc",
+          "source_result_sha256": "8776199da79a8f7a143326691713ce847306079c6590eb38a34e6f08392b570f"
+        },
+        "place_empty_cup": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "d2e693a61823055c5df4f22c17e05739cdba2b4aa98f55938bc583549a41501e",
+          "source_result_sha256": "d02ffc3e2fbd5c60b76d044798ab910a134601bb005f41452a99af7c708b9acd"
+        },
+        "place_object_basket": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100008,
+            100009
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "a4b1625683582a4aa5dca807ad24544aae80bb65251b71765c5a51ebb1a811b8",
+          "source_result_sha256": "83a8b59e6de5320186749dae45e2bd15a09c6c185366d00e63f8b3df768015bc"
+        },
+        "put_bottles_dustbin": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "4a37a3cf0b609650788c81b1d9e3b3a05f2cd194c63275686e1c65a0962b5105",
+          "source_result_sha256": "ec86c4da93d68917ceec195dc30a4e6c657867c616c171e73c5c0d9bf95b139a"
+        },
+        "shake_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "9198804f324e6b80400ab4d4213f4d0d66c517c30b96d8dcd46b9949dcdb2c4e",
+          "source_result_sha256": "6bda0caba03826c3067bb292aa1a218936daad15e1030c925970b94299a5bbf2"
+        },
+        "turn_switch": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "046f415284f00fa38936fd62c30bfd22477c97b8da2b39f1dd577bd04d931a0c",
+          "source_result_sha256": "e04e0181e8cc1c6193a2fef3ee2d11a90ab950ad21ae42631c1343564850e208"
+        }
+      },
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-12",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_clean_20260930_170841_exec30",
+      "recorded_timestamp_tag": "20260930_170841",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "subset_or_interrupted",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 15,
+      "successes": 58,
+      "attempts": 75,
+      "success_rate": 77.33333333333333,
+      "instruction_types": [
+        "unseen"
+      ],
+      "execute_steps": [
+        30
+      ],
+      "episodes_per_completed_task": {
+        "5": 15
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100005,
+            100006,
+            100008
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "5308a6fb8386722cb764ba1d7180d1fd9532935567204649509dd859b9297637",
+          "source_result_sha256": "5de7dfc8f0b42f11e7806c3b81ed5e08d957cde15ffb6f5cd89cea7f2ab240c1"
+        },
+        "blocks_ranking_rgb": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            3,
+            3
+          ],
+          "source_log_sha256": "dec55e80579f7abd4a528792721c97be1247e1335d93993c12707e35cd323dea",
+          "source_result_sha256": "c66eb31d3240a228aa21377fbd43d10fcc26195805ba863f3827ed0f68c70711"
+        },
+        "dump_bin_bigbin": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100004,
+            100010,
+            100012
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            3,
+            4
+          ],
+          "source_log_sha256": "b1bcb295f4a3fc85f186de9ad48ae67c1542ae49f862ff6ba444902ed9af4124",
+          "source_result_sha256": "33ce2b58a1b9b91c9365e6f9926ea6155d87a3faf754c2ff1881ce3d512f791d"
+        },
+        "grab_roller": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "5889d49e08aeaafe46e45bbd6ac321a9cc2653818c517a66d949d3c2736a018b",
+          "source_result_sha256": "93346c3f419cfb6ff30c82b284c7edddc9329447793be68d6b51ed06f2f1ac34"
+        },
+        "move_can_pot": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            3
+          ],
+          "source_log_sha256": "636cbd8256b70c28f404b83e247b48d3ff908581ec18d9bbbc1b06d03f3317a0",
+          "source_result_sha256": "ff7a317a5a7f6e920a2546c3465175c67069f026b4fac4d6a4499cbae3ca2a8f"
+        },
+        "move_playingcard_away": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "8a4411025746f569a48631212402009aaca31e30396f96bfc54bf055b7b81b7e",
+          "source_result_sha256": "33ce2b58a1b9b91c9365e6f9926ea6155d87a3faf754c2ff1881ce3d512f791d"
+        },
+        "open_laptop": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "de7b9780b678e9bf73c310b74924c182688b8f98a2b64718498b461cbc1a0360",
+          "source_result_sha256": "9e702f03a7dccca0aa07a102fedfc3fa346c5923f36cfebdb2333256aef966d0"
+        },
+        "pick_diverse_bottles": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100007,
+            100009,
+            100012
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            2,
+            3,
+            3
+          ],
+          "source_log_sha256": "bb4ee9f2ec00ca75fc2ace138fa86d72eb53b9ef3819d297b8f738fe27f448ee",
+          "source_result_sha256": "f3556ff202f69993f25862e6501a2c853ca0a360e97e56ffeb3ff733a8884e79"
+        },
+        "place_a2b_right": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            4
+          ],
+          "source_log_sha256": "c5aa01183bc25996f2eea892eeb92e72bf581b4518640b6875717b9e3ab444a7",
+          "source_result_sha256": "680b3970c91e4e354e087051955528f6192a69b31e47b7c5115ff8c52aea1a41"
+        },
+        "place_container_plate": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100003,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "681d89009fc89fc198598b0a693a552f5d33fb86dd9adf5d327a840e79b83366",
+          "source_result_sha256": "dfd592d8c16c3bf3680d781632571a634513d48de3c7e4373590f803c57146b1"
+        },
+        "place_empty_cup": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "153ba46f80ef2b03449d6b656a49305f16833ee12e7eb38d655fbe3f0c00c65b",
+          "source_result_sha256": "16d46b4acdee2c01ae13202fa04e4b4907faf2eb38c3279379522d2acb9cb877"
+        },
+        "place_object_basket": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100008,
+            100009
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "615ef164a15111cf5ef103f6776b19e728d7cf0d143fe282bfbf7137d0894dba",
+          "source_result_sha256": "aafe7e6cac31e7dcd1859b64465fb898a49ad59d8422eec612243f107bbbcdc1"
+        },
+        "put_bottles_dustbin": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100004,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "28dc3e0066b3cec8ec8f88ed7d6949d2cdcfeff920463fbd0c600eb792a8a85f",
+          "source_result_sha256": "ed39adc5677241b5e3394885defbb336a75c8d3e9b5d2ce0301b0c9723dcccf5"
+        },
+        "shake_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "ca7911384b07e42732b78ceaef945cf224e0b67cd694055029a87f3c845ed5dd",
+          "source_result_sha256": "4398be8de8a25c8c5d457eda066fdbc30f520dbe600a497d2b9d08f9e6bc1127"
+        },
+        "turn_switch": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          "source_log_sha256": "63c6c808832697ffd06d604cccf80fb7194b1a6364a1193fdec5d61c34acb671",
+          "source_result_sha256": "14763af238da1ee2d09c10b1cb89b5b91fc814870d2b480d1df665916e6a4c94"
+        }
+      },
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-13",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_randomized_20260930_175021_exec50",
+      "recorded_timestamp_tag": "20260930_175021",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "randomized",
+      "status": "subset_or_interrupted",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 15,
+      "successes": 25,
+      "attempts": 75,
+      "success_rate": 33.333333333333336,
+      "instruction_types": [
+        "unseen"
+      ],
+      "execute_steps": [
+        50
+      ],
+      "episodes_per_completed_task": {
+        "5": 15
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            4
+          ],
+          "source_log_sha256": "b772626abd51acd95fe3051ed80cfa27655b824db52dd64b6c83d1bbd642e9e2",
+          "source_result_sha256": "5f3e18c7465f7bfdfa7cb209cdd037cd2fbdb9668ac74420440196052ffd6ab9"
+        },
+        "blocks_ranking_rgb": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "be3aa6b484a8c88a0bbc74786ab5bd88686d59184120b25a83a39edee79fc49f",
+          "source_result_sha256": "588446d19d32a66b42913cf5d662fa58b9c5469890bac81f3f6c2ef88883c68a"
+        },
+        "dump_bin_bigbin": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100003,
+            100007,
+            100011,
+            100012,
+            100017
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "8eb2de7be0e129aa5afd100a538b761bf0789187611f0b9bac68c8f0fad41f05",
+          "source_result_sha256": "bbd67a9f4a44148225bc25a1f2915f9a737be667492a1a28ce5201521c1f6ffd"
+        },
+        "grab_roller": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "35197755b0ba2ad5af4380313ff0582f558eb882687ef84b7da2dff6aea6399a",
+          "source_result_sha256": "1f95291a6973971c42a0bc96ede5b6303f9843dbf32c2c3f4777c29627fb26d9"
+        },
+        "move_can_pot": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "55b20aaddacfffc495dda39217c1587c03d9e82e40c06f83bdc4dc615c6691cb",
+          "source_result_sha256": "54190df348c8fd419a3a6062a6172ceaf5df6175686468c58fcfc2dd21e4267e"
+        },
+        "move_playingcard_away": {
+          "successes": 4,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            3,
+            4
+          ],
+          "source_log_sha256": "5c6645ab20815e37301627b8555ab35f6f7c481f38f9f82848c0fd9669f81659",
+          "source_result_sha256": "5f3e18c7465f7bfdfa7cb209cdd037cd2fbdb9668ac74420440196052ffd6ab9"
+        },
+        "open_laptop": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "source_log_sha256": "b20516df57a94ca561afb29cb858049744644a9a0ace91aeef64f73c58af4418",
+          "source_result_sha256": "f108920ed2407e55d093e45e71270a9332600be921c6ecedc49c014191043196"
+        },
+        "pick_diverse_bottles": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100005,
+            100007,
+            100008,
+            100009,
+            100013
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "0769480efe071cba4796b9fe163c204667fedbe9e331e15dfb6be359c493639d",
+          "source_result_sha256": "47bcf3c04ff7967a402bc6c11c342f474c376a27359356267b781c8698fd542a"
+        },
+        "place_a2b_right": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "source_log_sha256": "9f6d30ddc0b3a7b9db2fd0dbcfd621ce49b8b3558d2689f4060b927934a3bfcf",
+          "source_result_sha256": "abd27807585ad735ce5039c413296de5a1e49e2deffd7733f4460fe8c3162af8"
+        },
+        "place_container_plate": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "5f54f5da8c701f5e56814f903dc8a4ce63ade1254548a19ae62d29aaa0c62be4",
+          "source_result_sha256": "602b67d492b778da0d00d07a2c6da4c30bb27129db613fb63de845dca2868bb3"
+        },
+        "place_empty_cup": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "ba99b938cef83c7197d828e5f75570b5b37ef55d448e511ad3e8f824f15e28cf",
+          "source_result_sha256": "48404c1eba2e0f882365d5d588f296e6d7dc34b544794a3b8584b45c07059787"
+        },
+        "place_object_basket": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100007,
+            100009
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "c1eaed8e8d3c53ddd4e27a4c4bf8a2537783438ee2b6fda005e1e1fbad971425",
+          "source_result_sha256": "06906e419712d47fb32b8594db43b238bda34e61cd6c1a37f96c0052d38c1f27"
+        },
+        "put_bottles_dustbin": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100008
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "276a8bddb309a861fae2b8146c83141527e587b9428856c4936cb64d56736711",
+          "source_result_sha256": "26c5f613b0b46d72dd696741229434aaff5281babdf6f648333362259446d8d1"
+        },
+        "shake_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100007
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "df8e878340b9f100ed8ec848fd0c84c77e6cd62e4e56d2c39542f521ec76e335",
+          "source_result_sha256": "fd0ee4b7281942f185cc0f9261dd04a2c3d0ec932f24df077b784f9005c7168c"
+        },
+        "turn_switch": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 50,
+          "execution_evidence": "step50_before_infer",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "7d46c053b9f17fc357662072546005c9b310e10e02c90caf6f57c4843bec30d9",
+          "source_result_sha256": "4155cdf7c3b35e74d1975067b5c045b143e304507555d865f3f94ff06c75a4f8"
+        }
+      },
+      "partial_per_task": {}
+    },
+    {
+      "id": "v1-14",
+      "version": "v1",
+      "source_run": "sft_v1_lr1e4_gb1024_4k_demo_randomized_20260930_184208_exec30",
+      "recorded_timestamp_tag": "20260930_184208",
+      "checkpoint_paths": [
+        "sft_v1_lr1e4_gb1024/checkpoints/global_step_4600/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4600
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "randomized",
+      "status": "subset_or_interrupted",
+      "precision": "unknown: not independently captured in historical per-run logs",
+      "completed_tasks": 15,
+      "successes": 28,
+      "attempts": 75,
+      "success_rate": 37.333333333333336,
+      "instruction_types": [
+        "unseen"
+      ],
+      "execute_steps": [
+        30
+      ],
+      "episodes_per_completed_task": {
+        "5": 15
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100004,
+            100005
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "8283aa11a57a5cf5ca0ad2154ad4508f39ae95abf1c3ca89b323bf8c9c816b15",
+          "source_result_sha256": "20a3ea40cff4a18b0b2392597fa38122ed51ba72c473aedf147ea99ce5015cda"
+        },
+        "blocks_ranking_rgb": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            2,
+            2
+          ],
+          "source_log_sha256": "ac47afe54f57fe1d92dfc5fbde6da5666d672162d3a075a8fcc3f57ef751b938",
+          "source_result_sha256": "e8a58f3006668c321990b3fba7f230aa364b9f0cb9b895b7fa4a85b8fb42c6ab"
+        },
+        "dump_bin_bigbin": {
+          "successes": 3,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100003,
+            100007,
+            100011,
+            100012,
+            100017
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            3,
+            3
+          ],
+          "source_log_sha256": "1ffa9fd31ce42939281bfd574e719e55d9f30d94458a5677557cab99b51466f4",
+          "source_result_sha256": "438693bf9c19ec819b3534de1a771bfabb1bbd3e085e4fa36836d885869afa9b"
+        },
+        "grab_roller": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "e0f5918cac9efffe010cffbbe70dbb59867bc53f81c873b2fe5ce8a732f0b8d7",
+          "source_result_sha256": "8075453b76f8efce580072c2fdaf0b4d56d5d719077f8334a292c986ef80499f"
+        },
+        "move_can_pot": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "89bf84f09443561b7f38a70f3d33be0f5ce1aae8ed36d739c52ffcda4c35091a",
+          "source_result_sha256": "031f557c229f1bb2286736c66c4bee4c45fec0ed1d10b7a12376c174d2756232"
+        },
+        "move_playingcard_away": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "f264716d6fe4bdb1b8c5ecd926dc441acbc84f0f2864af05ec0c47f920231f83",
+          "source_result_sha256": "36713a51078bad02bbc9e2cad297a96a76f97dbffa24b29fb8673b3026f66068"
+        },
+        "open_laptop": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            2,
+            2,
+            2
+          ],
+          "source_log_sha256": "87a748d0e957157307a8f2ade2f7c2f418c0dd7150e7d7f452090033650360b5",
+          "source_result_sha256": "2518a95aa4644987a79e0a22d18a6b5b58829c4e600b631b9772e0259921d854"
+        },
+        "pick_diverse_bottles": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100005,
+            100007,
+            100008,
+            100009,
+            100013
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "9993eb492b92a8b652d87f6a3d2f1e115ef1981279be7c58d3a8328d215978de",
+          "source_result_sha256": "e27f8f7a8ab99d2bcefcfa3dfc3bcbc9e4075f20ef212360cb86accaf968af4b"
+        },
+        "place_a2b_right": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100004,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "7f9bdad70c2f5eea475207ba0898dde58f3859645daa788f7d7818827e068c54",
+          "source_result_sha256": "4d251797468e7e0716c4e5d89ba05b7627b2f17bc690faf70ff28a4f7f2f8d78"
+        },
+        "place_container_plate": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100005
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "source_log_sha256": "5d41bbe2e947074b4cfc07141845d62b47976467f9699af3e3352620a1117754",
+          "source_result_sha256": "a5ef6d286fac8093ddb1488029efe93dc6f019382c36f5acdd7efe36cbf8b366"
+        },
+        "place_empty_cup": {
+          "successes": 2,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100001,
+            100002,
+            100003,
+            100004
+          ],
+          "cumulative_successes": [
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          "source_log_sha256": "4ee084baf9d7cd6a3df9254cf0367bd7d1ccb95e2ff7240d0fcca5b539071104",
+          "source_result_sha256": "39b1e5f353d95abbfc8a6f83fe3b3f5f50a0d9d24b4b6bbc64d4421e716ea67c"
+        },
+        "place_object_basket": {
+          "successes": 1,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100007,
+            100009
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "source_log_sha256": "ccef15dc040bf02a13b6e1c069f2a48567159af2fbc92b7855c54d9a8063f5a9",
+          "source_result_sha256": "d0ddabe0666e1a4f7a5da848482ac58e716c4974d3eff4ab044c148e48ad7d83"
+        },
+        "put_bottles_dustbin": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100008
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "3bdd08e0e822653871046f4e3c26169f68d6e78b0876e88b66baae21a6d7589c",
+          "source_result_sha256": "d524e9e92ad3f250f763d9b89021014e961fc6eb1dbceebff00925abbc8f3d17"
+        },
+        "shake_bottle": {
+          "successes": 5,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100001,
+            100002,
+            100003,
+            100004,
+            100007
+          ],
+          "cumulative_successes": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "source_log_sha256": "b779230cf99341ec8aff83454b16296d2791c57d3ea67fd8c18f5086c38fd7e9",
+          "source_result_sha256": "95a03df6e87bae54912e7b3cea3b28b4c55fc50559c3de76e05eed47eb6dbdaf"
+        },
+        "turn_switch": {
+          "successes": 0,
+          "attempts": 5,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "explicit",
+          "result_and_log_verified": true,
+          "contiguous_sequence": true,
+          "seeds": [
+            100000,
+            100002,
+            100003,
+            100005,
+            100006
+          ],
+          "cumulative_successes": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "source_log_sha256": "4a6230b3d4093057c8498ad68158f8d1d44523e0217caff3be4872fc6be049ff",
+          "source_result_sha256": "211ef2791cb06826d682d7a4da087459051769e02057fb17e4096bc8990bc94e"
+        }
+      },
+      "partial_per_task": {}
+    }
+  ]
+}

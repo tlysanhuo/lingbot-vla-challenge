@@ -1,11 +1,12 @@
 {
   "foundation": "LingBot-VLA 2.0 (6B)",
-  "version_naming": "v0/v1/v2/v3 are project experiment stages, not upstream LingBot product versions",
+  "version_naming": "v0–v4 are project experiment stages, not upstream LingBot product versions",
   "research_order": [
     "v0",
     "v1",
     "v2",
-    "v3"
+    "v3",
+    "v4"
   ],
   "stages": [
     {
@@ -53,6 +54,18 @@
       "next_decision": "Select raw/EMA checkpoints and confirm all 50 tasks",
       "curve": "v3_wandb.csv",
       "provenance": "v3_wandb_provenance.json"
+    },
+    {
+      "id": "v4",
+      "role": "Episode-balanced continuation and candidate screening",
+      "steps": 6000,
+      "global_batch_size": 1024,
+      "historical_gpu_count": 8,
+      "initialization": "v3 global_step_4000 raw, weights only",
+      "weight_parent": "v3@4000",
+      "next_decision": "Screen 3k/6k candidates; retain v3 for 100-episode expansion while v4 improvement remains unconfirmed",
+      "curve": "v4_tensorboard.csv",
+      "provenance": "v4_tensorboard.provenance.json"
     }
   ]
 }

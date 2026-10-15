@@ -1,0 +1,40 @@
+{
+  "selection": "First recorded success and first recorded failure for move_pillbottle_pad in the frozen v3 full100 randomized snapshot.",
+  "video_status": "deferred_until_current_full_evaluation_completes",
+  "cases": [
+    {
+      "case_id": "success",
+      "checkpoint": "v3 4k raw",
+      "episode_file": "results/evaluation/v3_full100_episodes.jsonl",
+      "line": 1302,
+      "episode": {
+        "task": "move_pillbottle_pad",
+        "setting": "demo_randomized",
+        "instruction_type": "unseen",
+        "episode": 2,
+        "seed": 100001,
+        "instruction": "Grab the white cylindrical bottle and set it on the pad",
+        "success": true,
+        "action_steps": 150
+      },
+      "video": null
+    },
+    {
+      "case_id": "failure",
+      "checkpoint": "v3 4k raw",
+      "episode_file": "results/evaluation/v3_full100_episodes.jsonl",
+      "line": 1301,
+      "episode": {
+        "task": "move_pillbottle_pad",
+        "setting": "demo_randomized",
+        "instruction_type": "unseen",
+        "episode": 1,
+        "seed": 100000,
+        "instruction": "Use the left arm to grab the plastic orange bottle with white lid and place it",
+        "success": false,
+        "action_steps": 400
+      },
+      "video": null
+    }
+  ]
+}

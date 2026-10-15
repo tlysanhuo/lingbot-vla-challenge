@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "snapshot_at": "2026-10-15T20:37:00+08:00",
+  "archive_exported_at": "2026-10-15T20:41:13+08:00",
+  "scope": "Every directory in the supplied eval-root; no invented results for absent runs. Modern active/stopped runs use the same frozen snapshot as latest_snapshot.json.",
+  "directory_count": 71,
+  "runs_with_completed_tasks": 56,
+  "notes": [
+    "Setting rates count only tasks with both result-file and log evidence.",
+    "Subset/panel/interrupted entries are not full-50-task scores.",
+    "Runs remain separate; retries and repeated seeds are not combined into a model score.",
+    "No archived v0 policy score was found in this evaluation root; v0 checkpoint selection was cancelled."
+  ],
+  "versions": {
+    "v0": {
+      "file": "results/evaluation/history/v0.json",
+      "run_count": 0,
+      "runs_with_results": 0
+    },
+    "v1": {
+      "file": "results/evaluation/history/v1.json",
+      "run_count": 14,
+      "runs_with_results": 7
+    },
+    "v2": {
+      "file": "results/evaluation/history/v2.json",
+      "run_count": 39,
+      "runs_with_results": 34
+    },
+    "v3": {
+      "file": "results/evaluation/history/v3.json",
+      "run_count": 14,
+      "runs_with_results": 12
+    },
+    "v4": {
+      "file": "results/evaluation/history/v4.json",
+      "run_count": 3,
+      "runs_with_results": 3
+    },
+    "environment": {
+      "file": "results/evaluation/history/environment.json",
+      "run_count": 1,
+      "runs_with_results": 0
+    }
+  }
+}

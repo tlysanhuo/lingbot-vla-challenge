@@ -1,0 +1,45 @@
+{
+  "stage": "v4",
+  "run_name": "sft_v4_balanced6k_v1_8gpu",
+  "weight_parent": "sft_v3_tail_v1_r2/global_step_4000/hf_ckpt",
+  "initialization": "weights only; new optimizer and scheduler",
+  "additional_steps": 6000,
+  "cumulative_lineage_steps": 29000,
+  "training_exit_code": 0,
+  "optimizer": "Muon",
+  "precision": "FP32",
+  "global_batch_size": 1024,
+  "micro_batch": 32,
+  "gpu_count": 8,
+  "gradient_accumulation_steps": 4,
+  "learning_rate": {
+    "warmup_steps": 200,
+    "warmup_start": 2e-06,
+    "peak": 1e-05,
+    "cosine_end": 2e-06
+  },
+  "sampling": {
+    "uniform_frame_probability": 0.5,
+    "uniform_episode_then_frame_probability": 0.5,
+    "source": "clean demonstration lengths only"
+  },
+  "retained": [
+    "clean2500",
+    "c2r_v1",
+    "seen instruction binding",
+    "state noise std0.01 probability0.5",
+    "native Depth/DINO supervision",
+    "EMA0.999"
+  ],
+  "saved_additional_steps": [
+    3000,
+    6000
+  ],
+  "exports": [
+    "raw",
+    "EMA"
+  ],
+  "normalization_sha256": "488ec6569c30dd69419358241efdb2e6c3488117768e7028a1e891be83e10db8",
+  "clean2500_recomputed_statistics_used": false,
+  "publication_scope": "historical recipe and results; v4 sampler is not integrated into portable training entrypoint"
+}

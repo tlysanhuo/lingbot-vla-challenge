@@ -4,13 +4,13 @@
 
 **Full-parameter post-training · Multi-view augmentation · Stateful checkpointing · Closed-loop evaluation**
 
-[项目演进](#项目演进) · [实验结果](#实验结果) · [训练曲线](#训练曲线) · [方法实现](#方法实现) · [复现指南](docs/REPRODUCIBILITY.md) · [工程设计](docs/ENGINEERING.md)
+[项目演进](#项目演进) · [全版本评测档案](docs/EVALUATION_HISTORY.md) · [任务成功率](docs/TASK_RESULTS.md) · [成功与失败case](docs/EVALUATION_CASES.md) · [训练曲线](#训练曲线) · [复现指南](docs/REPRODUCIBILITY.md)
 
 ![v3 confirmation](assets/figures/confirmation.png)
 
 ## 项目演进
 
-项目按 **v0流程验证 → v1正式基线 → v2视觉泛化 → v3精修与确认** 连续迭代。每一阶段都保留训练配置、指标来源、观察到的问题和下一步决策。
+项目按 **v0流程验证 → v1正式基线 → v2视觉泛化 → v3精修与确认 → v4均衡续训与筛选** 连续迭代。每一阶段都保留训练配置、指标来源、观察到的问题和下一步决策。
 
 | 阶段 | 核心工作 | 实际训练 | 形成的下一步依据 |
 |---|---|---|---|
@@ -18,8 +18,9 @@
 | **v1** | **无视觉增强的全50任务基线** | **4600步，global1024** | 历史clean60.8/randomized34.4，识别泛化缺口 |
 | v2 | c2r多视角视觉增强 | 20k日程，选19k检查点 | 泛化改善后进入平台期，转向精修 |
 | v3 | 低LR、seen绑定、状态噪声；raw/EMA选型 | 从v2@19k权重续训4000步 | 4k raw完成1000集确认，均值65.6 |
+| v4 | 50%帧均匀＋50%演示均匀采样，保留原增强 | 从v3@4k新增6000步，累计29k | 3k randomized十集49.0%；6k筛选未完成，尚无已确认收益 |
 
-阶段编号是项目版本，基座均为LingBot-VLA 2.0。v0、v1、v2分别从官方基座初始化，v3才直接继承v2；研究过程连续，权重谱系按实际记录展示。历史v1两setting都用unseen指令、exec50，不能与当前确认分直接作同口径涨幅计算。
+阶段编号是项目版本，基座均为LingBot-VLA 2.0。v0、v1、v2分别从官方基座初始化，v3继承v2、v4继承v3；研究过程连续，权重谱系按实际记录展示。历史v1两setting都用unseen指令、exec50，不能与当前确认分直接作同口径涨幅计算。当前仍保留v3 4k raw作为主候选，正在进行每任务100集扩样。
 
 各阶段的训练过程和曲线在下文直接展开；[训练历程档案](docs/TRAINING_HISTORY.md)保留更详细的来源与复现记录。
 
@@ -39,6 +40,110 @@
 
 - [机器可读结果](results/evaluation/v3_confirmation.json) · [1000集逐集记录](results/evaluation/v3_episodes.jsonl) · [评测协议](results/evaluation/protocol.json)
 - [逐任务可视化](assets/figures/task_breakdown.png) · [检查点选型与负结果](docs/EXPERIMENTS.md)
+
+<!-- EVALUATION_REPORT:START -->
+
+### 从v0到v4：全部评测记录
+
+[v0 流程验证](docs/evaluation/v0.md) · [v1 基线](docs/evaluation/v1.md) · [v2 增强与检查点扫描](docs/evaluation/v2.md) · [v3 精修与扩样](docs/evaluation/v3.md) · [v4 均衡续训](docs/evaluation/v4.md)
+
+已归档现存 **71个评测目录**，包括零结果启动、面板、未完成评测、raw/EMA选型与负结果。每个版本页面均可展开各次运行的全部任务成绩。[迭代总览](docs/EVALUATION_HISTORY.md) · [所有版本逐任务CSV](results/evaluation/all_task_results.csv)
+
+![检查点迭代与选型](assets/figures/checkpoint_evolution.png)
+
+### 50任务成功率：跨版本展示
+
+图中每格为成功率，灰色表示未测；星号表示尚未测满目标回合。v1/v2采用exec50且clean也为unseen，v3/v4采用exec30和clean/seen，因此跨版本图用于展示实验过程，不代表严格同条件增益。
+
+![全版本任务成功率](assets/figures/iteration_task_rates.png)
+
+### 最新评测快照
+
+**更新时间：2026-10-15T20:37:00+08:00**。这是静态记录；百集全量仍以实际完成状态为准，不将未完成任务补零或报告为最终均分。
+
+| 评测 | Setting / 指令 | 状态 | 测满任务 | 已记录回合 | 完整任务子集成功率 |
+| --- | --- | --- | --- | --- | --- |
+| v3 4k raw · 100集全量 | randomized/unseen | 进行中 | 22/50 | 2215/5000 | 37.5% (825/2200) |
+| v3 4k raw · 100集全量 | clean/seen | 未开始 | 0/50 | 0/5000 | — |
+| v4 3k raw · 10集筛选 | randomized/unseen | 完成 | 50/50 | 500/500 | 49.0% (245/500) |
+| v4 3k raw · 10集筛选 | clean/seen | 已停止 | 38/50 | 398/500 | 77.4% (294/380) |
+| v4 6k raw · 10集筛选 | randomized/unseen | 已停止 | 18/50 | 185/500 | 41.1% (74/180) |
+| v4 6k raw · 10集筛选 | clean/seen | 未开始 | 0/50 | 0/500 | — |
+
+“已记录回合”包含未满任务；最右列只汇总已测满的任务，部分任务集合的成功率不能当作完整50任务成绩。
+
+<details>
+<summary>展开v3全部50任务：十集确认与百集进度</summary>
+
+| 任务 | v3 clean/seen · 10集 | v3 randomized/unseen · 10集 | v3 randomized/unseen · 100集目标 | v3 clean/seen · 100集目标 | 随机半场扩样差值 |
+| --- | --- | --- | --- | --- | --- |
+| `adjust_bottle` | 100.0% (10/10) | 70.0% (7/10) | 65.0% (65/100) | — | -5.0 pp |
+| `beat_block_hammer` | 100.0% (10/10) | 30.0% (3/10) | 25.0% (25/100) | — | -5.0 pp |
+| `blocks_ranking_rgb` | 100.0% (10/10) | 90.0% (9/10) | 82.0% (82/100) | — | -8.0 pp |
+| `blocks_ranking_size` | 70.0% (7/10) | 40.0% (4/10) | 52.0% (52/100) | — | +12.0 pp |
+| `click_alarmclock` | 0.0% (0/10) | 10.0% (1/10) | 15.0% (15/100) | — | +5.0 pp |
+| `click_bell` | 0.0% (0/10) | 40.0% (4/10) | 53.0% (53/100) | — | +13.0 pp |
+| `dump_bin_bigbin` | 90.0% (9/10) | 50.0% (5/10) | 48.0% (48/100) | — | -2.0 pp |
+| `grab_roller` | 100.0% (10/10) | 100.0% (10/10) | 87.0% (87/100) | — | -13.0 pp |
+| `handover_block` | 90.0% (9/10) | 20.0% (2/10) | 31.0% (31/100) | — | +11.0 pp |
+| `handover_mic` | 100.0% (10/10) | 50.0% (5/10) | 39.0% (39/100) | — | -11.0 pp |
+| `hanging_mug` | 20.0% (2/10) | 20.0% (2/10) | 11.0% (11/100) | — | -9.0 pp |
+| `lift_pot` | 80.0% (8/10) | 20.0% (2/10) | 8.0% (8/100) | — | -12.0 pp |
+| `move_can_pot` | 80.0% (8/10) | 10.0% (1/10) | 11.0% (11/100) | — | +1.0 pp |
+| `move_pillbottle_pad` | 100.0% (10/10) | 60.0% (6/10) | 29.0% (29/100) | — | -31.0 pp |
+| `move_playingcard_away` | 100.0% (10/10) | 30.0% (3/10) | 26.0% (26/100) | — | -4.0 pp |
+| `move_stapler_pad` | 30.0% (3/10) | 30.0% (3/10) | 14.0% (14/100) | — | -16.0 pp |
+| `open_laptop` | 100.0% (10/10) | 40.0% (4/10) | 41.0% (41/100) | — | +1.0 pp |
+| `open_microwave` | 60.0% (6/10) | 0.0% (0/10) | 3.0% (3/100) | — | +3.0 pp |
+| `pick_diverse_bottles` | 60.0% (6/10) | 50.0% (5/10) | 49.0% (49/100) | — | -1.0 pp |
+| `pick_dual_bottles` | 60.0% (6/10) | 80.0% (8/10) | 62.0% (62/100) | — | -18.0 pp |
+| `place_a2b_left` | 60.0% (6/10) | 80.0% (8/10) | 36.0% (36/100) | — | -44.0 pp |
+| `place_a2b_right` | 70.0% (7/10) | 10.0% (1/10) | 38.0% (38/100) | — | +28.0 pp |
+| `place_bread_basket` | 100.0% (10/10) | 60.0% (6/10) | 60.0% (9/15) † | — | — |
+| `place_bread_skillet` | 90.0% (9/10) | 40.0% (4/10) | — | — | — |
+| `place_burger_fries` | 100.0% (10/10) | 90.0% (9/10) | — | — | — |
+| `place_can_basket` | 70.0% (7/10) | 60.0% (6/10) | — | — | — |
+| `place_cans_plasticbox` | 100.0% (10/10) | 100.0% (10/10) | — | — | — |
+| `place_container_plate` | 100.0% (10/10) | 60.0% (6/10) | — | — | — |
+| `place_dual_shoes` | 90.0% (9/10) | 50.0% (5/10) | — | — | — |
+| `place_empty_cup` | 90.0% (9/10) | 80.0% (8/10) | — | — | — |
+| `place_fan` | 70.0% (7/10) | 10.0% (1/10) | — | — | — |
+| `place_mouse_pad` | 40.0% (4/10) | 0.0% (0/10) | — | — | — |
+| `place_object_basket` | 90.0% (9/10) | 80.0% (8/10) | — | — | — |
+| `place_object_scale` | 100.0% (10/10) | 40.0% (4/10) | — | — | — |
+| `place_object_stand` | 90.0% (9/10) | 80.0% (8/10) | — | — | — |
+| `place_phone_stand` | 90.0% (9/10) | 20.0% (2/10) | — | — | — |
+| `place_shoe` | 100.0% (10/10) | 90.0% (9/10) | — | — | — |
+| `press_stapler` | 100.0% (10/10) | 80.0% (8/10) | — | — | — |
+| `put_bottles_dustbin` | 70.0% (7/10) | 60.0% (6/10) | — | — | — |
+| `put_object_cabinet` | 60.0% (6/10) | 20.0% (2/10) | — | — | — |
+| `rotate_qrcode` | 90.0% (9/10) | 20.0% (2/10) | — | — | — |
+| `scan_object` | 100.0% (10/10) | 60.0% (6/10) | — | — | — |
+| `shake_bottle` | 100.0% (10/10) | 90.0% (9/10) | — | — | — |
+| `shake_bottle_horizontally` | 100.0% (10/10) | 70.0% (7/10) | — | — | — |
+| `stack_blocks_three` | 100.0% (10/10) | 70.0% (7/10) | — | — | — |
+| `stack_blocks_two` | 100.0% (10/10) | 90.0% (9/10) | — | — | — |
+| `stack_bowls_three` | 70.0% (7/10) | 50.0% (5/10) | — | — | — |
+| `stack_bowls_two` | 80.0% (8/10) | 60.0% (6/10) | — | — | — |
+| `stamp_seal` | 90.0% (9/10) | 30.0% (3/10) | — | — | — |
+| `turn_switch` | 90.0% (9/10) | 30.0% (3/10) | — | — | — |
+
+†：任务未满目标回合，显示实际分母。扩样差值只对已测满100集的任务计算。
+
+</details>
+
+[v3/v4完整分任务表](docs/TASK_RESULTS.md) · [快照JSON与逐集记录索引](results/evaluation/latest_snapshot.json)
+
+### 两个case：成功与失败
+
+| Case | 任务 | 模型 / Setting | 原始回合 | 动作步数 |
+| --- | --- | --- | --- | --- |
+| 成功 | `move_pillbottle_pad` | v3 · randomized/unseen | episode 2 / seed 100001 | 150 |
+| 失败 | `move_pillbottle_pad` | v3 · randomized/unseen | episode 1 / seed 100000 | 400 |
+
+两个case来自同一任务的真实逐集记录，实际指令与原始记录链接见[案例页](docs/EVALUATION_CASES.md)。**评测视频待当前全量结束后补录1—2例**；补录会单独标注，不计入原分数。
+
+<!-- EVALUATION_REPORT:END -->
 
 ## 训练曲线
 
@@ -90,6 +195,18 @@ v3图表直接来自已结束的W&B运行，导出**3998条指标记录，覆盖
 
 [W&B原始运行](https://wandb.ai/3120252125-/ant-lingbot-competition/runs/sft-v3-tail-v1-clean2500-parent19000-r2) · [指标CSV](results/training/v3_wandb.csv) · [导出来源](results/training/v3_wandb_provenance.json) · [训练配置](configs/v3.yaml) · [检查点选型记录](docs/EXPERIMENTS.md)
 
+### v4 · 演示均衡续训与候选筛选
+
+从**v3@4k raw**加载权重，新建优化器/调度，实际新增**6000步**，global1024；200步warmup从2e-6到1e-5，随后cosine降至2e-6。采样改为50%帧均匀＋50%演示均匀后取帧，保留c2r、seen绑定、状态扰动和原配套归一化。
+
+![v4 balanced continuation](assets/figures/training_v4.png)
+
+3k和6k raw/EMA均已导出。3k raw的randomized全50任务×10集为**245/500=49.0%**，此前v3同规模为50.4%；3k clean与6k randomized提前停止，不能给出完整双场均分，也不能据部分结果断言6k最终优劣。当前记录支持继续核实候选，没有证明这次均衡续训带来提分。
+
+[v4全部评测与逐任务结果](docs/evaluation/v4.md) · [6000步原始指标](results/training/v4_tensorboard.csv) · [曲线来源](results/training/v4_tensorboard.provenance.json) · [实际训练配方摘要](results/training/v4_recipe.json)
+
+v4在此作为已执行的研究阶段归档；当前仓库的便携训练入口仍覆盖v1–v3，尚未将v4采样实现宣称为可直接复现的发布入口。
+
 ### 权重谱系与经验迭代
 
 ```mermaid
@@ -102,9 +219,12 @@ flowchart LR
     V0 -.流程经验.-> V1
     V1 -.泛化问题与方法迭代.-> V2
     V3 --> Confirm[4k raw<br/>1000集确认]
+    V3 -->|weights-only| V4[v4 · 均衡续训6000步]
+    V4 --> Screen[3k / 6k raw<br/>候选筛选]
+    Confirm --> Full[v3 4k raw<br/>10000集扩样进行中]
 ```
 
-项目经验按v0→v1→v2→v3积累，实际权重初始化关系按图中的实线记录。训练loss用于复盘优化过程，模型选择依据闭环成功率。
+项目经验按v0→v1→v2→v3→v4积累，实际权重初始化关系按图中的实线记录。训练loss用于复盘优化过程，模型选择依据闭环成功率。
 
 ## 方法实现
 
@@ -140,8 +260,12 @@ flowchart LR
 ```bash
 python -m pip install -r requirements-report.txt
 python scripts/verify_results.py
+python scripts/verify_evaluation_history.py
 python scripts/plot_results.py
+python scripts/build_evaluation_report.py
 ```
+
+更新静态快照及全版本档案的方法见[报告维护说明](docs/REPORTING.md)。
 
 准备固定版本上游源码并应用项目改动：
 
