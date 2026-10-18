@@ -1,6 +1,6 @@
 {
   "selection": "First recorded success and first recorded failure for move_pillbottle_pad in the frozen v3 full100 randomized snapshot.",
-  "video_status": "deferred_until_current_full_evaluation_completes",
+  "video_status": "not_planned_logs_only",
   "cases": [
     {
       "case_id": "success",

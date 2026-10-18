@@ -1,0 +1,24 @@
+{
+  "old_10eps_percent": {
+    "clean": 80.8,
+    "randomized": 50.4,
+    "mean": 65.6
+  },
+  "new_100eps_percent": {
+    "clean": 78.04,
+    "randomized": 47.38,
+    "mean": 62.71
+  },
+  "delta_percentage_points": {
+    "clean": -2.76,
+    "randomized": -3.02,
+    "mean": -2.89
+  },
+  "relative_drop_percent": {
+    "clean": 3.415841584158405,
+    "randomized": 5.992063492063485,
+    "mean": 4.40548780487804
+  },
+  "same_checkpoint": true,
+  "not_strict_episode_pairing": true
+}

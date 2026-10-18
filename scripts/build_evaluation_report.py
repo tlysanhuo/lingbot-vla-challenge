@@ -10,7 +10,7 @@ STAGES = {
     'v0': ('流程验证', '完成1000步训练，验证数据、监督、保存链路。原选点评测取消，现存评测目录中没有可核验的v0闭环成功率；不以零分代替缺失结果。'),
     'v1': ('正式基线与执行长度检查', '从官方基座训练4600步，建立无视觉增强基线。目录中的4k是截断命名；实际加载记录为global_step_4600。包含全50任务、15任务面板、exec30/50及启动失败记录。clean历史指令为unseen。'),
     'v2': ('视觉增强、检查点扫描与协议修正', '从基座重新训练，引入c2r增强，选用19k检查点。保留1k至19k面板/全任务结果、四检查点平均的负结果，以及exec30和clean/seen纠正后的独立评测。不同任务数或指令口径不合并。'),
-    'v3': ('低学习率精修、raw/EMA选型与扩样', '承接v2@19k，新增4000步低LR精修、seen绑定和状态噪声。保留2k/4k raw/EMA矩阵、每任务10集确认，以及当前每任务100集评测。五集67.4与十集65.6分开记录；百集结果仍以快照状态为准。'),
+    'v3': ('低学习率精修、raw/EMA选型与扩样', '承接v2@19k，新增4000步低LR精修、seen绑定和状态噪声。保留2k/4k raw/EMA矩阵、每任务10集确认，以及当前每任务100集评测。五集67.4、十集65.6与百集62.71分开记录；百集已于2026-10-18完成。'),
     'v4': ('演示均衡续训与候选筛选', '承接v3@4k，实际新增6000步；50%帧均匀＋50%演示均匀采样，保留原增强与配套归一化。训练已完成，3k/6k raw筛选均有记录。3k randomized完整为49.0%；其clean和6k筛选提前停止，不报完整双场均分。'),
     'environment': ('环境验证记录', '环境/官方模型锚点单独保留，不划为我们训练出的v0至v4模型成绩。'),
 }
@@ -31,7 +31,7 @@ def table(headers, rows):
 def score(row, annotate=False):
     if not row or not row['attempts']:
         return '—'
-    text = f"{100 * row['successes'] / row['attempts']:.1f}% ({row['successes']}/{row['attempts']})"
+    text = f"{100 * row['successes'] / row['attempts']:.2f}% ({row['successes']}/{row['attempts']})"
     if annotate and row.get('status', 'complete') != 'complete':
         text += ' †'
     return text
@@ -119,10 +119,12 @@ def latest(snapshot, baseline):
     for task in tasks:
         r = current['randomized']['per_task'][task]
         delta = f"{100*r['successes']/r['attempts'] - 10*baseline['randomized'][task]['successes']:+.1f} pp" if r['status'] == 'complete' else '—'
+        c = current['clean']['per_task'][task]
+        clean_delta = f"{100*c['successes']/c['attempts'] - 10*baseline['clean'][task]['successes']:+.1f} pp" if c['status'] == 'complete' else '—'
         task_rows.append([f'`{task}`', score(baseline['clean'][task]), score(baseline['randomized'][task]),
-                          score(r, True), score(current['clean']['per_task'][task], True), delta])
+                          score(r, True), score(c, True), delta, clean_delta])
     tasks_table = table(['任务', 'v3 clean/seen · 10集', 'v3 randomized/unseen · 10集',
-                         'v3 randomized/unseen · 100集目标', 'v3 clean/seen · 100集目标', '随机半场扩样差值'], task_rows)
+                         'v3 randomized/unseen · 100集', 'v3 clean/seen · 100集', 'randomized差值', 'clean差值'], task_rows)
     v4 = snapshot['runs']
     v4_table = table(['任务', 'v4 3k randomized · 10集', 'v4 3k clean · 10集', 'v4 6k randomized · 10集'],
                      [[f'`{task}`', score(v4['v4_3k10']['settings']['randomized']['per_task'][task], True),
@@ -151,11 +153,11 @@ def cases():
         selected.append({'case_id': 'success' if outcome else 'failure', 'checkpoint': 'v3 4k raw',
                          'episode_file': source, 'line': line, 'episode': event, 'video': None})
     (DATA / 'cases.json').write_text(json.dumps({'selection': 'First recorded success and first recorded failure for move_pillbottle_pad in the frozen v3 full100 randomized snapshot.',
-                                               'video_status': 'deferred_until_current_full_evaluation_completes',
+                                               'video_status': 'not_planned_logs_only',
                                                'cases': selected}, ensure_ascii=False, indent=2) + '\n')
     lines = ['# 两个真实评测case', '',
              '选择同一个任务的首次成功和首次失败各一例，均来自v3 4k raw百集评测的randomized/unseen记录。它们用于展示逐集证据，不是任务成功率的代表性抽样，也不是同seed对照。', '',
-             '**视频待补录。**历史及当前全量运行没有保存仿真视频。按项目安排，当前全量评测结束后再单独补录1—2个case；届时标记为新的演示评测，不将补录成败改写为下面旧回合的结果，也不并入原评测分数。', '',
+             '完整评测未保存仿真视频，当前保留两条原始日志case。仿真视频补录已移出当前计划；现有真机Demo见[演示说明](DEMO.md)。', '',
              '以下为原始日志中已经存在的真实记录。无视频时不能进一步断言失败是抓空、碰撞、识别错误或放置偏差。', '']
     compact = []
     for case in selected:
@@ -189,8 +191,7 @@ def figures(snapshot, baseline):
     for ax, setting in zip(axes, ['clean', 'randomized']):
         columns = [old1[setting], old2[setting], baseline[setting], snapshot['runs']['v4_3k10']['settings'][setting]['per_task']]
         labels = ['v1 4.6k\n5 ep', 'v2 19k\n5 ep', 'v3 4k\n10 ep', 'v4 +3k\n10 ep']
-        if setting == 'randomized':
-            columns.append(snapshot['runs']['v3_full100']['settings'][setting]['per_task']); labels.append('v3 4k\n100 ep*')
+        columns.append(snapshot['runs']['v3_full100']['settings'][setting]['per_task']); labels.append('v3 4k\n100 ep')
         arr = np.array([[100 * col[t]['successes'] / col[t]['attempts'] if col[t]['attempts'] else np.nan for col in columns] for t in snapshot['tasks']])
         ax.imshow(np.ma.masked_invalid(arr), cmap=cmap, vmin=0, vmax=100, aspect='auto')
         ax.set_yticks(range(50), [t.replace('_', ' ') for t in snapshot['tasks']], fontsize=7.5)
@@ -202,8 +203,8 @@ def figures(snapshot, baseline):
                 partial = col[task].get('status', 'complete') not in ('complete', 'not_started')
                 text = '—' if np.isnan(value) else f'{value:.0f}' + ('*' if partial else '')
                 ax.text(j, i, text, ha='center', va='center', fontsize=8, color='white' if value >= 65 else '#17233b')
-    fig.text(.04, .035, 'v1/v2: exec50, 5 episodes/task. v3/v4: exec30, 10 episodes/task. Protocols differ; this is not a controlled gain comparison.', fontsize=10, color='#526078')
-    fig.text(.04, .015, f"Gray = not evaluated. * = partial task / ongoing 100-episode expansion. Snapshot: {snapshot['snapshot_at']}", fontsize=10, color='#526078')
+    fig.text(.04, .035, 'v1/v2: exec50, 5 episodes/task. v3/v4: exec30, 10 or 100 episodes/task. Protocols differ; this is not a controlled gain comparison.', fontsize=10, color='#526078')
+    fig.text(.04, .015, f"Gray = not evaluated. * = a task with fewer than its target episodes. Snapshot: {snapshot['snapshot_at']}", fontsize=10, color='#526078')
     fig.savefig(out / 'iteration_task_rates.png', dpi=140); plt.close(fig)
     history = load('results/evaluation/history/v2.json')['runs']
     steps = [10000, 12000, 14000, 15000, 16000, 17000, 18000, 19000]
@@ -250,13 +251,13 @@ def main():
                       '### 50任务成功率：跨版本展示', '',
                       '图中每格为成功率，灰色表示未测；星号表示尚未测满目标回合。v1/v2采用exec50且clean也为unseen，v3/v4采用exec30和clean/seen，因此跨版本图用于展示实验过程，不代表严格同条件增益。', '',
                       '![全版本任务成功率](assets/figures/iteration_task_rates.png)', '',
-                      '### 最新评测快照', '', f"**更新时间：{snapshot['snapshot_at']}**。这是静态记录；百集全量仍以实际完成状态为准，不将未完成任务补零或报告为最终均分。", '',
+                      '### 最新评测快照', '', f"**更新时间：{snapshot['snapshot_at']}**。v3百集全量已完成：clean 78.04%、randomized 47.38%、双场均分62.71%。v4未完成筛选保留实际进度。", '',
                       overview, '', '“已记录回合”包含未满任务；最右列只汇总已测满的任务，部分任务集合的成功率不能当作完整50任务成绩。', '',
-                      '<details>', '<summary>展开v3全部50任务：十集确认与百集进度</summary>', '', tasks, '',
+                      '<details>', '<summary>展开v3全部50任务：十集确认与百集结果</summary>', '', tasks, '',
                       '†：任务未满目标回合，显示实际分母。扩样差值只对已测满100集的任务计算。', '', '</details>', '',
                       '[v3/v4完整分任务表](docs/TASK_RESULTS.md) · [快照JSON与逐集记录索引](results/evaluation/latest_snapshot.json)', '',
                       '### 两个case：成功与失败', '', samples, '',
-                      '两个case来自同一任务的真实逐集记录，实际指令与原始记录链接见[案例页](docs/EVALUATION_CASES.md)。**评测视频待当前全量结束后补录1—2例**；补录会单独标注，不计入原分数。', '', END])
+                      '两个case来自同一任务的真实逐集记录，实际指令与原始记录链接见[案例页](docs/EVALUATION_CASES.md)。仿真视频补录已移出当前计划；现有真机Demo保留。', '', END])
     path = ROOT / 'README.md'; readme = path.read_text()
     if START in readme:
         readme = readme[:readme.index(START)] + block + readme[readme.index(END) + len(END):]

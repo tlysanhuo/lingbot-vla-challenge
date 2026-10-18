@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "name": "v5_local_occlusion",
+  "status": "planned_not_implemented_not_launched",
+  "executable_training_config": false,
+  "parent": "v3/global_step_4000/raw",
+  "augmentation": {
+    "method": "local_random_erasing",
+    "sample_probability": 0.1,
+    "maximum_affected_cameras": 1,
+    "area_fraction": [
+      0.02,
+      0.05
+    ],
+    "repeat_current_future_mask": true,
+    "student_input": "post_c2r_then_erasing",
+    "teacher_input": "post_c2r_before_erasing",
+    "inference_enabled": false,
+    "parameters_validated": false
+  },
+  "training": {
+    "single_candidate": true,
+    "optimizer_step_budget": [
+      2000,
+      3000
+    ],
+    "final_steps": null,
+    "learning_rate_schedule": null,
+    "global_batch_size": 1024,
+    "gpu_limit": 4,
+    "training_and_evaluation_serial": true,
+    "plain_continuation_control": false,
+    "parameter_grid": false
+  },
+  "normalization": {
+    "mode": "retain_parent_paired_statistics",
+    "sha256": "488ec6569c30dd69419358241efdb2e6c3488117768e7028a1e891be83e10db8",
+    "clean2500_attachment_enabled": false
+  },
+  "inference": {
+    "fp32": true,
+    "chunk_size": 50,
+    "execute_steps": 30,
+    "denoising_steps": 10,
+    "compile": true,
+    "single_checkpoint": true
+  },
+  "confirmation_order": [
+    "randomized/unseen",
+    "clean/seen"
+  ],
+  "new_training_started": false,
+  "new_evaluation_started": false,
+  "baseline": {
+    "randomized": {
+      "successes": 2369,
+      "attempts": 5000,
+      "rate": 47.38
+    },
+    "clean": {
+      "successes": 3902,
+      "attempts": 5000,
+      "rate": 78.04
+    }
+  },
+  "baseline_mean": 62.71000000000001
+}

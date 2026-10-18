@@ -1,6 +1,6 @@
 {
   "version": "v3",
-  "snapshot_at": "2026-10-15T20:37:00+08:00",
+  "snapshot_at": "2026-10-18T13:26:00+08:00",
   "runs": [
     {
       "id": "v3-01",
@@ -14678,12 +14678,12 @@
       "variant": "raw",
       "version_evidence": "loaded_model_path",
       "setting": "randomized",
-      "status": "in_progress",
+      "status": "complete",
       "precision": "FP32",
-      "completed_tasks": 22,
-      "successes": 825,
-      "attempts": 2200,
-      "success_rate": 37.5,
+      "completed_tasks": 50,
+      "successes": 2369,
+      "attempts": 5000,
+      "success_rate": 47.38,
       "instruction_types": [
         "unseen"
       ],
@@ -14691,7 +14691,7 @@
         30
       ],
       "episodes_per_completed_task": {
-        "100": 22
+        "100": 50
       },
       "per_task": {
         "adjust_bottle": {
@@ -14935,21 +14935,900 @@
           "execute_steps": 30,
           "execution_evidence": "captured_protocol",
           "contiguous_sequence": true
-        }
-      },
-      "partial_per_task": {
+        },
         "place_bread_basket": {
-          "successes": 9,
-          "attempts": 15,
+          "successes": 77,
+          "attempts": 100,
           "target": 100,
-          "status": "in_progress",
-          "result_and_log_verified": false,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_bread_skillet": {
+          "successes": 48,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_burger_fries": {
+          "successes": 90,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_can_basket": {
+          "successes": 47,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_cans_plasticbox": {
+          "successes": 91,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_container_plate": {
+          "successes": 69,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_dual_shoes": {
+          "successes": 49,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_empty_cup": {
+          "successes": 60,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_fan": {
+          "successes": 26,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_mouse_pad": {
+          "successes": 21,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_object_basket": {
+          "successes": 69,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_object_scale": {
+          "successes": 39,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_object_stand": {
+          "successes": 76,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_phone_stand": {
+          "successes": 27,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_shoe": {
+          "successes": 80,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "press_stapler": {
+          "successes": 69,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "put_bottles_dustbin": {
+          "successes": 52,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "put_object_cabinet": {
+          "successes": 27,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "rotate_qrcode": {
+          "successes": 10,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "scan_object": {
+          "successes": 50,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "shake_bottle": {
+          "successes": 80,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "shake_bottle_horizontally": {
+          "successes": 80,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_blocks_three": {
+          "successes": 74,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_blocks_two": {
+          "successes": 95,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_bowls_three": {
+          "successes": 47,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_bowls_two": {
+          "successes": 47,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stamp_seal": {
+          "successes": 18,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "unseen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "turn_switch": {
+          "successes": 26,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
           "instruction_type": "unseen",
           "execute_steps": 30,
           "execution_evidence": "captured_protocol",
           "contiguous_sequence": true
         }
-      }
+      },
+      "partial_per_task": {}
+    },
+    {
+      "id": "v3-15",
+      "version": "v3",
+      "source_run": "sft_v3_tail_v1_r2_4k_demo_clean_20261016_164249_v3_s4000_raw_full100_20261014_154241_demo_clean_s4000raw100",
+      "recorded_timestamp_tag": "20261016_164249",
+      "checkpoint_paths": [
+        "sft_v3_tail_v1_r2/checkpoints/global_step_4000/hf_ckpt"
+      ],
+      "checkpoint_steps": [
+        4000
+      ],
+      "variant": "raw",
+      "version_evidence": "loaded_model_path",
+      "setting": "clean",
+      "status": "complete",
+      "precision": "FP32",
+      "completed_tasks": 50,
+      "successes": 3902,
+      "attempts": 5000,
+      "success_rate": 78.04,
+      "instruction_types": [
+        "seen"
+      ],
+      "execute_steps": [
+        30
+      ],
+      "episodes_per_completed_task": {
+        "100": 50
+      },
+      "per_task": {
+        "adjust_bottle": {
+          "successes": 100,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "beat_block_hammer": {
+          "successes": 85,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "blocks_ranking_rgb": {
+          "successes": 84,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "blocks_ranking_size": {
+          "successes": 62,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "click_alarmclock": {
+          "successes": 2,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "click_bell": {
+          "successes": 1,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "dump_bin_bigbin": {
+          "successes": 95,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "grab_roller": {
+          "successes": 100,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "handover_block": {
+          "successes": 82,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "handover_mic": {
+          "successes": 97,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "hanging_mug": {
+          "successes": 26,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "lift_pot": {
+          "successes": 98,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "move_can_pot": {
+          "successes": 85,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "move_pillbottle_pad": {
+          "successes": 92,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "move_playingcard_away": {
+          "successes": 100,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "move_stapler_pad": {
+          "successes": 36,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "open_laptop": {
+          "successes": 94,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "open_microwave": {
+          "successes": 52,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "pick_diverse_bottles": {
+          "successes": 71,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "pick_dual_bottles": {
+          "successes": 79,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_a2b_left": {
+          "successes": 64,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_a2b_right": {
+          "successes": 56,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_bread_basket": {
+          "successes": 83,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_bread_skillet": {
+          "successes": 88,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_burger_fries": {
+          "successes": 96,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_can_basket": {
+          "successes": 72,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_cans_plasticbox": {
+          "successes": 99,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_container_plate": {
+          "successes": 95,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_dual_shoes": {
+          "successes": 85,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_empty_cup": {
+          "successes": 96,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_fan": {
+          "successes": 81,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_mouse_pad": {
+          "successes": 62,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_object_basket": {
+          "successes": 87,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_object_scale": {
+          "successes": 81,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_object_stand": {
+          "successes": 93,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_phone_stand": {
+          "successes": 81,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "place_shoe": {
+          "successes": 94,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "press_stapler": {
+          "successes": 87,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "put_bottles_dustbin": {
+          "successes": 75,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "put_object_cabinet": {
+          "successes": 37,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "rotate_qrcode": {
+          "successes": 86,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "scan_object": {
+          "successes": 84,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "shake_bottle": {
+          "successes": 100,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "shake_bottle_horizontally": {
+          "successes": 100,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_blocks_three": {
+          "successes": 94,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_blocks_two": {
+          "successes": 100,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_bowls_three": {
+          "successes": 76,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stack_bowls_two": {
+          "successes": 93,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "stamp_seal": {
+          "successes": 61,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        },
+        "turn_switch": {
+          "successes": 55,
+          "attempts": 100,
+          "target": 100,
+          "status": "complete",
+          "result_and_log_verified": true,
+          "instruction_type": "seen",
+          "execute_steps": 30,
+          "execution_evidence": "captured_protocol",
+          "contiguous_sequence": true
+        }
+      },
+      "partial_per_task": {}
     }
   ]
 }

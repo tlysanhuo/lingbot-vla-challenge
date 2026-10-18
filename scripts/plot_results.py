@@ -43,26 +43,33 @@ def training():
     fig.savefig(OUT/'training_v3.png',dpi=170);fig.savefig(OUT/'training_v3.svg');plt.close(fig)
 
 def scores():
-    data=json.loads((ROOT/'results/evaluation/v3_confirmation.json').read_text())['results']
-    fig,ax=plt.subplots(figsize=(10.8,4.9));fig.subplots_adjust(left=.09,right=.96,top=.77,bottom=.19)
-    vals=[100*sum(x['successes'] for x in data[s].values())/sum(x['attempts'] for x in data[s].values()) for s in ['clean','randomized']]
-    vals.append(sum(vals)/2)
-    fig.text(.09,.92,'50 tasks. One policy. 1,000 episodes.',fontsize=23,weight='bold')
+    snapshot=json.loads((ROOT/'results/evaluation/latest_snapshot.json').read_text())
+    halves=snapshot['runs']['v3_full100']['settings']
+    complete=all(halves[k]['status']=='complete' for k in ['clean','randomized'])
+    data=({k:halves[k]['per_task'] for k in ['clean','randomized']} if complete else
+          json.loads((ROOT/'results/evaluation/v3_confirmation.json').read_text())['results'])
+    target=100 if complete else 10
+    counts={k:(sum(x['successes'] for x in data[k].values()),sum(x['attempts'] for x in data[k].values())) for k in data}
+    total=sum(v[1] for v in counts.values())
+    fig,ax=plt.subplots(figsize=(10.8,4.9));fig.subplots_adjust(left=.24,right=.96,top=.77,bottom=.19)
+    vals=[100*counts[k][0]/counts[k][1] for k in ['clean','randomized']];vals.append(sum(vals)/2)
+    fig.text(.09,.92,f'50 tasks. One policy. {total:,} episodes.',fontsize=23,weight='bold')
     fig.text(.09,.845,'v3 4k raw  ·  FP32 inference  ·  chunk 50 / execute 30  ·  10 denoising steps',color='#526078',fontsize=10.5)
     bars=ax.barh(['Clean / seen','Randomized / unseen','Equal-setting mean'],vals,color=[TEAL,BLUE,PURPLE],height=.55)
-    for bar,v in zip(bars,vals):ax.text(v+1.2,bar.get_y()+bar.get_height()/2,f'{v:.1f}%',va='center',fontsize=15,weight='bold')
+    for bar,v in zip(bars,vals):ax.text(v+1.2,bar.get_y()+bar.get_height()/2,f'{v:.2f}%',va='center',fontsize=15,weight='bold')
     ax.invert_yaxis();ax.set_xlim(0,100);ax.set_xlabel('Success rate (%)');ax.set_axisbelow(True);ax.grid(axis='x');ax.spines['left'].set_visible(False);ax.tick_params(axis='y',length=0)
-    fig.text(.09,.055,'Internal confirmation: 404/500 clean + 252/500 randomized. Not an official competition ranking.',color='#68758b',fontsize=9)
+    c,r=counts['clean'],counts['randomized']
+    fig.text(.09,.055,f'Local evaluation: {c[0]}/{c[1]} clean + {r[0]}/{r[1]} randomized. Not an official ranking.',color='#68758b',fontsize=9)
     fig.savefig(OUT/'confirmation.png',dpi=170);plt.close(fig)
-    tasks=sorted(data['clean']);values=np.array([[data[s][task]['successes'] for s in ['clean','randomized']] for task in tasks])
+    tasks=sorted(data['clean']);values=np.array([[data[k][task]['successes'] for k in ['clean','randomized']] for task in tasks])
     fig,axes=plt.subplots(1,2,figsize=(12,10));fig.subplots_adjust(left=.25,right=.96,top=.89,bottom=.06,wspace=1.25)
-    fig.suptitle('Task-level confirmation  /  successes out of 10',x=.52,y=.975,fontsize=19,weight='bold')
+    fig.suptitle(f'Task-level evaluation  /  successes out of {target}',x=.52,y=.975,fontsize=19,weight='bold')
     for ax,start in zip(axes,[0,25]):
-        arr=values[start:start+25];ax.imshow(arr,cmap='YlGnBu',vmin=0,vmax=10,aspect='auto')
+        arr=values[start:start+25];ax.imshow(arr,cmap='YlGnBu',vmin=0,vmax=target,aspect='auto')
         ax.set_yticks(range(25),[x.replace('_',' ') for x in tasks[start:start+25]],fontsize=8)
         ax.set_xticks([0,1],['Clean / seen','Random / unseen'],fontsize=9);ax.xaxis.tick_top();ax.tick_params(length=0,pad=7)
         for i in range(25):
-            for j in range(2):ax.text(j,i,str(arr[i,j]),ha='center',va='center',fontsize=9,color='white' if arr[i,j]>=7 else '#152238')
+            for j in range(2):ax.text(j,i,str(arr[i,j]),ha='center',va='center',fontsize=9,color='white' if arr[i,j]>=target*.7 else '#152238')
     fig.savefig(OUT/'task_breakdown.png',dpi=150);plt.close(fig)
 
 def history():

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "capture_started_at": "2026-10-15T20:36:59+08:00",
-  "snapshot_at": "2026-10-15T20:37:00+08:00",
+  "capture_started_at": "2026-10-18T13:25:57+08:00",
+  "snapshot_at": "2026-10-18T13:26:00+08:00",
   "results_type": "internal evaluation snapshot; not an official score or live dashboard",
   "tasks": [
     "adjust_bottle",
@@ -60,20 +60,20 @@
       "label": "v3 4k raw · 100集全量",
       "source_id": "v3_s4000_raw_full100_20261014_154241",
       "checkpoint": "sft_v3_tail_v1_r2/checkpoints/global_step_4000/hf_ckpt",
-      "source_status": "running",
+      "source_status": "complete",
       "episodes_per_task": 100,
       "episode_file": "results/evaluation/v3_full100_episodes.jsonl",
-      "episode_file_sha256": "c232c30614ab3c76af47a39a2f832b19d9ab4dccb9fda2b9da7c04d4b7a1133e",
+      "episode_file_sha256": "4d512db27110ed242bc278bd30fbeb90819502588bd0f2521525bf551fa0fb4b",
       "settings": {
         "randomized": {
           "instruction_type": "unseen",
-          "status": "in_progress",
+          "status": "complete",
           "source_run": "sft_v3_tail_v1_r2_4k_demo_randomized_20261014_154245_v3_s4000_raw_full100_20261014_154241_demo_randomized_s4000raw100",
-          "tasks_complete": 22,
-          "episodes_recorded": 2215,
-          "successes_recorded": 834,
-          "complete_task_successes": 825,
-          "complete_task_attempts": 2200,
+          "tasks_complete": 50,
+          "episodes_recorded": 5000,
+          "successes_recorded": 2369,
+          "complete_task_successes": 2369,
+          "complete_task_attempts": 5000,
           "per_task": {
             "adjust_bottle": {
               "successes": 65,
@@ -230,562 +230,562 @@
               "result_and_log_verified": true
             },
             "place_bread_basket": {
-              "successes": 9,
-              "attempts": 15,
+              "successes": 77,
+              "attempts": 100,
               "target": 100,
-              "status": "in_progress",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_bread_skillet": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 48,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_burger_fries": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 90,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_can_basket": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 47,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_cans_plasticbox": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 91,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_container_plate": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 69,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_dual_shoes": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 49,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_empty_cup": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 60,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_fan": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 26,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_mouse_pad": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 21,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_object_basket": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 69,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_object_scale": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 39,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_object_stand": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 76,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_phone_stand": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 27,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_shoe": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 80,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "press_stapler": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 69,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "put_bottles_dustbin": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 52,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "put_object_cabinet": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 27,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "rotate_qrcode": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 10,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "scan_object": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 50,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "shake_bottle": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 80,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "shake_bottle_horizontally": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 80,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_blocks_three": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 74,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_blocks_two": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 95,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_bowls_three": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 47,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_bowls_two": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 47,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stamp_seal": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 18,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "turn_switch": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 26,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             }
           }
         },
         "clean": {
           "instruction_type": "seen",
-          "status": "not_started",
-          "source_run": null,
-          "tasks_complete": 0,
-          "episodes_recorded": 0,
-          "successes_recorded": 0,
-          "complete_task_successes": 0,
-          "complete_task_attempts": 0,
+          "status": "complete",
+          "source_run": "sft_v3_tail_v1_r2_4k_demo_clean_20261016_164249_v3_s4000_raw_full100_20261014_154241_demo_clean_s4000raw100",
+          "tasks_complete": 50,
+          "episodes_recorded": 5000,
+          "successes_recorded": 3902,
+          "complete_task_successes": 3902,
+          "complete_task_attempts": 5000,
           "per_task": {
             "adjust_bottle": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 100,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "beat_block_hammer": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 85,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "blocks_ranking_rgb": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 84,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "blocks_ranking_size": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 62,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "click_alarmclock": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 2,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "click_bell": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 1,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "dump_bin_bigbin": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 95,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "grab_roller": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 100,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "handover_block": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 82,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "handover_mic": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 97,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "hanging_mug": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 26,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "lift_pot": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 98,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "move_can_pot": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 85,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "move_pillbottle_pad": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 92,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "move_playingcard_away": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 100,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "move_stapler_pad": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 36,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "open_laptop": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 94,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "open_microwave": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 52,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "pick_diverse_bottles": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 71,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "pick_dual_bottles": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 79,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_a2b_left": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 64,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_a2b_right": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 56,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_bread_basket": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 83,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_bread_skillet": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 88,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_burger_fries": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 96,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_can_basket": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 72,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_cans_plasticbox": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 99,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_container_plate": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 95,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_dual_shoes": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 85,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_empty_cup": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 96,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_fan": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 81,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_mouse_pad": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 62,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_object_basket": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 87,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_object_scale": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 81,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_object_stand": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 93,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_phone_stand": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 81,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "place_shoe": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 94,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "press_stapler": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 87,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "put_bottles_dustbin": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 75,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "put_object_cabinet": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 37,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "rotate_qrcode": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 86,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "scan_object": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 84,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "shake_bottle": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 100,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "shake_bottle_horizontally": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 100,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_blocks_three": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 94,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_blocks_two": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 100,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_bowls_three": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 76,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stack_bowls_two": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 93,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "stamp_seal": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 61,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             },
             "turn_switch": {
-              "successes": 0,
-              "attempts": 0,
+              "successes": 55,
+              "attempts": 100,
               "target": 100,
-              "status": "not_started",
-              "result_and_log_verified": false
+              "status": "complete",
+              "result_and_log_verified": true
             }
           }
         }
@@ -824,8 +824,84 @@
         "randomized/pick_dual_bottles": "e3f7f60f5f7198d8d0fefe21d264c6e78b0892fe7c84faf394ccf753270ecfd0",
         "randomized/place_a2b_left": "1d38de40b8238be2884cb5ede395c2b7d38c5102449d852742d128fe8677d1ab",
         "randomized/place_a2b_right": "2f7cabc42e7dbbcfb555cf1c6b781e9cf141c02b117e8e14dc221ee5becbf6c8",
-        "randomized/place_bread_basket": "26e0af05ff8bcfb00a90846d6b177a1980d03c6ea39dd1c480026e8d95407c04",
-        "randomized/place_bread_skillet": "18e0ca0f5f5545e1117455650c1a0e0d6c12bfa9bec574f52c8a303013fbf2b0"
+        "randomized/place_bread_basket": "c8789bbcfe307c136871257f76c2c59c82f38b60312f485058c94c829f3bdf05",
+        "randomized/place_bread_skillet": "6efffb8a451ac5a1a5f1b5da845bfa8dc1d23158c437e97d81e8f3be9171691c",
+        "randomized/place_burger_fries": "dca3cd3fa5c01bb495efb7d270a64a11679c8ec0e19c58f511f636a6ddcaf620",
+        "randomized/place_can_basket": "74609fe08b63ae9b5e0333e034f72422cbcd2aea4fce0c085e564194bb911a24",
+        "randomized/place_cans_plasticbox": "303482c70de64dce91bfcdc9430a0aeb3d5f8fbe76e3257ef3aa1ab4e36463de",
+        "randomized/place_container_plate": "01c032d9434db35c033455955024575050f32cc5ff852eeb77dc665c6c912a2e",
+        "randomized/place_dual_shoes": "f9483dfe4aa595c2a44d90188d5a4c5f5f655b22820e90f2c0f0d1f722de3998",
+        "randomized/place_empty_cup": "067871260fa5193b552152fcb0807c80dfbc63c136901e4fb84e50b514dd8d57",
+        "randomized/place_fan": "730fde42b82a1218f2daa0c00f77b1a3478539f1606bf2b9da9dac1160516554",
+        "randomized/place_mouse_pad": "155bd852f73c4d1f7c969eba871d60eeb1ab1f3bac3b9b7344c2ed274118363f",
+        "randomized/place_object_basket": "3268ee0b5969bdea83bd8720ed7d5c93656e3c5b89257da6311eb7c92957651f",
+        "randomized/place_object_scale": "7c7bb68435befc1e5fc890160d34b66420b2b6343ae41e5d06e564d67d9cb045",
+        "randomized/place_object_stand": "ed87369b39d9d3df24f350f1b32a612b8641481a22b56e2bc5334c71ebb216d8",
+        "randomized/place_phone_stand": "a65d11c481ac07f69da8cefb270964da186270d6975110dc085d35bcc7549f8c",
+        "randomized/place_shoe": "cef7681df38a1c817719d70e955ee6abf8703ccb219ea3d0c2b445497e7fb007",
+        "randomized/press_stapler": "d4329f300c58c6398dabdcc5565fb25acf2403fa7bfab7a4822e4fdf723fedff",
+        "randomized/put_bottles_dustbin": "3a97598dcc73ac366825622f92635062fdebe54a919f2a4330404a3102845eb4",
+        "randomized/put_object_cabinet": "c88d8ee0980c858b4cbc8c8503d72798a591ae2e95f81dbb0e43b8f2a7228a11",
+        "randomized/rotate_qrcode": "fa6744c731ecea0721899e3ce24c8eaa9abf63db037cad5a0bcbccaa824a5272",
+        "randomized/scan_object": "216f2a8483bb8e6854fb2fa6033bf1b137457387225b2f4cd2b1bd9c3a848d14",
+        "randomized/shake_bottle": "78c53e2bacfef63dab99c55d853312d8b2419ed4af3bdf650ae5d5d492085df1",
+        "randomized/shake_bottle_horizontally": "63eb0ee029b8f6f75e9b4765ec29bcab5a40c3e69a90366cd7fcc3248882a67b",
+        "randomized/stack_blocks_three": "8ad85c25d9a83142b3d2926ab0b181e5664e473aafe47f4949558bda8f6b3302",
+        "randomized/stack_blocks_two": "7124e8bb2ed53bf5e4452057b07c8bdaa628efedcb31d0fe7fefd611662cc6c0",
+        "randomized/stack_bowls_three": "b323a7dd3b3559b079c75cfb08270bd4cbca95535c39317d73b7390c9109f544",
+        "randomized/stack_bowls_two": "83abd79a7ce2530c7522c79ae79a8f2fc92205b5bf9edc47c676c845ec3a2b4d",
+        "randomized/stamp_seal": "01a3fee93226bddaa4ccca68918c18f430cb650849c7ac6c31a3ed3ebc427ef1",
+        "randomized/turn_switch": "96ff291dfd28dae3b129454afb453ed057e4bf91b1cb53b5bfb433d8f91eec7d",
+        "clean/adjust_bottle": "4e32a13681278dc1ca2ffa44d880803a56d54e5d14b5c7fe9804b54546f7e21a",
+        "clean/beat_block_hammer": "9eecb72d61c43ac022264154c55e4a8c3aa675abe1f7c6f6099bc6c1c44a92c0",
+        "clean/blocks_ranking_rgb": "4125a78c1b52b1a8fdb38ca32b0eeaa1c26346e01dabab0d39b1dd0952b09c08",
+        "clean/blocks_ranking_size": "315255cfa904bef45b671284916cf5a11eb2597bf86eafe1aad640a9384095f2",
+        "clean/click_alarmclock": "932741ed2bef80d9328b01bf1f0ca600b7b84b9332fbdccd13a03931b339f321",
+        "clean/click_bell": "3dbb80f20ac652692e187fb0969ac7052f98d8128805c7749d731d4956bbbcb7",
+        "clean/dump_bin_bigbin": "47ac730ef30871c9fe7e2a33e4a1ebb5d276d975a3e2ff6e26a71ad758dae297",
+        "clean/grab_roller": "e52631a81b08ca173e0fc20df1a3a91a5326314d4289c86e2386aaa0ad8cbbb9",
+        "clean/handover_block": "65a66d4fd92b790c4e331a1bdea58d0c78718158bca5dceba4249140c4967427",
+        "clean/handover_mic": "012b3ac565d7ef36453fa21acda5727c4e60ec7ed9775fe1e2c12122b3bd9b49",
+        "clean/hanging_mug": "9aefffc2c3fb22d4cc5b1130bea2f3849aa1fe5a3804759ef6338fd287b7757d",
+        "clean/lift_pot": "12d0dae891351464ba5d9be6dba2fbea4c2641861b3d36c2c9da1241cb8249b2",
+        "clean/move_can_pot": "1ef95858d920a2372c6dc06afcfa1668f228c147178cc20f5a26351391c69b48",
+        "clean/move_pillbottle_pad": "52ffa6b0d9b72771a36aded6a715c95e788991a05dac8144675e93508901cfbb",
+        "clean/move_playingcard_away": "2e2da8167242d0c8bb38fe8a17bf5a86703c138fb453b40db38c9b338238b31c",
+        "clean/move_stapler_pad": "6b540398561c490e366f61a0a036b94e9552967f72a587c6d139cebff6fefefa",
+        "clean/open_laptop": "3ee4de09a26aa11598b80185826e0b48830def0d9b13ca4777f06cd150edc023",
+        "clean/open_microwave": "a1bdf8a90ea9749c5fc396dfaf4353d0df2a1e48413fe9938a6013c0f986aad2",
+        "clean/pick_diverse_bottles": "3b61af1d803a96d27b7ac9ac15dafab5d6ff3ac4800e463156748d1f190cdded",
+        "clean/pick_dual_bottles": "20de317ee8d58da01bd18191e761c2b7fdad7c9d7c79fa44a366f305cb2eb86b",
+        "clean/place_a2b_left": "93e88edeb87ca3b3245173de561085186f06d4e8d2a918bd477850bf185a557a",
+        "clean/place_a2b_right": "597d634f583c9812dce6574e8154a322d0f24350a72e2a05399a7d8f040d90fb",
+        "clean/place_bread_basket": "6d0b7f373ca6eccee1de9c7ba64f86f8ff717197c5ad5ce48573bb673a13b1f1",
+        "clean/place_bread_skillet": "131dd6190c9a41f5dbae7fb51e096bb28857ffc7dd20581e606bb88c2103b2c9",
+        "clean/place_burger_fries": "66f49a4708edbd456a3dd92dce82c8b1089ccbbe9ba2dd261a3cc1a94ea1468b",
+        "clean/place_can_basket": "d57d58cb90a02e4e202ed862c97f08ef5557e9c9e0f35e88fcb8b75ce13d49d1",
+        "clean/place_cans_plasticbox": "2ef53e79f88e9de0acd7266c8cd27a1f1dea771debc28fa77b3cd80480c41cae",
+        "clean/place_container_plate": "56f4ff02daf16ccd69c09d53796b27e4fd0777eb0459169512ba1e435115fb78",
+        "clean/place_dual_shoes": "c7c15542eb0fa5065d4e7fd0b24160837ff7a22ce721c921bb572d281dc58d7e",
+        "clean/place_empty_cup": "606b5c49919fe41ef60b10aaaf0e25c6b39457363fbdbb03b27ea42744621166",
+        "clean/place_fan": "42b5242f25ebdf26ad757da2d4721fa4bfbc280efe102d303e805f02d66220e6",
+        "clean/place_mouse_pad": "a67ebd451eba76f12be102c89ac84eee4e83f36160ef93474a0d313c4b40f5c2",
+        "clean/place_object_basket": "f6fc36b37577dea7e9f0874eab0e0f3e4c8a350d199fb5a37cff88579a7654e1",
+        "clean/place_object_scale": "75090ce7bf2dfe36462884f89fe8e2da4f7d7f6f710e98f31775294c329db26e",
+        "clean/place_object_stand": "a4a2841d6f52852099bd9e33ee85a805c0c01c6adbb9739d8d0e84794a26842e",
+        "clean/place_phone_stand": "6f2b35d4cf8ed2d69d5702ff92a536a5d4973c13dc2dc6764d0d1833c5b495fb",
+        "clean/place_shoe": "ccc9aadede6c0324551bb01c644ecb7ac75af0cfe03ff7091769e25014bb5730",
+        "clean/press_stapler": "ca7fe500d95efd990a7e490f79ab5a05add2905dc15efdc7af6d934f44e52023",
+        "clean/put_bottles_dustbin": "f7d111e6c88d51b3cd0346baf96f6d2097c6b9fd5ba7ab78e1df3f91cd9a9415",
+        "clean/put_object_cabinet": "7fb1a21de2f700860a54192f242f8f5b92a7b8b3ea9e95ceb58d824d7bc2a384",
+        "clean/rotate_qrcode": "2b3d274049d6d56cdd9a33771a2f69ee45ca8c63ed4488799d9e7386d30a7cb4",
+        "clean/scan_object": "fb871cb2688d88bbc3362f42cfeaa2ae46ba342c0a6fb40889967ef05c21371e",
+        "clean/shake_bottle": "292602fcd4b56df5014340650085f7ce677a4e7972d6e2419f6cdcfc44f45c86",
+        "clean/shake_bottle_horizontally": "71ca477831719e18d87d1406484de80643f62374f83eb324e666c70507c7921a",
+        "clean/stack_blocks_three": "26fdcb713f42b690b422d1eb2a1ce93e38d2fd995d95978015230ba3da229077",
+        "clean/stack_blocks_two": "88788a32720838462b321345f08fbb50903518f66b39eb8c87c1cdd1716c8e51",
+        "clean/stack_bowls_three": "f789fb9a41b10d9f8db29f308a253a90643e0c6321467422a1d0530eb0d3c810",
+        "clean/stack_bowls_two": "78380a3d8f3d07197a90f0d89234b76cecc7973eb36bb76453a4660c6636a629",
+        "clean/stamp_seal": "9c96df079e94b6a1f8c212ffefb49e11607b0c5f61764404c422a91dd3a37d85",
+        "clean/turn_switch": "c098f30b3dcbe31fa3e3dae5c713da0812a10b1130dc3637cfb9f607075f761d"
       }
     },
     "v4_3k10": {

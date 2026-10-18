@@ -2,7 +2,7 @@
 
 环境/官方模型锚点单独保留，不划为我们训练出的v0至v4模型成绩。
 
-快照时间：2026-10-15T20:37:00+08:00。
+快照时间：2026-10-18T13:26:00+08:00。
 
 [返回迭代总览](../EVALUATION_HISTORY.md) · [机器可读档案](../../results/evaluation/history/environment.json)
 

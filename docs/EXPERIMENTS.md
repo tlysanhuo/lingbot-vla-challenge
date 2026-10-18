@@ -4,13 +4,19 @@
 
 ## 全部评测按版本归档
 
-[全版本索引](EVALUATION_HISTORY.md)覆盖现存71个运行目录，按v0–v4及环境记录分类；各次运行都保留任务级计数。包含未完成运行、旧指令口径、raw/EMA、检查点平均与exec30/50对照。当前百集与v4筛选见[最新任务表](TASK_RESULTS.md)。
+[全版本索引](EVALUATION_HISTORY.md)覆盖现存72个运行目录，按v0–v4及环境记录分类；各次运行都保留任务级计数。包含未完成运行、旧指令口径、raw/EMA、检查点平均与exec30/50对照。当前百集与v4筛选见[最新任务表](TASK_RESULTS.md)。
 
-## 当前确认
+## 当前完整结果
 
-v3 4k raw完成50任务×2setting×10集，clean/seen 404/500=80.8%，randomized/unseen 252/500=50.4%，等权均值65.6%。FP32、chunk50/exec30、10步去噪。所有任务均10集；逐集记录、任务结果文件和最终日志成功数交叉核验。
+v3 4k raw于2026-10-18 12:40（北京时间）完成50任务×2setting×100集：clean/seen 3902/5000=78.04%，randomized/unseen 2369/5000=47.38%，均分62.71%。FP32、chunk50/exec30、10步去噪。所有任务均100集，逐集记录、任务结果和日志计数核验一致。
 
-[逐任务图](../assets/figures/task_breakdown.png)
+| 口径 | clean/seen | randomized/unseen | 均分 |
+| --- | ---: | ---: | ---: |
+| 旧十集确认 | 80.80% | 50.40% | 65.60% |
+| 百集全量 | 78.04% | 47.38% | 62.71% |
+| 差值 | −2.76pp | −3.02pp | −2.89pp |
+
+两轮非严格逐集配对；旧十集与百集不拼成110集。[百集JSON](../results/evaluation/v3_full100.json) · [逐任务图](../assets/figures/task_breakdown.png) · [下一版训练方案](NEXT_TRAINING_PLAN.md)
 
 ## v1与v2的早期全任务评测
 

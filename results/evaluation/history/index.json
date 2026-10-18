@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "snapshot_at": "2026-10-15T20:37:00+08:00",
-  "archive_exported_at": "2026-10-15T20:41:13+08:00",
+  "snapshot_at": "2026-10-18T13:26:00+08:00",
+  "archive_exported_at": "2026-10-18T13:26:10+08:00",
   "scope": "Every directory in the supplied eval-root; no invented results for absent runs. Modern active/stopped runs use the same frozen snapshot as latest_snapshot.json.",
-  "directory_count": 71,
-  "runs_with_completed_tasks": 56,
+  "directory_count": 72,
+  "runs_with_completed_tasks": 57,
   "notes": [
     "Setting rates count only tasks with both result-file and log evidence.",
     "Subset/panel/interrupted entries are not full-50-task scores.",
@@ -29,8 +29,8 @@
     },
     "v3": {
       "file": "results/evaluation/history/v3.json",
-      "run_count": 14,
-      "runs_with_results": 12
+      "run_count": 15,
+      "runs_with_results": 13
     },
     "v4": {
       "file": "results/evaluation/history/v4.json",

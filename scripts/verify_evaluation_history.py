@@ -49,6 +49,29 @@ def main():
             assert half['successes_recorded'] == sum(r['successes'] for r in half['per_task'].values())
             if half['source_run']:
                 modern_sources[half['source_run']] = half
+    if (ROOT / 'results/evaluation/v3_full100.json').exists():
+        full = load('results/evaluation/v3_full100.json')
+        current = snapshot['runs']['v3_full100']
+        assert full['episode_file_sha256'] == current['episode_file_sha256']
+        assert all(h['status'] == 'complete' for h in current['settings'].values())
+        rates = []
+        for setting, half in current['settings'].items():
+            expected = {task: {key: row[key] for key in ('successes', 'attempts')}
+                        for task, row in half['per_task'].items()}
+            assert full['results'][setting] == expected
+            successes = sum(row['successes'] for row in expected.values())
+            attempts = sum(row['attempts'] for row in expected.values())
+            rate = 100 * successes / attempts
+            assert full['summary'][setting] == {'successes': successes, 'attempts': attempts, 'rate': rate}
+            rates.append(rate)
+        assert full['equal_setting_mean'] == sum(rates) / len(rates)
+        comparison = load('results/evaluation/v3_10eps_vs_100eps.json')
+        old = load('results/evaluation/v3_confirmation.json')['results']
+        for setting in ('clean', 'randomized'):
+            previous = 100 * sum(r['successes'] for r in old[setting].values()) / sum(r['attempts'] for r in old[setting].values())
+            assert comparison['old_10eps_percent'][setting] == previous
+            assert comparison['new_100eps_percent'][setting] == full['summary'][setting]['rate']
+            assert abs(comparison['delta_percentage_points'][setting] - (full['summary'][setting]['rate'] - previous)) < 1e-9
     index = load('results/evaluation/history/index.json')
     assert index['snapshot_at'] == snapshot['snapshot_at']
     count = with_results = 0

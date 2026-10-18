@@ -7,10 +7,11 @@
 ```bash
 python -m pip install -r requirements-report.txt
 python scripts/verify_results.py
+python scripts/verify_evaluation_history.py
 python scripts/plot_results.py
 ```
 
-验证100个任务/setting格子的实际计数、1000集记录、指令口径与W&B导出；图表完全由仓库中的CSV/JSON生成。
+verify_results检查历史十集与训练记录；verify_evaluation_history检查最新10000集快照、任务计数和档案一致性。图表由仓库中的CSV/JSON生成。
 
 ## 2. 固定源码与环境
 
@@ -53,7 +54,7 @@ $MODEL_ROOT/
 
 `DATA_ROOT`必须是官方clean2500演示的LeRobot目录，包含data/meta/videos。仿真对象、机械臂与纹理资产按官方渠道放到src/RoboTwin要求的位置；randomized资产仅供评测。
 
-历史归一化统计的来源事项见[DATA_PROVENANCE.md](DATA_PROVENANCE.md)。重现历史结果必须保留对应映射；设计新统计方案时须建立新实验，不能悄悄替换后继续报告旧分数。
+实际配套归一化统计见[DATA_PROVENANCE.md](DATA_PROVENANCE.md)。重现历史结果必须保留对应映射；设计新统计方案时须建立新实验，不能悄悄替换后继续报告旧分数。
 
 ## 4. 历史训练阶段
 
