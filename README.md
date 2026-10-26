@@ -92,11 +92,11 @@ v3图表直接来自已结束的W&B运行，导出**3998条指标记录，覆盖
 
 ![v4 balanced continuation](assets/figures/training_v4.png)
 
-3k和6k raw/EMA均已导出。3k raw的randomized全50任务×10集为**245/500=49.0%**，此前v3同规模为50.4%；3k clean与6k randomized提前停止，不能给出完整双场均分，也不能据部分结果断言6k最终优劣。当前记录支持继续核实候选，没有证明这次均衡续训带来提分。
+3k和6k raw/EMA均已导出。3k raw的randomized全50任务×10集为**245/500=49.0%**，此前v3同规模为50.4%；3k clean与6k randomized提前停止，不能给出完整双场均分，也不能据部分结果断言6k最终优劣。该历史记录没有证明均衡续训带来提分；后续最终候选另从v3出发。
 
 [v4全部评测与逐任务结果](docs/evaluation/v4.md) · [6000步原始指标](results/training/v4_tensorboard.csv) · [曲线来源](results/training/v4_tensorboard.provenance.json) · [实际训练配方摘要](results/training/v4_recipe.json)
 
-v4在此作为已执行的研究阶段归档；当前仓库的便携训练入口仍覆盖v1–v3，尚未将v4采样实现宣称为可直接复现的发布入口。
+v4在此作为已执行的研究阶段归档；便携训练入口覆盖v1–v3与最终v5/v7；v4采样仍作为历史研究记录。
 
 ### 权重谱系与经验迭代
 
@@ -113,10 +113,11 @@ flowchart LR
     V3 -->|weights-only| V4[v4 · 均衡续训6000步]
     V4 --> Screen[3k / 6k raw<br/>候选筛选]
     Confirm --> Full[v3 4k raw<br/>10000集完成 · 62.71%]
-    V3 -.方案准备.-> V5[v5 · 局部遮挡续训<br/>未开训]
+    V3 -->|新增3000步| V5[v5 · 局部擦除<br/>全量完成 · 63.40%]
+    V3 -->|新增2000步| V7[v7 · 完整clean混合精修<br/>全量完成 · 63.40%]
 ```
 
-项目经验按v0→v1→v2→v3→v4积累，实际权重初始化关系按图中的实线记录。训练loss用于复盘优化过程，模型选择依据闭环成功率。
+项目经验按v0→v7积累；v5和v7各自从v3继续，v7不继承v5/v6。实际初始化关系按图中的实线记录。训练loss用于复盘优化过程，模型选择依据闭环成功率。
 
 ## 方法实现
 
