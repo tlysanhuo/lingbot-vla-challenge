@@ -120,3 +120,20 @@ CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python tests/test_v3
 ```
 
 分布式分片EMA测试使用CPU/Gloo两个rank，参见test_v3_sharded_ema.py参数。测试与干运行能验证接口、保存恢复逻辑和发布完整性；新机器的完整模型训练和仿真仍需在安装后验证。
+
+## 7. 最终v7与v5的独立八卡复现
+
+先按上文完成固定源码与公开资产准备，并构建seen绑定。v5/v7均从复现出的v3@4k继续，是两条不同谱系。
+
+```bash
+bash train.sh --stage v7 --gpus 0,1,2,3,4,5,6,7 --dedicated-node --dry-run
+# 或 stage v5，分别对应configs/v7.yaml与configs/v5.yaml
+```
+
+这两个八卡入口仅用于独立节点，本机默认四卡配额及训练/评测串行约束保持。dry-run不占卡，去掉该标记才运行，提交仓库更新不启动新训练。v7代码覆盖包含完整clean分支和DP rank独立随机流；两者关闭时保留历史v2/v3契约。
+
+```bash
+bash eval.sh --checkpoint "$OUTPUT_ROOT/runs/sft_v7_clean_final_2k_v1_8gpu/checkpoints/global_step_2000/hf_ckpt" --gpus 0,1 --episodes 100 --conda-sh /path/to/miniforge3/etc/profile.d/conda.sh --output "$OUTPUT_ROOT/new_v7_eval" --dry-run
+```
+
+支持独立八卡加`--dedicated-node`；原统计、FP32/compile/chunk50/exec30/denoise10，先randomized后clean。仅成功重启的逐进程Warp客户端用于新运行，规划器失败立即退出。最终数据核验可运行`python scripts/verify_final_results.py`。公开代码和本地提交包复现入口有所封装区别，核心源码和配方一致。

@@ -99,6 +99,17 @@ class FeatureTransform:
 
         self.model_config = model_config
         self.teacher_clean_rgb = bool(getattr(data_config, "teacher_clean_rgb", False))
+        from .clean_mixture import sample_complete_clean
+        self.complete_clean_probability = float(getattr(data_config, "complete_clean_probability", 0.0))
+        sample_complete_clean(self.complete_clean_probability, policy_eval=True)
+        from .local_erasing import validate_local_erasing
+        self.local_erasing_kwargs = {
+            "local_erasing_probability": float(getattr(data_config, "local_erasing_probability", 0.0)),
+            "local_erasing_area_min": float(getattr(data_config, "local_erasing_area_min", 0.02)),
+            "local_erasing_area_max": float(getattr(data_config, "local_erasing_area_max", 0.05)),
+            "local_erasing_camera": getattr(data_config, "local_erasing_camera", "camera_top"),
+        }
+        validate_local_erasing(*self.local_erasing_kwargs.values())
         self.state_noise_std = float(getattr(data_config, "state_noise_std", 0.0))
         self.state_noise_probability = float(getattr(data_config, "state_noise_probability", 0.0))
         if self.state_noise_std < 0 or not 0 <= self.state_noise_probability <= 1:
@@ -412,6 +423,8 @@ class FeatureTransform:
         if self.return_item_befor_padding:
             return item
 
+        from .clean_mixture import sample_complete_clean
+        complete_clean = sample_complete_clean(self.complete_clean_probability, policy_eval=policy_eval)
         batch_dict = self.pad_and_concat(item, w_action)
 
         state = prepare_state(batch_dict, self.model_config.max_state_dim) 
@@ -428,24 +441,26 @@ class FeatureTransform:
                 self.processor.image_processor,
                 batch_dict,
                 image_keys=self.feature_config.images,
-                train=self.image_augment and not policy_eval,
+                train=self.image_augment and not policy_eval and not complete_clean,
                 use_depth_align=self.use_depth_align,
                 return_image_grid_thw=return_image_grid_thw,
                 return_augment_params=True,
                 image_augment_recipe=getattr(self, "image_augment_recipe", None),
                 teacher_clean_rgb=self.teacher_clean_rgb,
+                **self.local_erasing_kwargs,
             )
             if self.use_future_image and len(batch_dict.get("future_image", {})) > 0:
                 future_obs = {**batch_dict, "image": batch_dict["future_image"]}
                 future_images, _, future_pil_images, _ = prepare_images(
                     self.processor.image_processor, future_obs,
                     image_keys=self.feature_config.images,
-                    train=self.image_augment and not policy_eval,
+                    train=self.image_augment and not policy_eval and not complete_clean,
                     use_depth_align=self.use_depth_align,
                     return_image_grid_thw=False,
                     augment_params=image_augment_params,
                     image_augment_recipe=getattr(self, "image_augment_recipe", None),
                     teacher_clean_rgb=self.teacher_clean_rgb,
+                    **self.local_erasing_kwargs,
                 )
             else:
                 future_images, future_pil_images = None, None
@@ -477,7 +492,7 @@ class FeatureTransform:
         assert self.model_config.max_action_dim >= chunk_joint_mask.shape[-1], f"max_action_dim is smaller than the action joint dimension: {self.model_config.max_action_dim} < {chunk_joint_mask.shape[-1]}"
         chunk_joint_mask = F.pad(chunk_joint_mask, (0, self.model_config.max_action_dim - chunk_joint_mask.shape[-1])).to(dtype=torch.bool)
         
-        if not policy_eval and self.state_noise_std and self.state_noise_probability:
+        if not policy_eval and not complete_clean and self.state_noise_std and self.state_noise_probability:
             arm_mask = torch.zeros_like(state_joint_mask)
             offset = 0
             for joint in self.feature_config.joints:
@@ -502,6 +517,8 @@ class FeatureTransform:
             }
         if image_grid_thw is not None:
             batch_dict['image_grid_thw'] = image_grid_thw
+        if self.complete_clean_probability and not policy_eval:
+            batch_dict['complete_clean_sample'] = torch.tensor(complete_clean)
 
         if self.use_depth_align: 
             batch_dict['pil_images'] = pil_images

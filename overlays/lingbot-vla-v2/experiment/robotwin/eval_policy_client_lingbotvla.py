@@ -1,7 +1,6 @@
 import sys
 import os
 import subprocess
-import json
 
 sys.path.append("./")
 sys.path.append(f"./policy")
@@ -133,7 +132,6 @@ def main(usr_args):
     else:
         save_dir = Path(f"eval_result/{task_name}/{policy_name}/{task_config}/{ckpt_setting}/{current_time}")
     save_dir.mkdir(parents=True, exist_ok=True)
-    usr_args["audit_file"] = str(save_dir / "episodes.jsonl")
 
     # 命令行 --eval_video_log 优先于 YAML 配置
     if "eval_video_log" in usr_args:
@@ -174,9 +172,7 @@ def main(usr_args):
 
     st_seed = 100000 * (1 + seed)
     suc_nums = []
-    test_num = int(usr_args["test_num"])
-    if test_num <= 0:
-        raise ValueError("test_num must be positive")
+    test_num = 100
     topk = 1
 
     # model = get_model(usr_args)
@@ -207,14 +203,6 @@ def main(usr_args):
 
     print(f"Data has been saved to {file_path}")
     # return task_reward
-
-
-def record_event(usr_args, event, **data):
-    record = dict(event=event, task=usr_args["task_name"],
-                  setting=usr_args["task_config"],
-                  instruction_type=usr_args["instruction_type"], **data)
-    with open(usr_args["audit_file"], "a", encoding="utf-8") as stream:
-        stream.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 def eval_policy(task_name,
@@ -249,8 +237,6 @@ def eval_policy(task_name,
     # reset_func = eval_function_decorator(policy_name, "reset_model")
 
     now_seed = st_seed
-    record_event(usr_args, "protocol", episodes=test_num, description_count=100,
-                 start_seed=st_seed, execute_steps=execute_steps, expert_check=True)
     task_total_reward = 0
     clear_cache_freq = args["clear_cache_freq"]
 
@@ -266,7 +252,6 @@ def eval_policy(task_name,
                 episode_info = TASK_ENV.play_once()
                 TASK_ENV.close_env()
             except UnStableError as e:
-                record_event(usr_args, "expert", seed=now_seed, accepted=False, reason="unstable", error=str(e))
                 # print(" -------------")
                 # print("Error: ", e)
                 # print(" -------------")
@@ -275,7 +260,6 @@ def eval_policy(task_name,
                 args["render_freq"] = render_freq
                 continue
             except Exception as e:
-                record_event(usr_args, "expert", seed=now_seed, accepted=False, reason="exception", error=repr(e))
                 # stack_trace = traceback.format_exc()
                 # print(" -------------")
                 # print("Error: ", e)
@@ -286,10 +270,7 @@ def eval_policy(task_name,
                 print(f"error occurs ! {e}")
                 continue
 
-        expert_passed = (not expert_check) or (TASK_ENV.plan_success and TASK_ENV.check_success())
-        record_event(usr_args, "expert", seed=now_seed, accepted=bool(expert_passed),
-                     reason="passed" if expert_passed else "plan_or_success_check_failed")
-        if expert_passed:
+        if (not expert_check) or (TASK_ENV.plan_success and TASK_ENV.check_success()):
             succ_seed += 1
             suc_test_seed_list.append(now_seed)
         else:
@@ -301,10 +282,9 @@ def eval_policy(task_name,
 
         TASK_ENV.setup_demo(now_ep_num=now_id, seed=now_seed, is_test=True, **args)
         episode_info_list = [episode_info["info"]]
-        results = generate_episode_descriptions(args["task_name"], episode_info_list, 100)
+        results = generate_episode_descriptions(args["task_name"], episode_info_list, test_num)
         instruction = np.random.choice(results[0][instruction_type])
         TASK_ENV.set_instruction(instruction=instruction)  # set language instruction
-        record_event(usr_args, "episode_start", episode=now_id + 1, seed=now_seed, instruction=str(instruction))
 
         if TASK_ENV.eval_video_path is not None:
             ffmpeg = subprocess.Popen(
@@ -414,9 +394,6 @@ def eval_policy(task_name,
         else:
             print("\033[91mFail!\033[0m")
 
-        record_event(usr_args, "episode_result", episode=now_id + 1, seed=now_seed,
-                     instruction=str(instruction), success=bool(succ),
-                     action_steps=int(TASK_ENV.take_action_cnt))
         now_id += 1
         TASK_ENV.close_env(clear_cache=((succ_seed + 1) % clear_cache_freq == 0))
 

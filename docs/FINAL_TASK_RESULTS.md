@@ -1,0 +1,56 @@
+# 最终三版：50任务完整百集对比
+
+每格为成功数/100对应的成功率。全量比较，但不是严格逐seed配对。
+
+| 任务 | v3 random | v3 clean | v5 random | v5 clean | v7 random | v7 clean |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| `adjust_bottle` | 65% | 100% | 61% | 100% | 64% | 100% |
+| `beat_block_hammer` | 25% | 85% | 31% | 87% | 32% | 86% |
+| `blocks_ranking_rgb` | 82% | 84% | 83% | 89% | 78% | 87% |
+| `blocks_ranking_size` | 52% | 62% | 57% | 68% | 48% | 61% |
+| `click_alarmclock` | 15% | 2% | 12% | 1% | 13% | 2% |
+| `click_bell` | 53% | 1% | 53% | 0% | 62% | 1% |
+| `dump_bin_bigbin` | 48% | 95% | 53% | 95% | 55% | 96% |
+| `grab_roller` | 87% | 100% | 89% | 100% | 88% | 100% |
+| `handover_block` | 31% | 82% | 32% | 80% | 28% | 81% |
+| `handover_mic` | 39% | 97% | 52% | 98% | 39% | 99% |
+| `hanging_mug` | 11% | 26% | 15% | 28% | 15% | 30% |
+| `lift_pot` | 8% | 98% | 10% | 98% | 8% | 98% |
+| `move_can_pot` | 11% | 85% | 15% | 89% | 20% | 89% |
+| `move_pillbottle_pad` | 29% | 92% | 27% | 89% | 30% | 91% |
+| `move_playingcard_away` | 26% | 100% | 34% | 100% | 30% | 100% |
+| `move_stapler_pad` | 14% | 36% | 10% | 45% | 15% | 41% |
+| `open_laptop` | 41% | 94% | 41% | 91% | 37% | 94% |
+| `open_microwave` | 3% | 52% | 8% | 49% | 3% | 54% |
+| `pick_diverse_bottles` | 49% | 71% | 44% | 63% | 40% | 70% |
+| `pick_dual_bottles` | 62% | 79% | 60% | 78% | 61% | 85% |
+| `place_a2b_left` | 36% | 64% | 36% | 68% | 44% | 68% |
+| `place_a2b_right` | 38% | 56% | 36% | 61% | 30% | 55% |
+| `place_bread_basket` | 77% | 83% | 68% | 86% | 72% | 85% |
+| `place_bread_skillet` | 48% | 88% | 50% | 87% | 49% | 88% |
+| `place_burger_fries` | 90% | 96% | 90% | 100% | 84% | 98% |
+| `place_can_basket` | 47% | 72% | 50% | 71% | 45% | 74% |
+| `place_cans_plasticbox` | 91% | 99% | 94% | 98% | 95% | 100% |
+| `place_container_plate` | 69% | 95% | 59% | 94% | 67% | 97% |
+| `place_dual_shoes` | 49% | 85% | 47% | 85% | 48% | 90% |
+| `place_empty_cup` | 60% | 96% | 61% | 96% | 60% | 94% |
+| `place_fan` | 26% | 81% | 25% | 88% | 26% | 82% |
+| `place_mouse_pad` | 21% | 62% | 19% | 61% | 17% | 71% |
+| `place_object_basket` | 69% | 87% | 66% | 87% | 70% | 86% |
+| `place_object_scale` | 39% | 81% | 44% | 81% | 38% | 77% |
+| `place_object_stand` | 76% | 93% | 75% | 98% | 76% | 96% |
+| `place_phone_stand` | 27% | 81% | 34% | 73% | 35% | 78% |
+| `place_shoe` | 80% | 94% | 73% | 94% | 76% | 91% |
+| `press_stapler` | 69% | 87% | 59% | 84% | 65% | 88% |
+| `put_bottles_dustbin` | 52% | 75% | 61% | 75% | 54% | 79% |
+| `put_object_cabinet` | 27% | 37% | 36% | 49% | 29% | 41% |
+| `rotate_qrcode` | 10% | 86% | 15% | 84% | 14% | 82% |
+| `scan_object` | 50% | 84% | 49% | 87% | 48% | 91% |
+| `shake_bottle` | 80% | 100% | 82% | 100% | 81% | 100% |
+| `shake_bottle_horizontally` | 80% | 100% | 85% | 100% | 78% | 100% |
+| `stack_blocks_three` | 74% | 94% | 76% | 98% | 69% | 95% |
+| `stack_blocks_two` | 95% | 100% | 94% | 100% | 95% | 99% |
+| `stack_bowls_three` | 47% | 76% | 38% | 76% | 41% | 88% |
+| `stack_bowls_two` | 47% | 93% | 51% | 98% | 57% | 96% |
+| `stamp_seal` | 18% | 61% | 15% | 55% | 16% | 64% |
+| `turn_switch` | 26% | 55% | 23% | 60% | 21% | 56% |

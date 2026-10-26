@@ -16,7 +16,9 @@ BJT = timezone(timedelta(hours=8))
 FIELDS = ('task', 'setting', 'instruction_type', 'episode', 'seed', 'instruction', 'success', 'action_steps')
 LABELS = {'v3_full100': 'v3 4k raw · 100集全量',
           'v4_3k10': 'v4 3k raw · 10集筛选',
-          'v4_6k10': 'v4 6k raw · 10集筛选'}
+          'v4_6k10': 'v4 6k raw · 10集筛选',
+          'v5_full100': 'v5 3k raw · 100集全量',
+          'v7_full100': 'v7 2k raw · 100集全量'}
 
 
 def now():
@@ -30,7 +32,7 @@ def write_json(path, value):
 def export_run(run_id, state_file, tasks):
     state = json.loads(state_file.read_text())
     target = state['episodes_per_task']
-    assert target == (100 if run_id == 'v3_full100' else 10)
+    assert target == (100 if run_id.endswith('full100') else 10)
     records = []
     settings = {}
     evidence = {}

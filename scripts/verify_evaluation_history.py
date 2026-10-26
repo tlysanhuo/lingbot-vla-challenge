@@ -73,12 +73,13 @@ def main():
             assert comparison['new_100eps_percent'][setting] == full['summary'][setting]['rate']
             assert abs(comparison['delta_percentage_points'][setting] - (full['summary'][setting]['rate'] - previous)) < 1e-9
     index = load('results/evaluation/history/index.json')
-    assert index['snapshot_at'] == snapshot['snapshot_at']
+    # Legacy archive capture time stays historical when final snapshots are added.
+    assert index['snapshot_at'] <= snapshot['snapshot_at']
     count = with_results = 0
     expected_csv = {}
     for version, meta in index['versions'].items():
         archive = load(meta['file'])
-        assert archive['version'] == version and archive['snapshot_at'] == snapshot['snapshot_at']
+        assert archive['version'] == version and archive['snapshot_at'] == index['snapshot_at']
         runs = archive['runs']
         assert len(runs) == meta['run_count']
         assert sum(bool(r['attempts']) for r in runs) == meta['runs_with_results']

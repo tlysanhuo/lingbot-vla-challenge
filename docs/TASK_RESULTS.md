@@ -1,3 +1,9 @@
+# 最新完整结果
+
+[v3/v5/v7全部50任务完整百集对比](FINAL_TASK_RESULTS.md) · [CSV](../results/evaluation/final_task_results.csv) · [最终方案](FINAL_METHOD.md)
+
+---
+
 # 当前候选分任务成功率
 
 快照时间：**2026-10-18T13:26:00+08:00**。这是手动导出的静态快照，不是实时看板。

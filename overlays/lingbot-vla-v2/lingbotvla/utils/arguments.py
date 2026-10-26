@@ -232,6 +232,8 @@ class DataArguments:
     )
     state_noise_std: float = field(default=0.0, metadata={"help": "Normalized arm-state input noise; zero disables."})
     state_noise_probability: float = field(default=0.0, metadata={"help": "Per-sample probability of arm-state input noise."})
+    complete_clean_probability: float = field(default=0.0, metadata={"help": "Train-only whole-sample clean branch: skip image augmentation and state noise together."})
+    sampling_manifest: Optional[str] = field(default=None, metadata={"help": "Clean episode-length sampling manifest; None keeps the original sampler."})
     seen_bindings_file: Optional[str] = field(
         default=None, metadata={"help": "Validated clean episode/seen instruction binding manifest."},
     )
@@ -262,6 +264,10 @@ class DataArguments:
         default=False,
         metadata={"help": "Use original current/future RGB for frozen teachers while retaining student augmentation; requires unchanged spatial geometry."},
     )
+    local_erasing_probability: float = field(default=0.0, metadata={"help": "Training-only probability of one camera-local erasure; zero preserves the old path."})
+    local_erasing_area_min: float = field(default=0.02, metadata={"help": "Minimum erased fraction of the selected camera image."})
+    local_erasing_area_max: float = field(default=0.05, metadata={"help": "Maximum erased fraction of the selected camera image."})
+    local_erasing_camera: str = field(default="camera_top", metadata={"help": "Camera receiving local erasing; teachers keep post-c2r/pre-erasure RGB."})
     def __post_init__(self):
         if self.text_keys is None:
             if self.data_type == "plaintext":

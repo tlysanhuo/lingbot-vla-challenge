@@ -11,6 +11,7 @@ from torch import Tensor
 from torchvision.transforms import v2
 from lingbotvla.utils import logging as logging_utils
 from .augment import apply_c2r_augmentation, sample_c2r_params
+from .local_erasing import REPLAY_KEY, sample_local_erasing, apply_local_erasing, validate_local_erasing
 
 logger = logging_utils.get_logger(__name__)
 
@@ -288,6 +289,10 @@ def prepare_images(
     return_augment_params=False,
     image_augment_recipe=None,
     teacher_clean_rgb=False,
+    local_erasing_probability=0.0,
+    local_erasing_area_min=0.02,
+    local_erasing_area_max=0.05,
+    local_erasing_camera="camera_top",
 ):
     """Normalize, resize, and pad images and stack them into a tensor.
 
@@ -322,6 +327,20 @@ def prepare_images(
                         augment_params = sample_visual_augmentation_params(observation["image"][key])
                     break
 
+    erasing_enabled = train and local_erasing_probability > 0
+    erasing_params = None
+    if erasing_enabled:
+        validate_local_erasing(local_erasing_probability, local_erasing_area_min,
+                               local_erasing_area_max, local_erasing_camera)
+        if image_augment_recipe != "c2r_v1" or teacher_clean_rgb:
+            raise ValueError("Local erasing requires c2r_v1 and post-c2r teacher RGB (teacher_clean_rgb=False)")
+        augment_params = dict(augment_params)
+        if REPLAY_KEY not in augment_params:
+            augment_params[REPLAY_KEY] = sample_local_erasing(
+                observation["image"], local_erasing_probability,
+                local_erasing_area_min, local_erasing_area_max, local_erasing_camera)
+        erasing_params = augment_params[REPLAY_KEY]
+
     if use_depth_align:
         pil_images = []
         pil_image_dict = {}
@@ -348,7 +367,11 @@ def prepare_images(
                 )
 
         if use_depth_align and not teacher_clean_rgb:
-            pil_image_dict[key] = img.cpu().numpy()
+            # Teachers retain the post-c2r image, before the new student-only mask.
+            rgb = img.cpu().numpy()
+            pil_image_dict[key] = rgb.copy() if erasing_enabled else rgb
+        if erasing_params is not None and erasing_params["camera"] == key:
+            img = apply_local_erasing(img, erasing_params)
 
         if image_processor is None:
             img = img.to(dtype) / 127.5 - 1.0 # to [-1, 1]

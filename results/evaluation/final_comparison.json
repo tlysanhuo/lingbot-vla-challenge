@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "snapshot_bjt": "2026-10-26T10:28:37.241411+08:00",
+  "scope": "50 tasks x 2 settings x 100 completed episodes per version; not strictly paired by seed",
+  "summaries": {
+    "v5": {
+      "randomized": {
+        "attempts": 5000,
+        "successes": 2398
+      },
+      "clean": {
+        "attempts": 5000,
+        "successes": 3942
+      },
+      "mean_percent": 63.4
+    },
+    "v7": {
+      "randomized": {
+        "attempts": 5000,
+        "successes": 2366
+      },
+      "clean": {
+        "attempts": 5000,
+        "successes": 3974
+      },
+      "mean_percent": 63.4
+    },
+    "v3": {
+      "randomized": {
+        "attempts": 5000,
+        "successes": 2369
+      },
+      "clean": {
+        "attempts": 5000,
+        "successes": 3902
+      },
+      "mean_percent": 62.71
+    }
+  },
+  "selected_version": "v7_step2000_raw",
+  "selection_reason": "v5 and v7 tie on mean; v7 has higher clean score",
+  "normalization_sha256": "488ec6569c30dd69419358241efdb2e6c3488117768e7028a1e891be83e10db8"
+}

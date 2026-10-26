@@ -7,6 +7,7 @@ import random
 import numpy as np
 import torch
 import torch.distributed as dist
+from lingbotvla.utils.flow_rng import FlowMatchingRNG
 
 
 def build_stage_contract(args):
@@ -34,6 +35,20 @@ def build_stage_contract(args):
     # True must remain in the contract so incompatible resumes are rejected.
     if not contract['data'].get('teacher_clean_rgb', False):
         contract['data'].pop('teacher_clean_rgb', None)
+    if not contract['data'].get('complete_clean_probability', 0.0):
+        contract['data'].pop('complete_clean_probability', None)
+    if getattr(args.train, 'flow_rank_rng', False):
+        contract['training']['flow_rank_rng'] = True
+    # Keep v3/v4 contracts unchanged when the new training-only feature is off.
+    if not contract['data'].get('local_erasing_probability', 0.0):
+        for name in ('local_erasing_probability', 'local_erasing_area_min',
+                     'local_erasing_area_max', 'local_erasing_camera'):
+            contract['data'].pop(name, None)
+    sampling = getattr(args.data, 'sampling_manifest', None)
+    if sampling:
+        contract['sampling_manifest_sha256'] = hashlib.sha256(Path(sampling).read_bytes()).hexdigest()
+    else:
+        contract['data'].pop('sampling_manifest', None)
     path = getattr(args.data, 'seen_bindings_file', None)
     if path:
         contract['seen_bindings_sha256'] = hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -50,6 +65,10 @@ def _validate_local_stage_checkpoint(checkpoint_path, contract):
     step = int(saved['global_step'])
     if step < 0 or step > contract['training']['max_steps']:
         raise ValueError('checkpoint step is outside the stage budget')
+    if contract['training'].get('flow_rank_rng', False):
+        FlowMatchingRNG.validate_state(saved.get('flow_rng_state'),
+            seed=contract['training']['seed'], dp_rank=rank,
+            dp_size=contract['training']['world_size'])
     if not (Path(checkpoint_path) / 'optimizer/.metadata').is_file():
         raise ValueError('stage checkpoint has no complete optimizer metadata')
     if contract['training']['ema_decay']:
@@ -78,17 +97,22 @@ def validate_stage_checkpoint(checkpoint_path, contract):
         raise ValueError("Stage checkpoint rejected before DCP load: " + "; ".join(failures))
 
 
-def extra_stage_state(contract, ema):
+def extra_stage_state(contract, ema, flow_rng=None):
     if contract is None and ema is None:
         return {}
     rng = {'python': random.getstate(), 'numpy': np.random.get_state()}
     if torch.cuda.is_initialized():
         rng['cuda'] = torch.cuda.get_rng_state(torch.cuda.current_device())
-    return {'stage_contract': contract, 'ema_metadata': ema.metadata() if ema else None,
-            'stage_rng_state': rng}
+    extra = {'stage_contract': contract, 'ema_metadata': ema.metadata() if ema else None,
+             'stage_rng_state': rng}
+    if flow_rng is not None:
+        extra['flow_rng_state'] = flow_rng.state_dict()
+    elif contract is not None and contract['training'].get('flow_rank_rng', False):
+        raise ValueError('Enabled flow RNG was not provided for checkpoint save')
+    return extra
 
 
-def restore_stage_state(extra, contract, ema):
+def restore_stage_state(extra, contract, ema, flow_rng=None):
     if contract is not None and extra.get('stage_contract') != contract:
         raise ValueError('training stage mismatch')
     if ema is not None:
@@ -99,3 +123,7 @@ def restore_stage_state(extra, contract, ema):
         np.random.set_state(rng['numpy'])
         if 'cuda' in rng:
             torch.cuda.set_rng_state(rng['cuda'], torch.cuda.current_device())
+    if flow_rng is not None:
+        flow_rng.load_state_dict(extra.get('flow_rng_state'))
+    elif contract is not None and contract['training'].get('flow_rank_rng', False):
+        raise ValueError('Enabled flow RNG was not provided for checkpoint restore')

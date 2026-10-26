@@ -51,6 +51,7 @@ gc.set_threshold(50000, 50, 50)
 
 from lingbotvla.checkpoint.ema import ShardedEMA
 from lingbotvla.checkpoint.training_stage import (build_stage_contract, validate_stage_checkpoint, extra_stage_state, restore_stage_state)
+from lingbotvla.utils.flow_rng import FlowMatchingRNG
 
 logger = helper.create_logger(__name__)
 # try:
@@ -192,6 +193,7 @@ class MyTrainingArguments(TrainingArguments):
     training_stage: Optional[str] = field(
         default=None, metadata={"help": "Named weights-only stage with strict within-stage resume."},
     )
+    flow_rank_rng: bool = field(default=False, metadata={"help": "Isolated per-DP-rank flow noise/time RNG with strict checkpoint resume."})
     ema_decay: float = field(
         default=0.0, metadata={"help": "EMA decay, zero disables EMA; active EMA is CPU-offloaded and sharded."},
     )
@@ -448,13 +450,13 @@ def main():
             data_collate_fn.append(OmniDataCollatorWithPacking()) # TODO 8.21
         else:
             data_collate_fn.append(OmniDataCollatorWithPadding())
-    
+
     if args.data.dataloader_type == "native":
         if args.data.datasets_type == 'vla':
             args.data.chunk_size = args.train.chunk_size
             train_dataset = build_vla_dataset(dataset_config=args.data, model_config=args.model, config=model.config, processor=processor, use_depth_align=use_depth_align)
             args.train.compute_train_steps(args.data.max_seq_len, args.data.train_size, len(train_dataset))
-        
+
         train_dataloader = build_dataloader(
             dataset=train_dataset,
             micro_batch_size=args.train.micro_batch_size,
@@ -473,7 +475,10 @@ def main():
             drop_last=args.data.drop_last,
             pin_memory=args.data.pin_memory,
             prefetch_factor=args.data.prefetch_factor if args.data.num_workers > 0 else None,
-        )
+
+        sampling_manifest=args.data.sampling_manifest,
+        sampling_dataset_root=args.data.train_path,
+    )
     else:
         raise NotImplementedError(f"Unsupported dataloader type: {args.data.dataloader_type}.")
 
@@ -596,6 +601,23 @@ def main():
         save_model_assets(args.train.model_assets_dir, model_assets)
 
     ema = ShardedEMA(model, args.train.ema_decay) if args.train.ema_decay else None
+    flow_rng = None
+    if args.train.flow_rank_rng:
+        parallel = get_parallel_state()
+        if (stage_contract is None or parallel.dp_size != args.train.world_size
+                or parallel.dp_rank != args.train.global_rank
+                or args.model.config_key != 'LingbotVLAV2Config'):
+            raise ValueError('Isolated flow RNG currently requires named LingBot-VLA2 pure-DP training')
+        flow_rng = FlowMatchingRNG(args.train.seed, parallel.dp_rank, parallel.dp_size,
+                                   f'cuda:{args.train.local_rank}')
+        import hashlib
+        fingerprint = hashlib.sha256(flow_rng.generator.get_state().cpu().numpy().tobytes()).hexdigest()
+        fingerprints = [None] * args.train.world_size
+        dist.all_gather_object(fingerprints, fingerprint)
+        if len(set(fingerprints)) != args.train.world_size:
+            raise RuntimeError('Independent flow RNG initialization produced duplicate rank states')
+        logger.info_rank0(f'Verified {len(fingerprints)} distinct CUDA flow RNG streams')
+        logger.info(f'Independent flow RNG: dp_rank={parallel.dp_rank}, dp_size={parallel.dp_size}')
     start_epoch, start_step, global_step = 0, 0, 0
     current_epoch_for_eval, current_epoch_step_for_eval = 1, 0
     save_checkpoint_path = None
@@ -682,7 +704,7 @@ def main():
                     train_dataloader.load_state_dict(state["extra_state"]["train_dataloader"])
                 environ_meter.load_state_dict(state["extra_state"]["environ_meter"])
                 torch.set_rng_state(state["extra_state"]["torch_rng_state"])
-                restore_stage_state(state["extra_state"], stage_contract, ema)
+                restore_stage_state(state["extra_state"], stage_contract, ema, flow_rng)
                 if start_step == 0:  # resume at the end of epoch
                     iter(train_dataloader)  # clear resume state and prefetch data
                 dist.barrier()
@@ -764,6 +786,7 @@ def main():
             future_video_current_dino = None
             future_video_current_rgb, future_video_target_rgb = None, None
             ignore_batch_num = 0
+            complete_clean_count, complete_clean_total = 0, 0
             torch.cuda.synchronize()
             start_time = time.time()
             for micro_batch in micro_batches:
@@ -772,6 +795,10 @@ def main():
                 future_video_cls_targets = None
                 future_video_current_dino = None
                 dataset_names = micro_batch.pop('rep_id', None)
+                clean_flags = micro_batch.pop('complete_clean_sample', None)
+                if clean_flags is not None:
+                    complete_clean_count += int(clean_flags.sum())
+                    complete_clean_total += clean_flags.numel()
                 environ_meter.add(micro_batch)
                 micro_batch = {
                     k: v.cuda(non_blocking=True) if isinstance(v, torch.Tensor) else v for k, v in micro_batch.items()
@@ -808,6 +835,9 @@ def main():
                             future_video_target_rgb = future_pil_images
                         depth_forward_time = time.time() - depth_start_time
 
+                if flow_rng is not None:
+                    micro_batch['noise'], micro_batch['time'] = flow_rng.sample(
+                        micro_batch['actions'], micro_batch['state'])
                 with model_fwd_context:
                     model_outputs = model(
                         **micro_batch,
@@ -959,6 +989,9 @@ def main():
 
             if args.train.global_rank == 0:
                 writer.add_scalar("training/loss", total_loss, global_step)
+                if complete_clean_total:
+                    writer.add_scalar('training/complete_clean_fraction_rank0',
+                                      complete_clean_count / complete_clean_total, global_step)
                 writer.add_scalar("training/vla_loss", total_vla_loss, global_step)
                 writer.add_scalar("training/depth_loss", total_depth_loss, global_step)
                 writer.add_scalar("training/future_depth_loss", total_future_depth_loss, global_step)
@@ -1105,7 +1138,7 @@ def main():
             if args.train.save_steps and global_step % args.train.save_steps == 0:
                 helper.empty_cache()
                 save_checkpoint_path = os.path.join(args.train.save_checkpoint_path, f"global_step_{global_step}")
-                
+
                 # param_to_name = {}
                 # for name, param in model.named_parameters():
                 #     param_to_name[name] = param
@@ -1126,7 +1159,7 @@ def main():
                         "train_dataloader": train_dataloader.state_dict(),
                         "environ_meter": environ_meter.state_dict(),
                         "torch_rng_state": torch.get_rng_state(),
-                        **extra_stage_state(stage_contract, ema),
+                        **extra_stage_state(stage_contract, ema, flow_rng),
                     },
                 }
                 if args.train.global_rank == 0:
@@ -1168,7 +1201,7 @@ def main():
                         "train_dataloader": train_dataloader.state_dict(),
                         "environ_meter": environ_meter.state_dict(),
                         "torch_rng_state": torch.get_rng_state(),
-                        **extra_stage_state(stage_contract, ema),
+                        **extra_stage_state(stage_contract, ema, flow_rng),
                     },
                 }
                 Checkpointer.save(args.train.save_checkpoint_path, state, global_steps=global_step)
@@ -1195,7 +1228,7 @@ def main():
                     "train_dataloader": train_dataloader.state_dict(),
                     "environ_meter": environ_meter.state_dict(),
                     "torch_rng_state": torch.get_rng_state(),
-                    **extra_stage_state(stage_contract, ema),
+                    **extra_stage_state(stage_contract, ema, flow_rng),
                 },
             }
             Checkpointer.save(args.train.save_checkpoint_path, state, global_steps=global_step)

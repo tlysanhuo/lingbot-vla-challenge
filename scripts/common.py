@@ -21,9 +21,9 @@ def render_config(path):
         raise ValueError("Unresolved configuration variable")
     return yaml.safe_load(text)
 
-def gpu_gate(value):
+def gpu_gate(value, max_cards=4):
     gpus = value.split(",")
-    if not gpus or len(gpus) > 4 or len(set(gpus)) != len(gpus) or not all(g.isdigit() for g in gpus):
+    if not gpus or len(gpus) > max_cards or len(set(gpus)) != len(gpus) or not all(g.isdigit() for g in gpus):
         raise ValueError("Select 1–4 distinct GPU indices")
     raw = subprocess.check_output(["nvidia-smi", "--query-gpu=index,memory.used", "--format=csv,noheader,nounits"], text=True)
     memory = {a.strip(): int(b) for a, b in (row.split(",") for row in raw.splitlines())}
